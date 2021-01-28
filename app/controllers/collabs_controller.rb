@@ -39,6 +39,6 @@ class CollabsController < ApplicationController
   end
 
   def collab_params
-    params.require(:collab).pemit(:name)
+    params.require(:collab).permit(:name)
   end
 end
