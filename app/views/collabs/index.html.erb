@@ -1,0 +1,6 @@
+<% @collabs.each do |collab| %>
+  <%= collab.name %>
+  <%= link_to "Collab", collab_path(collab) %>
+<% end %>
+
+<%= link_to "New Collab", new_collab_path %>
