@@ -1,4 +1,4 @@
 class UsersCollab < ApplicationRecord
-  belongs_to :users
-  belongs_to :collabs
+  belongs_to :user
+  belongs_to :collab
 end

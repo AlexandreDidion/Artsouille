@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: [:show, :edit, :update]
   root to: 'pages#home'
   resources :collabs do
     resources :exhibitions, only: [:show, :new, :create, :edit, :update, :delete]
