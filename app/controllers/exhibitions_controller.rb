@@ -1,6 +1,6 @@
 class ExhibitionsController < ApplicationController
   before_action :set_collab, only: [:show, :new, :create]
-  # before_action :set_exhibition, only: [:destroy]
+  before_action :set_exhibition, only: [:show, :destroy]
 
   def index
     @exhibitions = Exhibition.all
