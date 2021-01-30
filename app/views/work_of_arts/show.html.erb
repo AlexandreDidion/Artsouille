@@ -5,11 +5,11 @@
     </a>
     <div class="work-of-art-card-infos">
       <h3><%= @work_of_art.name %></h3>
-      <h4><%= @work_of_art.user %></h4>
+      <h4><%= @work_of_art.user.username %></h4>
       <h4><%= @work_of_art.creation_date %></h4>
       <p><%= @work_of_art.description %></p>
       <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
     </div>
+      <%= link_to "Back", work_of_arts_path %>
   </div>
-  <%= link_to "Back", work_of_arts_path %>
 </div>
