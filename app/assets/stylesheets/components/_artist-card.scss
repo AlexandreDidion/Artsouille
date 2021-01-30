@@ -1,0 +1,47 @@
+.container-artist-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+
+  .artist-card .artist-card-infos {
+    display: flex;
+    position: relative;
+  }
+
+  .artist-card-infos {
+    position: absolute;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+
+    .favorite-icon {
+      position: absolute;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      right: 20px;
+      top: -65px;
+      pointer-events: none;
+    }
+
+    h3 {
+      margin-top: 8px;
+    }
+
+    p {
+      font-family: 'FuturaPTLight';
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    max-width: 400px;
+    max-height: 600px;
+  }
+
+  img:hover {
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+}

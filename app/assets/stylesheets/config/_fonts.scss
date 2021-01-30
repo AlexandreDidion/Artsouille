@@ -14,3 +14,28 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: 'Lena';
+  src: asset-url('Lena.ttf');
+}
+
+@font-face {
+  font-family: 'Novar';
+  src: asset-url('Novar.ttf');
+}
+
+@font-face {
+  font-family: 'FuturaPTLight';
+  src: asset-url('FuturaPTLight.otf');
+}
+
+@font-face {
+  font-family: 'FuturaPTBook';
+  src: asset-url('FuturaPTBook.otf');
+}
+
+@font-face {
+  font-family: 'FuturaPTMedium';
+  src: asset-url('FuturaPTMedium.otf');
+}
