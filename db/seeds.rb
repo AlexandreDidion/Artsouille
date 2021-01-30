@@ -50,13 +50,18 @@ puts 'Creating users...'
     user: user
   )
     
-  work_of_arts = WorkOfArt.create!(
+  work_of_art = WorkOfArt.create!(
     name: Faker::Lorem.word,
     description: Faker::GreekPhilosophers.quote,
     creation_date: Faker::Date.in_date_period,
     user: user,
     collab: collab
   )  
+
+  work_of_arts_favorite = WorkOfArtsFavorite.create!(
+    work_of_art: work_of_art,
+    user: user
+  )
 end
 
 puts 'User created'
