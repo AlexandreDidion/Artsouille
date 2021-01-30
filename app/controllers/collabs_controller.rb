@@ -9,6 +9,7 @@ class CollabsController < ApplicationController
 
   def new
     @collab = Collab.new
+  end
 
   def create
     @collab = Collab.new(collab_params)
