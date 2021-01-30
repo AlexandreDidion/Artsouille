@@ -1,0 +1,19 @@
+<% @work_of_arts.each do |art| %>
+<div class="container-work-of-art-cards">
+
+  <div class="work-of-art-card">
+    <a href="">
+      <img src="/assets/dodoma.png" alt="dodoma">
+    </a>
+    <div class="work-of-art-card-infos">
+      <h3><%= art.name %></h3>
+      <p><%= art.description %></p>
+      <h4><%= art.creation_date %></h4>
+      <p>Location</p>
+      <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+    </div>
+    <%= link_to "View", user_work_of_art_path(art.user, art) %>
+  </div>
+  </div>
+  <% end %>
+
