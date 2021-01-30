@@ -5,7 +5,7 @@ class CollabsController < ApplicationController
     @collabs = Collab.all
   end
 
-  def show;end
+  def show; end
 
   def new
     @collab = Collab.new
@@ -20,7 +20,7 @@ class CollabsController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit; end
 
   def update
     @collab.update(collab_params)
