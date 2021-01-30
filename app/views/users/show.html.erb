@@ -1,8 +1,43 @@
-<%= @user.username  %>
+<br>
+<div class="container-profile-card">
 
-<%= simple_form_for @user do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :description %>
-  <%= f.button :submit, class:"btn btn-primary" %>
+  <div class="profile-card">
+    <a href="">
+      <img src="/assets/artist.png" alt="artist">
+    </a>
+    <div class="profile-card-infos">
+      <h3><%= @user.username  %></h3>
+      <hr>
+      <h4><%= @user.art_type  %></h4>
+      <hr>
+      <p><%= @user.city  %> <%= @user.country  %></p>
+      <hr>
+      <p>Biography</p>
+      <p><%= @user.description  %></p>
+      <hr>
+      <p>See my exhibitions</p>
+      <hr>
+      <p>Want to collab? Send a message!</p>
+      <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+    </div>
+  </div>
+
+</div>
+<br>
+<h3>Portfolio</h3>
+<% @user.work_of_arts.each do |art| %>
+<div class="container-work-of-art-cards">
+  <div class="work-of-art-card-card">
+    <a href="">
+      <img src="/assets/dodoma.png" alt="dodoma">
+    </a>
+    <div class="work-of-art-card-infos">
+      <h3><%= art.name %></h3>
+      <p><%= art.description %></p>
+      <p><%= art.creation_date %></p>
+      <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+    </div>
+  </div>
+  </div>
 <% end %>
+
