@@ -1,0 +1,28 @@
+.profile-card {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+
+  img {
+    max-width: 400px;
+    max-height: 600px;
+  }
+}
+
+.profile-card-infos {
+  max-width: 400px;
+  position: relative;
+  text-align: justify;
+
+  .favorite-icon {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    right: 0px;
+    top: 0px;
+  }
+
+  p {
+    margin-bottom: 8px;
+  }
+}
