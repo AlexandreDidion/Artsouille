@@ -61,6 +61,15 @@ ActiveRecord::Schema.define(version: 2021_01_29_171756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_collabs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "collab_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collab_id"], name: "index_users_collabs_on_collab_id"
+    t.index ["user_id"], name: "index_users_collabs_on_user_id"
+  end
+
   create_table "work_of_arts", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -74,6 +83,8 @@ ActiveRecord::Schema.define(version: 2021_01_29_171756) do
   end
 
   add_foreign_key "exhibitions", "collabs"
+  add_foreign_key "users_collabs", "collabs"
+  add_foreign_key "users_collabs", "users"
   add_foreign_key "work_of_arts", "collabs"
   add_foreign_key "work_of_arts", "users"
 end
