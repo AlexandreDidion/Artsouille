@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :users_collabs, dependent: :destroy
   has_many :collabs, through: :users_collabs, dependent: :destroy
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
