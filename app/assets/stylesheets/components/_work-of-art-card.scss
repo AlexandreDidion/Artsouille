@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 33.333333%;
 
   .work-of-art-card .work-of-art-card-infos {
     display: flex;
