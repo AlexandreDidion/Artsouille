@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Have a look to all the exhibitions</h1>
+  <% @exhibitions.each do |exhibition| %>
+    <%= exhibition.name %>
+    <%= exhibition.start_date %>
+    <%= exhibition.end_date %>
+  <% end %>
+
+  <%= link_to "Go back to all collabs", collabs_path %>
+</div>
+

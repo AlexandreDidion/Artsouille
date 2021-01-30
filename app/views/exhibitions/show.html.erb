@@ -1,0 +1,8 @@
+<%= @exhibition.name %>
+
+<%= @collab.exhibition.user %>
+
+<%= link_to "Edit Exhibition", edit_collab_exhibition_path(@collab) %>
+<%= link_to "Create a new exhibition", new_collab_exhibition_path(@collab) %>
+<%= link_to "Back to all the collaborations", collabs_path %>
+<%= link_to "Back to all exhibitions", exhibitions_path %>
