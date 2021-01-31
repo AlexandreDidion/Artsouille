@@ -5,7 +5,6 @@
       <%= link_to image_tag("artwork_3.jpg"), user_work_of_art_path(art.user, art) %>
       <div class="work-of-art-card-infos">
         <h3><%= art.name %></h3>
-        <p><%= art.description %></p>
         <p>by <u><%= art.user.first_name %> <%= art.user.last_name %></u></h3>
         <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
       </div>
