@@ -1,6 +1,18 @@
+.navbar-hr {
+  border-color: black;
+}
+
 .navbar-lewagon {
+  padding: 0 16px;
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  box-shadow: none;
+
+  .nav-link {
+    font-family: "Novar";
+    color: black;
+    font-weight: bold;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
