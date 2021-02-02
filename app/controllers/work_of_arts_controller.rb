@@ -12,6 +12,28 @@ class WorkOfArtsController < ApplicationController
   def show
   end
 
+  def new
+    @work_of_art = WorkOfArt.new
+  end
+
+  def create
+    @work_of_art = WorkOfArt.new(work_of_art_params)
+    @work_of_art.user = current_user
+    if @work_of_art.save
+      redirect_to work_of_art_path(@work_of_art)
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @work_of_art.update(work_of_art_params)
+      redirect_to user_work_of_art_path(@work_of_art), notice: 'Your artpage is updated'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def set_work_of_arts
