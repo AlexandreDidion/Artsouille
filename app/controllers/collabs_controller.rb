@@ -3,9 +3,9 @@ class CollabsController < ApplicationController
 
   def index
     if params[:query] == 'my_collabs'
-      @collabs = Collabs.where('user_id = ?', current_user)
+      @collabs = Collab.where('user_id = ?', current_user)
     else
-      @collabs = Collabs.all
+      @collabs = Collab.all
     end
   end
 
@@ -18,16 +18,21 @@ class CollabsController < ApplicationController
   def create
     @collab = Collab.new(collab_params)
     if @collab.save
+      UsersCollab.create(collab: @collab, user: current_user)
       redirect_to collab_path(@collab), notice: 'Ready to start a new collab!'
     else
       render 'new'
     end
   end
 
-  def edit; end
+  def edit
+    @ordered_usernames = User.all.map { |user| user.username }.sort
+  end
 
   def update
-    @collab.update(collab_params)
+    @collab.update(name: collab_params[:name])
+    user = User.find_by(username: collab_params[:user_ids].second)
+    UsersCollab.create(collab: @collab, user: user)
     redirect_to collab_path(@collab), notice: 'Duly updated'
   end
 
@@ -44,6 +49,6 @@ class CollabsController < ApplicationController
   end
 
   def collab_params
-    params.require(:collab).permit(:name)
+    params.require(:collab).permit(:name, user_ids: [])
   end
 end

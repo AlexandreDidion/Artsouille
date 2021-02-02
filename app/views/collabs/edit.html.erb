@@ -1,1 +1,4 @@
-<%= render 'form-collab' %>
+<%= simple_form_for @collab do |f| %>
+  <%= f.association :users, collection: @ordered_usernames, prompt: "Choose a Collaborator" %>
+  <%= f.button :submit, class:"btn btn-primary" %>
+<% end %>
