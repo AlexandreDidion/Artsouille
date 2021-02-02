@@ -1,5 +1,6 @@
 <div class="navbar-container">
   <hr class="navbar-hr">
+
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
     <%= link_to root_path, class: "navbar-brand" do %>
@@ -9,6 +10,13 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <div class="searchbar">
+      <form action="">
+        <input type="search" placeholder="Find an artist, artwork, exhibition...">
+        <i class="fa fa-search"></i>
+      </form>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
