@@ -2,7 +2,11 @@ class CollabsController < ApplicationController
   before_action :set_collab, only: [:show, :edit, :update, :destroy]
 
   def index
-    @collabs = Collab.all
+    if params[:query] == 'my_collabs'
+      @collabs = Collabs.where('user_id = ?', current_user)
+    else
+      @collabs = Collabs.all
+    end
   end
 
   def show; end
