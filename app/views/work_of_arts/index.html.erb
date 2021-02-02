@@ -2,7 +2,11 @@
 
   <% @work_of_arts.each do |art| %>
     <div class="work-of-art-card">
-      <%= link_to image_tag("artwork_3.jpg"), user_work_of_art_path(art.user, art) %>
+      <% if art.photos.attached? %>
+        <%= cl_image_tag art.key, crop: :fill, user_work_of_art_path(art.user, art) %>
+      <% else %>
+        <%= image_tag('dodoma.png') %>
+      <% end %>
       <div class="work-of-art-card-infos">
         <h3><%= art.name %></h3>
         <p>by <u><%= art.user.first_name %> <%= art.user.last_name %></u></h3>

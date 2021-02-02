@@ -17,4 +17,8 @@ class WorkOfArtsController < ApplicationController
   def set_work_of_arts
     @work_of_art = WorkOfArt.find(params[:id])
   end
+
+  def work_of_art_params
+    params.require(:work_of_art).permit(:name, :description, :creation_date, photos: [])
+  end
 end
