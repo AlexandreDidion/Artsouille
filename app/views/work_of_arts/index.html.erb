@@ -1,9 +1,13 @@
+<div>
+  <% if params[:query] == 'my_arts' %>
+    <%= link_to "Add new artwork", new_work_of_art_path(@work_of_art) %>
+  <% end %>
+</div>
 <div class="container-work-of-art-cards">
-
   <% @work_of_arts.each do |art| %>
     <div class="work-of-art-card">
-      <% if art.photos.attached? %>
-        <%= cl_image_tag art.key, crop: :fill %>
+      <% if art.photo.attached? %>
+        <%= cl_image_tag art.photo.key, crop: :fill %>
       <% else %>
         <%= image_tag('dodoma.png') %>
       <% end %>

@@ -2,9 +2,8 @@
   <%= simple_form_for @work_of_art do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, as: :file %>
     <%= f.button :submit, class:"btn btn-primary" %>
-    <%= link_to 'Cancel', user_work_of_art_path, class: "btn btn-outline-secondary" %>
   <% end %>
 </div>
 

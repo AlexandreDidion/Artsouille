@@ -4,7 +4,7 @@ class WorkOfArt < ApplicationRecord
 
   has_many :work_of_arts_favorites, dependent: :destroy
 
-  has_many_attached :photos
+  has_one_attached :photo
 
   validates :name, presence: true
 end

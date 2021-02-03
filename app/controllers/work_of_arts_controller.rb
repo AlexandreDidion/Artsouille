@@ -20,7 +20,7 @@ class WorkOfArtsController < ApplicationController
     @work_of_art = WorkOfArt.new(work_of_art_params)
     @work_of_art.user = current_user
     if @work_of_art.save
-      redirect_to work_of_art_path(@work_of_art)
+      redirect_to user_work_of_art_path(@work_of_art)
     else
       render :new
     end
@@ -41,6 +41,6 @@ class WorkOfArtsController < ApplicationController
   end
 
   def work_of_art_params
-    params.require(:work_of_art).permit(:name, :description, :creation_date, photos: [])
+    params.require(:work_of_art).permit(:name, :description, :creation_date, :photo)
   end
 end

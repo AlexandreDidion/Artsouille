@@ -1,8 +1,8 @@
 <div class="container-work-of-art-cards">
 
   <div class="work-of-art-card">
-    <% if @work_of_art.photos.attached? %>
-      <%= cl_image_tag @work_of_art.key, crop: :fill %>
+    <% if @work_of_art.photo.attached? %>
+      <%= cl_image_tag @work_of_art.photo.key, crop: :fill %>
     <% else %>
       <%= image_tag('dodoma.png') %>
     <% end %>
