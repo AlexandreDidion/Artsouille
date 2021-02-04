@@ -1,7 +1,11 @@
 <div class="container-work-of-art-cards">
 
   <div class="work-of-art-card">
-    <%= link_to image_tag("dodoma.png") %>
+    <% if @work_of_art.photo.attached? %>
+      <%= cl_image_tag @work_of_art.photo.key, crop: :fill %>
+    <% else %>
+      <%= image_tag('dodoma.png') %>
+    <% end %>
     <div class="work-of-art-card-infos">
       <h3><%= @work_of_art.user.first_name %> - <%= @work_of_art.user.last_name %></h3>
       <h4><%= @work_of_art.name %></h4>
@@ -11,6 +15,6 @@
     </div>
     <%= link_to "Back", work_of_arts_path %>
   </div>
-  
+
 </div>
 <br>
