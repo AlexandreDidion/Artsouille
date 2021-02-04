@@ -256,13 +256,10 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
-<<<<<<< HEAD
-    unicode_utils (1.4.0)
-=======
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
->>>>>>> master
+    unicode_utils (1.4.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -297,11 +294,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-<<<<<<< HEAD
-  country_select (~> 4.0)
-=======
   cloudinary (~> 1.16.0)
->>>>>>> master
+  country_select (~> 4.0)
   devise
   dotenv-rails
   faker!
