@@ -7,7 +7,7 @@
 }
 
 .navbar-lewagon {
-  padding: 0 16px;
+  padding: 0;
   justify-content: space-between;
   background: transparent;
   box-shadow: none;
@@ -25,4 +25,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand {
+  margin-right: 8px;
 }

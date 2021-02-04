@@ -20,22 +20,23 @@ class WorkOfArtsController < ApplicationController
   end
 
   def create
-    @work_of_art = WorkOfArt.new(work_of_arts_params)
+    @work_of_art = WorkOfArt.new(work_of_art_params)
     @work_of_art.user = current_user
     if @work_of_art.save
-      redirect_to user_work_of_art_path(@work_of_art)
+      redirect_to user_path(current_user)
     else
       render :new
     end
   end
 
   def update
-    if @work_of_art.update(work_of_arts_params)
-      redirect_to user_work_of_art_path(@work_of_art), notice: 'Your artwork is updated'
+    if @work_of_art.update(work_of_art_params)
+      redirect_to user_work_of_art_path(@work_of_art), notice: 'Your artpage is updated'
     else
       render :edit
     end
   end
+
 
   def destroy
     @work_of_art.destroy
@@ -44,11 +45,12 @@ class WorkOfArtsController < ApplicationController
 
   private
 
-  def work_of_arts_params
-    params.require(:work_of_art).permit(:name, :description, :creation_date)
-  end
 
   def set_work_of_arts
     @work_of_art = WorkOfArt.find(params[:id])
+  end
+
+  def work_of_art_params
+    params.require(:work_of_art).permit(:name, :description, :creation_date, :photo)
   end
 end
