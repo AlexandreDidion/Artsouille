@@ -35,4 +35,26 @@
 
 </div>
 <br>
+<br>
+<br>
+<h3 style="text-align:center">Portfolio</h3>
+<br>
+<br>
 
+<div class="container-work-of-art-cards">
+
+  <% @user.work_of_arts.each do |art| %>
+    <div class="work-of-art-card-card">
+      <%= link_to image_tag("dodoma.png") %>
+      <div class="work-of-art-card-infos">
+        <h3><%= art.name %></h3>
+        <p><%= art.description %></p>
+        <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+      </div>
+      <% if current_user == @user %>
+        <%= link_to "Edit", edit_user_work_of_art_path(art.user, art) %>
+        <%= link_to "Delete", user_work_of_art_path(art.user, art), data: { confirm: "Are you sure?" }, :method => :delete %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

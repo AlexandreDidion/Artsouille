@@ -1,5 +1,5 @@
 class WorkOfArtsController < ApplicationController
-  before_action :set_work_of_arts, only: [:show]
+  before_action :set_work_of_arts, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query] == 'my_arts'
@@ -10,6 +10,9 @@ class WorkOfArtsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   def new
@@ -34,7 +37,14 @@ class WorkOfArtsController < ApplicationController
     end
   end
 
+
+  def destroy
+    @work_of_art.destroy
+    redirect_to work_of_arts_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
+  end
+
   private
+
 
   def set_work_of_arts
     @work_of_art = WorkOfArt.find(params[:id])
