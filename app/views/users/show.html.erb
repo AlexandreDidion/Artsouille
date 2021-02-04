@@ -40,10 +40,11 @@
         <p><%= art.description %></p>
         <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
       </div>
-      <%= link_to "Edit", edit_user_work_of_art_path(art.user, art) %>
-      <%= link_to "Delete", user_work_of_art_path(art.user, art), data: { confirm: "Are you sure?" }, :method => :delete %>
+      <% if current_user == @user %>
+        <%= link_to "Edit", edit_user_work_of_art_path(art.user, art) %>
+        <%= link_to "Delete", user_work_of_art_path(art.user, art), data: { confirm: "Are you sure?" }, :method => :delete %>
+      <% end %>
     </div>
   <% end %>
-  <%= link_to "Add a new art", new_work_of_art_path %>
 
 </div>

@@ -39,7 +39,7 @@ class WorkOfArtsController < ApplicationController
 
   def destroy
     @work_of_art.destroy
-    redirect_to user_work_of_art_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
+    redirect_to work_of_arts_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
   end
 
   private
