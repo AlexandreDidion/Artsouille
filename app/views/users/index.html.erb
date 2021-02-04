@@ -1,8 +1,11 @@
 <div class="container-artist-cards">
-
   <% @users.each do |user| %>
     <div class="artist-card">
-      <%= link_to image_tag("artist.png"), user_path(user)%>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, crop: :fill %>
+      <% else %>
+        <%= link_to image_tag("artist.png"), user_path(user)%>
+      <% end %>
       <div class="artist-card-infos">
         <h3><%= user.first_name %> - <%= user.last_name %></h3>
         <h4><%= user.art_type%></h4>
@@ -12,7 +15,6 @@
       </div>
     </div>
   <% end %>
-
 </div>
 
 
