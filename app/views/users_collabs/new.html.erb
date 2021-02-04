@@ -1,0 +1,8 @@
+<%= simple_form_for [@collab, @users_collab] do |f| %>
+  <%= f.association :user, label_method: lambda {|u| u.username} %>
+  <%= f.input :user, collection: @filtered_users, label_method: lambda {|u| u.username}  %>
+  <%= f.button :submit, class:"btn btn-primary" %>
+<% end %>
+
+
+

@@ -25,14 +25,10 @@ class CollabsController < ApplicationController
     end
   end
 
-  def edit
-    @ordered_usernames = User.all.map { |user| user.username }.sort
-  end
+  def edit; end
 
   def update
-    @collab.update(name: collab_params[:name])
-    user = User.find_by(username: collab_params[:user_ids].second)
-    UsersCollab.create(collab: @collab, user: user)
+    @collab.update(collab_params)
     redirect_to collab_path(@collab), notice: 'Duly updated'
   end
 

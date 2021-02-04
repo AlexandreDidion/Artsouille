@@ -2,8 +2,10 @@
 
 <% @collab.users.each do |user| %>
   <%= user.username %>
+  <%= link_to "Remove this artist", users_collab_path(@collab.users_collabs.find {|uc| uc.user == user }), method: :delete, data: {confirm: "Remove artist from the collab?"} %>
 <% end %>
 
-<%= link_to "Add a member", edit_collab_path(@collab) %>
+<%= link_to "Add a member", new_collab_users_collab_path(@collab) %>
+
 
 <%= link_to "Back", collabs_path %>
