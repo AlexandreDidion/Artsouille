@@ -20,7 +20,7 @@ class WorkOfArtsController < ApplicationController
     @work_of_art = WorkOfArt.new(work_of_art_params)
     @work_of_art.user = current_user
     if @work_of_art.save
-      redirect_to user_work_of_art_path(@work_of_art)
+      redirect_to user_path(current_user)
     else
       render :new
     end

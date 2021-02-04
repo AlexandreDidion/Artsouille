@@ -42,10 +42,19 @@
 <br>
 
 <div class="container-work-of-art-cards">
+  <% if current_user == @user %>
+  <div>
+    <%= link_to "Add a new artwork", new_work_of_art_path(@work_of_art) %>
+  </div>
+  <% end %>
 
   <% @user.work_of_arts.each do |art| %>
     <div class="work-of-art-card-card">
-      <%= link_to image_tag("dodoma.png") %>
+      <% if art.photo.attached? %>
+        <%= cl_image_tag art.photo.key, crop: :fill %>
+      <% else %>
+        <%= image_tag('dodoma.png') %>
+      <% end %>
       <div class="work-of-art-card-infos">
         <h3><%= art.name %></h3>
         <p><%= art.description %></p>

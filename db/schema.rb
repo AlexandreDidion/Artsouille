@@ -91,17 +91,12 @@ ActiveRecord::Schema.define(version: 2021_02_02_182615) do
     t.index ["user_id"], name: "index_users_collabs_on_user_id"
   end
 
-  create_table "users_work_of_arts", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "work_of_art_id", null: false
-  end
-
   create_table "work_of_arts", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "creation_date"
     t.bigint "user_id", null: false
-    t.bigint "collab_id", null: false
+    t.bigint "collab_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["collab_id"], name: "index_work_of_arts_on_collab_id"
