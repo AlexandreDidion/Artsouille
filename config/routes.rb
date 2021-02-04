@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update] do
-    resources :work_of_arts, only: [:show, :edit, :update, :delete ]
+    resources :work_of_arts, only: [:show, :edit, :update, :destroy ]
   end
   resources :work_of_arts, only: [:new, :create, :index]
   resources :collabs do
-    resources :exhibitions, only: [:new, :create, :show, :edit, :update, :delete]
     resources :users_collabs, only: [:new, :create]
+    resources :exhibitions, only: [:new, :create, :show, :edit, :update, :destroy]
   end
   resources :exhibitions, only: [:index]
   resources :users_collabs, only: [:destroy]
