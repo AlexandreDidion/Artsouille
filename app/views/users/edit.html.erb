@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h2>Edit my profile</h2>
+        <%= simple_form_for @user do |f| %>
+          <%= f.input :first_name,
+                      required: false %>
+          <%= f.input :last_name,
+                      required: false %>
+          <%= f.input :description,
+                      required: false %>
+          <%= f.input :photo, as: :file, input_html: { multiple: true } %>
+          <%= f.button :submit, class:"btn btn-primary" %>
+          <%= link_to 'Cancel', user_path, class: "btn btn-outline-secondary" %>
+        <% end %>
+    </div>
+  </div>
+</div>

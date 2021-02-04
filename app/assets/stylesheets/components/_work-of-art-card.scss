@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 33.333333%;
 
   .work-of-art-card .work-of-art-card-infos {
     display: flex;
@@ -13,12 +15,13 @@
     flex-direction: column;
     text-align: left;
     position: relative;
+    margin-bottom: 20px;
 
     .favorite-icon {
       position: absolute;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      right: 20px;
-      top: -65px;
+      right: 9px;
+      top: -57px;
       pointer-events: none;
     }
 

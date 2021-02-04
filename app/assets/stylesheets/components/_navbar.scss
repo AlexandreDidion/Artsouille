@@ -1,6 +1,22 @@
+.navbar-container {
+  margin: 0 25px;
+}
+
+.navbar-hr {
+  border-color: black;
+}
+
 .navbar-lewagon {
+  padding: 0;
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  box-shadow: none;
+
+  .nav-link {
+    font-family: "Novar";
+    color: black;
+    font-weight: bold;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +25,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand {
+  margin-right: 8px;
 }

@@ -1,0 +1,87 @@
+@media (min-width: 481px) and (max-width: 767px) {
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .profile-card {
+    flex-direction: column;
+
+    img {
+      display: block;
+      margin: auto;
+      max-width: 325px;
+    }
+  }
+
+  .profile-card-infos {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 325px;
+
+    p {
+      font-size: 14px;
+    }
+
+    .favorite-icon {
+      width: 30px;
+      height: 30px;
+      right: 3px;
+    }
+  }
+
+  .artist-card {
+    flex-basis: 50%;
+    flex-direction: column;
+
+    img {
+      display: block;
+      margin: auto;
+      max-width: 200px;
+      }
+
+    .artist-card-infos {
+      margin: auto;
+      max-width: 200px;
+
+      p {
+        font-size: 14px;
+      }
+
+      .favorite-icon {
+        width: 30px;
+        height: 30px;
+        right: 7px;
+        top: -35px;
+      }
+    }
+  }
+
+  .work-of-art-card {
+    img {
+      max-width: 200px;
+    }
+
+    .work-of-art-card-infos {
+      p {
+        font-size: 14px;
+      }
+
+      .favorite-icon {
+        width: 30px;
+        height: 30px;
+        right: 7px;
+        top: -35px;
+      }
+    }
+  }
+}
