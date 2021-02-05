@@ -3,7 +3,7 @@ class CollabsController < ApplicationController
 
   def index
     if params[:query] == 'my_collabs'
-      @collabs = Collab.where('user_id = ?', current_user)
+      @collabs = Collab.joins(:users_collabs).where('user_id = ?', current_user)
     else
       @collabs = Collab.all
     end

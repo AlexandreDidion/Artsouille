@@ -1,4 +1,11 @@
-<%= simple_form_for @collab do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit, class:"btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= simple_form_for @collab do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit, class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
