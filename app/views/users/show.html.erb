@@ -1,9 +1,13 @@
 <div class="<%= page_background_class %>">
   <br>
-
   <div class="container-profile-card">
+
     <div class="profile-card">
-      <%= link_to image_tag("artist.png") %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, crop: :fill %>
+      <% else %>
+        <%= link_to image_tag("artist.png") %>
+      <% end %>
       <div class="profile-card-infos">
         <h3><%= @user.username  %></h3>
         <hr>
@@ -18,9 +22,38 @@
         <hr>
         <p>Want to collab? Send a message!</p>
         <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+        <hr>
+        <% if current_user == @user  %>
+          <div class="btn-profile">
+            <%= link_to "Edit my profile", edit_user_path, class: "btn btn-outline-primary btn-edit" %>
+            <%= link_to "Add a new artwork", new_work_of_art_path(@work_of_art), class: "btn btn-outline-primary" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-
   <br>
+  <br>
+  <br>
+  <h3 style="text-align:center">Portfolio</h3>
+  <br>
+  <br>
+
+  <div class="container-work-of-art-cards">
+    <% @user.work_of_arts.each do |art| %>
+      <div class="work-of-art-card-card">
+        <%= link_to image_tag("dodoma.png") %>
+        <div class="work-of-art-card-infos">
+          <h3><%= art.name %></h3>
+          <p><%= art.description %></p>
+          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+        </div>
+        <% if current_user == @user %>
+          <%= link_to "Edit", edit_user_work_of_art_path(art.user, art) %>
+          <%= link_to "Delete", user_work_of_art_path(art.user, art), data: { confirm: "Are you sure?" }, :method => :delete %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
 </div>
