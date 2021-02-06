@@ -1,10 +1,10 @@
 <div class="<%= page_background_class %>">
-  
+
   <div class="container-artist-cards">
     <% @users.each do |user| %>
       <div class="artist-card">
         <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key, crop: :fill %>
+          <%= image_tag user.photo, crop: :fill %>
         <% else %>
           <%= link_to image_tag("artist.png"), user_path(user)%>
         <% end %>
@@ -18,5 +18,5 @@
       </div>
     <% end %>
   </div>
-  
+
 </div>
