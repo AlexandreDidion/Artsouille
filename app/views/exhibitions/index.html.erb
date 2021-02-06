@@ -1,11 +1,10 @@
 <div class="container">
-  <h1>Have a look to all the exhibitions</h1>
-  <% @exhibitions.each do |exhibition| %>
-    <%= exhibition.name %>
-    <%= exhibition.start_date %>
-    <%= exhibition.end_date %>
-    <%= exhibition.collabs.user.username %>
-  <% end %>
-
-  <%= link_to "Go back to all collabs", collabs_path %>
+  <%= @exhibitions.each do |exhibition| %>
+  <div class="work-of-art-card">
+    <%= link_to exhibition.name, root_path %>
+    <%= exhibition.description %>
+    <% end %>
+  </div>
+  <%= link_to "Homepage", root_path %>
 </div>
+
