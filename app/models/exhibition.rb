@@ -1,5 +1,6 @@
 class Exhibition < ApplicationRecord
   belongs_to :collab
+  has_many :users, through: :collab
 
   validates :name, presence: true, uniqueness: true
   validates :category, inclusion: { in: ["visual", "sculpture", "performance", "music"] }
