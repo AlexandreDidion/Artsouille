@@ -9,6 +9,8 @@
                       required: false %>
           <%= f.input :description,
                       required: false %>
+          <%= f.input :city,
+                      required: false %>            
           <%= f.input :photo, as: :file %>
           <%= f.button :submit, class:"btn btn-primary" %>
           <%= link_to 'Cancel', user_path, class: "btn btn-outline-secondary" %>
