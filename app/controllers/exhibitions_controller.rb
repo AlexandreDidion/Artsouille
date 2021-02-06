@@ -27,16 +27,6 @@ class ExhibitionsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @exhibition.update(exhibition_params)
-      redirect_to collab_exhibition_path(@collab), notice: 'Exhibition is updated'
-    else
-      render :edit
-    end
-  end
 
     private
 
