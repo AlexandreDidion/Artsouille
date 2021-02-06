@@ -1,37 +1,35 @@
-<br>
-
-<div class="container-profile-card">
-
-  <div class="profile-card">
-    <% if @user.photo.attached? %>
-      <%= cl_image_tag @user.photo.key, crop: :fill %>
-    <% else %>
-      <%= link_to image_tag("artist.png") %>
-    <% end %>
-    <div class="profile-card-infos">
-      <h3><%= @user.username  %></h3>
-      <hr>
-      <h4><%= @user.art_type  %></h4>
-      <hr>
-      <p><%= @user.city  %>, <%= @user.country  %></p>
-      <hr>
-      <p>Biography</p>
-      <p><%= @user.description  %></p>
-      <hr>
-      <p>See my exhibitions</p>
-      <hr>
-      <p>Want to collab? Send a message!</p>
-      <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
-      <hr>
+<div class="<%= page_background_class %>">
+  <br>
+  <div class="container-profile-card">
+    <div class="profile-card">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, crop: :fill %>
+      <% else %>
+        <%= link_to image_tag("artist.png") %>
+      <% end %>
+      <div class="profile-card-infos">
+        <h3><%= @user.username  %></h3>
+        <hr>
+        <h4><%= @user.art_type  %></h4>
+        <hr>
+        <p><%= @user.city  %>, <%= @user.country  %></p>
+        <hr>
+        <p>Biography</p>
+        <p><%= @user.description  %></p>
+        <hr>
+        <p>See my exhibitions</p>
+        <hr>
+        <p>Want to collab? Send a message!</p>
+        <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+        <hr>
         <% if current_user == @user  %>
-        <div class="btn-profile">
-          <%= link_to "Edit my profile", edit_user_path, class: "btn btn-outline-primary btn-edit" %>
-          <%= link_to "Add a new artwork", new_work_of_art_path(@work_of_art), class: "btn btn-outline-primary" %>
-        </div>
+          <div class="btn-profile">
+            <%= link_to "Edit my profile", edit_user_path, class: "btn btn-outline-primary btn-edit" %>
+            <%= link_to "Add a new artwork", new_work_of_art_path(@work_of_art), class: "btn btn-outline-primary" %>
+          </div>
         <% end %>
       </div>
     </div>
-
 
 </div>
 <br>
