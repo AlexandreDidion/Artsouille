@@ -1,5 +1,38 @@
 @media (min-width: 481px) and (max-width: 767px) {
 
+  .background_yellow {
+    padding-top: 10px;
+  }
+
+  .dropdown {
+    position: absolute;
+
+    img {
+      position: absolute;
+      right: 0px;
+      top: -20px;
+    }
+
+    .dropdown-menu {
+      padding: 0px 0px 0px 6px;
+      width: 300px;
+      height: 112px;
+      width: 50px;
+      font-size: 14px;
+      line-height: 0.4rem;
+      position: absolute;
+      right: 0px;
+      top: -20px;
+    }
+  }
+
+  .searchbar{
+    form {
+      left: -5px;
+      transform: translate(0%);
+    }
+  }
+
   h1 {
     font-size: 32px;
   }

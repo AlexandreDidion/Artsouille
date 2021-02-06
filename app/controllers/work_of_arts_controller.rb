@@ -9,11 +9,9 @@ class WorkOfArtsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def new
     @work_of_art = WorkOfArt.new
@@ -37,14 +35,12 @@ class WorkOfArtsController < ApplicationController
     end
   end
 
-
   def destroy
     @work_of_art.destroy
     redirect_to work_of_arts_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
   end
 
   private
-
 
   def set_work_of_arts
     @work_of_art = WorkOfArt.find(params[:id])

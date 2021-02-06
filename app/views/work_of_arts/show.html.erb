@@ -1,5 +1,5 @@
-<div class="container-work-of-art-cards">
-
+<div class="<%= page_background_class %>">
+  
   <div class="work-of-art-card">
     <% if @work_of_art.photo.attached? %>
       <%= cl_image_tag @work_of_art.photo.key, crop: :fill %>
@@ -10,11 +10,9 @@
       <h3><%= @work_of_art.user.first_name %> - <%= @work_of_art.user.last_name %></h3>
       <h4><%= @work_of_art.name %></h4>
       <p><%= @work_of_art.description %></p>
-      <%= link_to "Back", work_of_arts_path %>
       <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+      <%= link_to "Back", work_of_arts_path %>
     </div>
-    <%= link_to "Back", work_of_arts_path %>
   </div>
 
 </div>
-<br>
