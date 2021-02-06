@@ -10,25 +10,31 @@
     <%= f.input :username,
                 required: true,
                 autofocus: true,
+                placeholder: "Gustave Klimt",
                 input_html: { autocomplete: "username" } %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                placeholder: "gustavklimt@gmail.com",
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
+                placeholder: "••••••••",
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
+                placeholder: "••••••••",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.country_select :country,
                 priority_countries: ["BE", "FR", "GB"],
                 prompt: "Select a Country",
                 required: true,
+                placeholder: "Austria",
                 input_html: { autocomplete: "Select Country" } %>
     <%= f.input :city,
                 required: true,
+                placeholder: "Vienna",
                 autofocus: true,
                 input_html: { autocomplete: "city" } %>
   </div>
