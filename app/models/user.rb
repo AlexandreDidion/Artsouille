@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :work_of_arts, dependent: :destroy
   has_many :users_collabs, dependent: :destroy
   has_many :collabs, through: :users_collabs, dependent: :destroy
+  has_many :exhibitions, through: :collabs
 
   has_many :followed_users, foreign_key: :follower_id, class_name: "Follow"
   has_many :followees, through: :followed_users
