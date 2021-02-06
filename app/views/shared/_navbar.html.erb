@@ -1,4 +1,4 @@
-<div class="navbar-container">
+<div class="navbar-container fixed-top <%= page_background_class %>">
   <hr class="navbar-hr">
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
@@ -8,7 +8,6 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
       <ul class="navbar-nav">
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
@@ -19,7 +18,7 @@
         <li class="nav-item active">
           <%= link_to "Artworks", work_of_arts_path, class: "nav-link" %>
         <li class="nav-item active">
-          <%= link_to "Exhibitions", "#", class: "nav-link" %>
+          <%= link_to "Collabs", collabs_path, class: "nav-link" %>
         </li>
       </ul>
 
@@ -29,7 +28,6 @@
           <i class="fa fa-search"></i>
         </form>
       </div>
-
     </div>
 
     <div>
@@ -41,7 +39,7 @@
               <%= link_to "My profile", user_path(current_user), class: "dropdown-item nav-link" %>
               <%= link_to "Messages", "#", class: "nav-link" %>
               <%= link_to "My Art", work_of_arts_path(query: 'my_arts'), class: "dropdown-item nav-link" %>
-              <%= link_to "Another action", "#", class: "dropdown-item nav-link" %>
+              <%= link_to "My Collabs", collabs_path(query: 'my_collabs'), class: "dropdown-item nav-link" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item nav-link" %>
             </div>
           </li>
@@ -53,5 +51,6 @@
       </ul>
     </div>
   </div>
+
   <hr class="navbar-hr">
 </div>

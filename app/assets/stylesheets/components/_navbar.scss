@@ -1,5 +1,5 @@
 .navbar-container {
-  margin: 0 25px;
+  padding: 0 25px;
 }
 
 .navbar-hr {
@@ -9,7 +9,6 @@
 .navbar-lewagon {
   padding: 0;
   justify-content: space-between;
-  background: transparent;
   box-shadow: none;
 
   .nav-link {
@@ -23,10 +22,7 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-.navbar-brand {
-  margin-right: 8px;
+.nav-item:hover {
+  text-decoration: underline;
+  text-underline-position: under;
 }
