@@ -18,7 +18,7 @@
         <li class="nav-item active">
           <%= link_to "Artworks", work_of_arts_path, class: "nav-link" %>
         <li class="nav-item active">
-          <%= link_to "Exhibitions", "#", class: "nav-link" %>
+          <%= link_to "Collabs", collabs_path, class: "nav-link" %>
         </li>
       </ul>
 
@@ -39,7 +39,7 @@
               <%= link_to "My profile", user_path(current_user), class: "dropdown-item nav-link" %>
               <%= link_to "Messages", "#", class: "nav-link" %>
               <%= link_to "My Art", work_of_arts_path(query: 'my_arts'), class: "dropdown-item nav-link" %>
-              <%= link_to "Another action", "#", class: "dropdown-item nav-link" %>
+              <%= link_to "My Collabs", collabs_path(query: 'my_collabs'), class: "dropdown-item nav-link" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item nav-link" %>
             </div>
           </li>

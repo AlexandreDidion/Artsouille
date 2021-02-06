@@ -1,6 +1,15 @@
-<%= @collab.name %>
-
-
-<%= link_to "Edit Collab", edit_collab_path(@collab) %>
-
-<%= link_to "Back", collabs_path %>
+<div class="container">
+  <h2><%= @collab.name %></h2>
+  <% @collab.users.each do |user| %>
+    <div class="work-of-art-card">
+      <%= user.username %>
+      <% if @collab.users.include?(current_user) %>
+        <%= link_to "Remove this artist", users_collab_path(@collab.users_collabs.find {|uc| uc.user == user }), method: :delete, data: {confirm: "Remove artist from the collab?"} %>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @collab.users.include?(current_user) %>
+    <%= link_to "Add a member", new_collab_users_collab_path(@collab) %>
+  <% end %>
+  <%= link_to "Back", collabs_path %>
+</div>
