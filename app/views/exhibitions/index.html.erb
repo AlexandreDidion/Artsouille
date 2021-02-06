@@ -1,8 +1,7 @@
 <div class="container">
-  <%= @exhibitions.each do |exhibition| %>
+  <% @exhibitions.each do |exhibition| %>
   <div class="work-of-art-card">
-    <%= link_to exhibition.name, root_path %>
-    <%= exhibition.description %>
+    <%= link_to exhibition.name, collab_exhibition_path(exhibition.collab, exhibition) %>
     <% end %>
   </div>
   <%= link_to "Homepage", root_path %>

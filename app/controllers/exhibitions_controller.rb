@@ -11,7 +11,7 @@ class ExhibitionsController < ApplicationController
     end
   end
 
-  def show;end
+  def show; end
 
   def new
     @exhibition = Exhibition.new
@@ -32,7 +32,7 @@ class ExhibitionsController < ApplicationController
 
   def update
     if @exhibition.update(exhibition_params)
-      redirect_to exhibition_path(@exhibition), notice: 'Exhibition is updated'
+      redirect_to collab_exhibition_path(@collab), notice: 'Exhibition is updated'
     else
       render :edit
     end

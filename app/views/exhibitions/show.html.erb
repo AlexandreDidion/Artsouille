@@ -1,11 +1,10 @@
-<!-- # <%= @exhibition.name %>
-
-# <%= @collab.exhibition.user %>
-
-# <%= link_to "Edit Exhibition", edit_collab_exhibition_path(@collab) %>
-# <%= link_to "All collabs", collabs_path %>
-# <%= link_to "All exhibitions", exhibitions_path %> -->
-
 <div class="container">
-  <h2><%= @exhibition.name %></h2>
+  <div class="work-of-art-card">
+    <h3><%= @exhibition.name %></h3>
+    <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
+    <p><%= @exhibition.description %></p>
+  </div>
+   <%= link_to "Edit Exhibition", edit_collab_exhibition_path(@collab) %>
+   <%= link_to "All collabs", collabs_path %>
+   <%= link_to "All exhibitions", exhibitions_path %>
 </div>
