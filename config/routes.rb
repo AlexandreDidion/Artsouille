@@ -1,15 +1,15 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update] do
-    resources :work_of_arts, only: [:show, :edit, :update, :destroy ]
+    resources :work_of_arts, only: [:new, :create]
   end
-  resources :work_of_arts, only: [:new, :create, :index]
+  resources :work_of_arts, only: [:index, :show, :edit, :update, :destroy]
   resources :collabs do
     resources :users_collabs, only: [:new, :create]
-    resources :exhibitions, only: [:new, :create, :show, :edit, :update, :destroy]
+    resources :exhibitions, only: [:new, :create]
   end
-  resources :exhibitions, only: [:index]
+  resources :exhibitions, only: [:index, :show, :edit, :update, :destroy]
   resources :users_collabs, only: [:destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

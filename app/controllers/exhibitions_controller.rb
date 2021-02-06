@@ -1,6 +1,6 @@
 class ExhibitionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
-  before_action :set_collab, only: [ :show, :new, :create]
+  before_action :set_collab, only: [:new]
   before_action :set_exhibition, only: [ :show, :destroy]
 
   def index
@@ -12,20 +12,6 @@ class ExhibitionsController < ApplicationController
   end
 
   def show; end
-
-  def new
-    @exhibition = Exhibition.new
-  end
-
-  def create
-    @exhibition = Exhibition.new(exhibition_params)
-    @exhibition.collab = @collab
-    if @exhibition.save
-      redirect_to collab_path(@collab)
-    else
-      render "new"
-    end
-  end
 
 
     private
