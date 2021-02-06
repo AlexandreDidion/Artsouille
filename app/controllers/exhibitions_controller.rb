@@ -5,7 +5,7 @@ class ExhibitionsController < ApplicationController
 
   def index
     if params[:query] == 'my_exhibitions'
-      @exhibitions = Exhibition.where('user_id = ?', current_user)
+      @exhibitions = Exhibition.where('collab_id IN (?)', current_user.collabs.map(&:id))
     else
       @exhibitions = Exhibition.all
     end
@@ -20,8 +20,7 @@ class ExhibitionsController < ApplicationController
 
   def show; end
 
-
-    private
+  private
 
   def set_collab
     @collab = Collab.find(params[:collab_id])

@@ -4,7 +4,7 @@
   resources :users, only: [:index, :show, :edit, :update] do
     resources :work_of_arts, only: [:index], module: :users
   end
-  resources :work_of_arts, only: [:new, :create, :index, :update, :edit, :destroy]
+  resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy]
   resources :collabs do
     resources :users_collabs, only: [:new]
     resources :exhibitions, only: [:new]
