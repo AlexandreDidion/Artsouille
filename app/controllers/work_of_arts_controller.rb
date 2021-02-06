@@ -25,7 +25,7 @@ class WorkOfArtsController < ApplicationController
 
   def update
     if @work_of_art.update(work_of_art_params)
-      redirect_to user_work_of_art_path(@work_of_art), notice: 'Your artpage is updated'
+      redirect_to user_work_of_arts(@work_of_art), notice: 'Your artpage is updated'
     else
       render :edit
     end
