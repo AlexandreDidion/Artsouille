@@ -1,5 +1,5 @@
 <div class="<%= page_background_class %>">
-  
+
   <div class="container-work-of-art-cards">
     <% @work_of_arts.each do |art| %>
       <div class="work-of-art-card">
@@ -9,7 +9,7 @@
           <%= image_tag('dodoma.png') %>
         <% end %>
         <div class="work-of-art-card-infos">
-          <h3><%= link_to art.name, user_work_of_art_path(art.user, art) %></h3>
+          <h3><%= link_to art.name, work_of_art_path(art) %></h3>
           <p>by <u><%= art.user.first_name %> <%= art.user.last_name %></u></h3>
           <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
