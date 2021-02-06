@@ -48,10 +48,11 @@
         <div class="work-of-art-card-infos">
           <h3><%= art.name %></h3>
           <p><%= art.description %></p>
-          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
           <% if current_user == @user %>
-            <%= link_to "Edit", edit_work_of_art_path(art) %>
-            <%= link_to "Delete", work_of_art_path(art), data: { confirm: "Are you sure?" }, :method => :delete %>
+            <div class="btn-work-of-art">
+              <%= link_to "Edit", edit_work_of_art_path(art), class: "btn btn-outline-primary" %>
+              <%= link_to "Delete", work_of_art_path(art), data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-outline-warning" %>
+            </div>
           <% end %>
         </div>
       </div>
