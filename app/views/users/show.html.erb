@@ -3,7 +3,7 @@
   <div class="container-profile-card">
     <div class="profile-card">
       <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, crop: :fill %>
+        <%= cl_image_tag(@user.photo.key, crop: 'fill') %>
       <% else %>
         <%= link_to image_tag("artist.png") %>
       <% end %>
@@ -43,8 +43,8 @@
 
   <% @user.work_of_arts.each do |art| %>
     <div class="work-of-art-card-card">
-      <% if user.photo.attached? %>
-        <%= cl_image_tag user.photo.key, crop: :fill %>
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag(@user.photo.key, crop: 'fill') %>
       <% else %>
         <%= link_to image_tag("dodoma.png") %>
       <% end %>
