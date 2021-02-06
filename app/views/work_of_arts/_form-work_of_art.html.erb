@@ -1,9 +1,14 @@
 <div class="container">
-  <%= simple_form_for @work_of_art do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login gradient-border">
+        <%= simple_form_for @work_of_art do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, class: "btn btn-outline-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-

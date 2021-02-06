@@ -1,18 +1,26 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login gradient-border">
       <h2>Edit my profile</h2>
         <%= simple_form_for @user do |f| %>
           <%= f.input :first_name,
+                      placeholder: "Gustave",
                       required: false %>
           <%= f.input :last_name,
+                      placeholder: "Klimt",
                       required: false %>
           <%= f.input :description,
+                      placeholder: "Culpa aspernatur maxime id aperiam est sit ad minus vel.",
+                      required: false %>
+          <%= f.input :city,
+                      placeholder: "Vienna",
                       required: false %>
           <%= f.input :photo, as: :file %>
-          <%= f.button :submit, class:"btn btn-primary" %>
-          <%= link_to 'Cancel', user_path, class: "btn btn-outline-secondary" %>
+          <%= f.button :submit, class:"btn btn-outline-primary" %>
+          <%= link_to 'Cancel', user_path, class: "btn btn-outline-warning" %>
         <% end %>
+      </div>
     </div>
   </div>
 </div>

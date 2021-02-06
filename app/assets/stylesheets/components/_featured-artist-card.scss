@@ -36,6 +36,8 @@
   img {
     max-width: 400px;
     max-height: 600px;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
   }
 
   img:hover {

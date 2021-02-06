@@ -2,11 +2,7 @@ class WorkOfArtsController < ApplicationController
   before_action :set_work_of_arts, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query] == 'my_arts'
-      @work_of_arts = WorkOfArt.where('user_id = ?', current_user)
-    else
-      @work_of_arts = WorkOfArt.all
-    end
+    @work_of_arts = WorkOfArt.all
   end
 
   def show; end
@@ -29,7 +25,7 @@ class WorkOfArtsController < ApplicationController
 
   def update
     if @work_of_art.update(work_of_art_params)
-      redirect_to user_work_of_art_path(@work_of_art), notice: 'Your artpage is updated'
+      redirect_to user_work_of_arts(@work_of_art), notice: 'Your artpage is updated'
     else
       render :edit
     end
@@ -47,6 +43,6 @@ class WorkOfArtsController < ApplicationController
   end
 
   def work_of_art_params
-    params.require(:work_of_art).permit(:name, :description, :creation_date, :photo)
+    params.require(:work_of_art).permit(:name, :description, :creation_date, :photo, :user_id)
   end
 end

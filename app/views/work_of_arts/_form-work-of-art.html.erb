@@ -1,9 +1,0 @@
-<div class="container">
-  <%= simple_form_for [current_user, @work_of_art] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :creation_date, as: :date %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-    
-  <% end %>
-</div>
