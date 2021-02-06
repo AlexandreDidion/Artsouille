@@ -20,6 +20,9 @@
         <li class="nav-item active">
           <%= link_to "Collabs", collabs_path, class: "nav-link" %>
         </li>
+        <li class="nav-item active">
+          <%= link_to "Exhibitions", exhibitions_path, class: "nav-link" %>
+        </li>
       </ul>
 
       <div class="searchbar">
@@ -40,6 +43,7 @@
               <%= link_to "Messages", "#", class: "nav-link" %>
               <%= link_to "My Art", work_of_arts_path(query: 'my_arts'), class: "dropdown-item nav-link" %>
               <%= link_to "My Collabs", collabs_path(query: 'my_collabs'), class: "dropdown-item nav-link" %>
+              <%= link_to "My Exhibitions", exhibitions_path(query: 'my exhibitions'), class: "dropdown-item nav-link" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item nav-link" %>
             </div>
           </li>
