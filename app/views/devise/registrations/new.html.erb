@@ -19,6 +19,15 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.country_select :country,  
+                priority_countries: ["BE", "FR", "GB"],
+                prompt: "Select a Country",
+                required: true,
+                input_html: { autocomplete: "Select Country" } %>
+    <%= f.input :city,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "city" } %>           
   </div>
 
   <div class="form-actions">
