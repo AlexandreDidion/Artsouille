@@ -1,4 +1,4 @@
-class WorkOfArtsController < ApplicationController
+class Users::WorkOfArtsController < ApplicationController
   def index
     user = User.find(params[:user_id])
     @work_of_arts = user.work_of_arts
