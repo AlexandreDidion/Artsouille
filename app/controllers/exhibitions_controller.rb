@@ -4,11 +4,14 @@ class ExhibitionsController < ApplicationController
   before_action :set_exhibition, only: [:show, :destroy]
 
   def index
-    @exhibitions = Exhibition.all
+    if params[:query] == 'my_exhibitions'
+      @exhibitions = Exhibition.where('user_id = ?', current_user)
+    else
+      @exhibitions = Exhibition.all
+    end
   end
 
-  def show
-  end
+  def show;end
 
   def new
     @exhibition = Exhibition.new
