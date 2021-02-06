@@ -1,7 +1,6 @@
 <div class="<%= page_background_class %>">
   <br>
   <div class="container-profile-card">
-
     <div class="profile-card">
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, crop: :fill %>
@@ -38,7 +37,6 @@
   <h3 style="text-align:center">Portfolio</h3>
   <br>
   <br>
-
   <div class="container-work-of-art-cards">
     <% @user.work_of_arts.each do |art| %>
       <div class="work-of-art-card-card">
@@ -55,5 +53,4 @@
       </div>
     <% end %>
   </div>
-  
 </div>
