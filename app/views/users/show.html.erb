@@ -40,13 +40,13 @@
   <div class="container-work-of-art-cards">
     <% @user.work_of_arts.each do |art| %>
       <div class="work-of-art-card-card">
-        <% if @user.photo.attached? %>
-          <%= image_tag @user.photo, crop: :fill %>
+        <% if art.photo.attached? %>
+          <%= image_tag art.photo, crop: :fill %>
         <% else %>
           <%= link_to image_tag("dodoma.png") %>
         <% end %>
         <div class="work-of-art-card-infos">
-          <h3><%= art.name %></h3>
+          <h3><%= link_to art.name, work_of_art_path(art) %></h3>
           <p><%= art.description %></p>
           <% if current_user == @user %>
             <div class="btn-work-of-art">
