@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_104026) do
+ActiveRecord::Schema.define(version: 2021_02_09_141050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_104026) do
     t.bigint "collab_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["collab_id"], name: "index_exhibitions_on_collab_id"
   end
 
@@ -78,6 +80,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_104026) do
     t.string "city"
     t.string "country"
     t.date "birthday"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -89,11 +93,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_104026) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["collab_id"], name: "index_users_collabs_on_collab_id"
     t.index ["user_id"], name: "index_users_collabs_on_user_id"
-  end
-
-  create_table "users_work_of_arts", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "work_of_art_id", null: false
   end
 
   create_table "work_of_arts", force: :cascade do |t|

@@ -17,4 +17,7 @@ class User < ApplicationRecord
 
   has_many :following_users, foreign_key: :followee_id, class_name: "Follow"
   has_many :followers, through: :following_users
+
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
 end

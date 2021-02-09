@@ -17,6 +17,17 @@
     position: relative;
     margin-bottom: 20px;
 
+    .btn-work-of-art {
+      display: flex;
+      justify-content: space-between;
+
+      .btn-outline-warning, .btn-outline-primary {
+        margin-top: 8px;
+        margin-bottom: 0;
+        width: 25%;
+      }
+    }
+
     .favorite-icon {
       position: absolute;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
