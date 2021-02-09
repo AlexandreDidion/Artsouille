@@ -9,6 +9,14 @@ class ExhibitionsController < ApplicationController
     else
       @exhibitions = Exhibition.all
     end
+
+    @markers = @exhibitions.geocoded.map do |exhibition|
+      {
+        lat: exhibition.latitude,
+        lng: exhibition.longitude,
+        infowindow: render_to_string(partial: "infowindow", locals: { exhibition: exhibition })
+      }
+    end
   end
 
   def show; end
