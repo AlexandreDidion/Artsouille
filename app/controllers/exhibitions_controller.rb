@@ -21,6 +21,11 @@ class ExhibitionsController < ApplicationController
 
   def show; end
 
+  def new
+    @exhibition = Exhibition.new
+  end
+
+
   private
 
   def set_collab
