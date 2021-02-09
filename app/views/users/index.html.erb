@@ -1,5 +1,9 @@
 <div class="<%= page_background_class %>">
-
+  <% if @users.empty? %>
+      <div class="container-artist-cards">
+        <h2> Well.. we didn't find anything for "<%= params[:search][:name] %>" </h2>
+      </div>
+  <% end %>
   <div class="container-artist-cards">
     <% @users.each do |user| %>
       <div class="artist-card">
@@ -20,3 +24,5 @@
   </div>
 
 </div>
+
+
