@@ -14,7 +14,7 @@ class ExhibitionsController < ApplicationController
       {
         lat: exhibition.latitude,
         lng: exhibition.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { exhibition: exhibition })
+        infowindow: render_to_string(partial: "infowindow", locals: { exhibition: exhibition })
       }
     end
   end

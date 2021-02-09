@@ -3,6 +3,14 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infowindow: render_to_string(partial: "infowindow", locals: { user: user })
+      }
+    end
   end
 
   def show; end

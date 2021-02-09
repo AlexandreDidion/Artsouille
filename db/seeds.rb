@@ -28,6 +28,8 @@ puts 'Creating users...'
       description: Faker::Lorem.sentence(word_count: 10),
       city: Faker::Address.city,
       country: Faker::Address.country,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude,
       birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
   )
 
