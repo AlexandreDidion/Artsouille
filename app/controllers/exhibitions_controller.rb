@@ -13,7 +13,8 @@ class ExhibitionsController < ApplicationController
     @markers = @exhibitions.geocoded.map do |exhibition|
       {
         lat: exhibition.latitude,
-        lng: exhibition.longitude
+        lng: exhibition.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { exhibition: exhibition })
       }
     end
   end
