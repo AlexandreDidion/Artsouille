@@ -1,0 +1,48 @@
+.container-exhibition-cards {
+  .divider {
+    margin: 75px 100px;
+  }
+
+  .exhibition-card {
+    display: flex;
+    justify-content: space-evenly;
+
+    img {
+      max-width: 300px;
+      max-height: 500px;
+      -webkit-transition: .2s ease-in-out;
+      transition: .2s ease-in-out;
+    }
+
+    img:hover {
+      -webkit-filter: brightness(60%);
+      filter: brightness(60%);
+      -webkit-transition: .2s ease-in-out;
+      transition: .2s ease-in-out;
+    }
+
+    .exhibition-card-infos {
+      width: 400px;
+      position: relative;
+      text-align: justify;
+
+      .favorite-icon {
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        right: 0px;
+        top: 0px;
+        pointer-events: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      p {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

@@ -22,5 +22,7 @@ class ApplicationController < ActionController::Base
     return 'background_pink' if params[:action] == 'show' && params[:controller] == 'users'
     return 'background_blue' if params[:action] == 'index' && params[:controller] == 'work_of_arts'
     return 'background_blue' if params[:action] == 'show' && params[:controller] == 'work_of_arts'
+    return 'background_green' if params[:action] == 'index' && params[:controller] == 'exhibitions'
+    return 'background_green' if params[:action] == 'show' && params[:controller] == 'exhibitions'
   end
 end
