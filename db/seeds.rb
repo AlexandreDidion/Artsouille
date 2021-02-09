@@ -28,9 +28,11 @@ puts 'Creating users...'
       description: Faker::Lorem.sentence(word_count: 10),
       city: Faker::Address.city,
       country: Faker::Address.country,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude,
       birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
   )
-  
+
 	collab = Collab.create!(
   	name: Faker::Lorem.unique.word,
   )
@@ -42,6 +44,8 @@ puts 'Creating users...'
       description: Faker::Lorem.sentence(word_count: 8),
       category: %w(visual sculpture performance music).sample,
       address: Faker::Address.street_address,
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude,
       collab: collab
     )
 
@@ -49,14 +53,14 @@ puts 'Creating users...'
     collab: collab,
     user: user
   )
-    
+
   work_of_art = WorkOfArt.create!(
     name: Faker::Lorem.word,
     description: Faker::GreekPhilosophers.quote,
     creation_date: Faker::Date.in_date_period,
     user: user,
     collab: collab
-  )  
+  )
 
   work_of_arts_favorite = WorkOfArtsFavorite.create!(
     work_of_art: work_of_art,
