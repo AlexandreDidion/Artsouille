@@ -4,6 +4,9 @@
     <%= link_to exhibition.name, exhibition_path(exhibition) %>
     <% end %>
   </div>
+  <% if @exhibition.users.include?(current_user) %>
+    <%= link_to "Edit", edit_exhibition_path(@exhibition) %>
+  <% end %>
   <%= link_to "Homepage", root_path, class: 'btn btn-primary' %>
 
   <div class="map-index">
