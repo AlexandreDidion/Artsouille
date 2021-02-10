@@ -31,6 +31,11 @@
           <i class="fa fa-search"></i>
         </form>
       </div>
+
+      <%= simple_form_for :search, url: users_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, input_html: {value: ""}, label: false %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
     </div>
 
     <div>

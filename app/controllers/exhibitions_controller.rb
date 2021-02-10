@@ -1,5 +1,5 @@
 class ExhibitionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_collab, only: [:new]
   before_action :set_exhibition, only: [:show, :destroy]
 
