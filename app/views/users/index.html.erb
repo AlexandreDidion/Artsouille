@@ -1,5 +1,9 @@
 <div class="<%= page_background_class %>">
-
+  <% if @users.empty? %>
+      <div class="container-artist-cards">
+        <h2> Well.. we didn't find anything for "<%= params[:search][:name] %>" </h2>
+      </div>
+  <% end %>
   <div class="container-artist-cards">
     <% @users.each do |user| %>
       <div class="artist-card">
@@ -9,7 +13,11 @@
           <%= link_to image_tag("artist.png"), user_path(user)%>
         <% end %>
         <div class="artist-card-infos">
-          <h3><%= user.first_name %> - <%= user.last_name %></h3>
+          <h3> <%= link_to user_path(user) do %>
+            <%= user.first_name %> - <%= user.last_name %>
+            <% end %>
+
+          </h3>
           <h4><%= user.art_type%></h4>
           <p><%= user.city%>, <%= user.country%></p>
           <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
@@ -25,3 +33,5 @@
            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>
+
+

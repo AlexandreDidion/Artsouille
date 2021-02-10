@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :country, :city])
 
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :username, :description])
@@ -22,5 +22,7 @@ class ApplicationController < ActionController::Base
     return 'background_pink' if params[:action] == 'show' && params[:controller] == 'users'
     return 'background_blue' if params[:action] == 'index' && params[:controller] == 'work_of_arts'
     return 'background_blue' if params[:action] == 'show' && params[:controller] == 'work_of_arts'
+    return 'background_green' if params[:action] == 'index' && params[:controller] == 'exhibitions'
+    return 'background_green' if params[:action] == 'show' && params[:controller] == 'exhibitions'
   end
 end
