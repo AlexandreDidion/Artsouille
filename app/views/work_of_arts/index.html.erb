@@ -10,6 +10,9 @@
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+          <%= link_to toggle_favorite_work_of_art_path(art), remote: true, method: :post do %>
+          <%= render 'work_of_arts/like_button', work_of_art: art %>
+          <% end %>
           <p>by <u> <%= link_to user_path(art.user) do %>
                       <%= art.user.first_name %>
                       <%= art.user.last_name %>
@@ -20,5 +23,6 @@
         <br>
       </div>
     <% end %>
+    <%= current_user.all_favorited %>
   </div>
 </div>

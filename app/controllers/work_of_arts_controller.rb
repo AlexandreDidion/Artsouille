@@ -1,5 +1,6 @@
 class WorkOfArtsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: :toggle_favorite
   before_action :set_work_of_arts, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -35,6 +36,11 @@ class WorkOfArtsController < ApplicationController
   def destroy
     @work_of_art.destroy
     redirect_to work_of_arts_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
+  end
+
+  def toggle_favorite
+    @work_of_art = WorkOfArt.find_by(id: params[:id])
+    current_user.favorited?(@work_of_art)  ? current_user.unfavorite(@work_of_art) : current_user.favorite(@work_of_art)
   end
 
   private

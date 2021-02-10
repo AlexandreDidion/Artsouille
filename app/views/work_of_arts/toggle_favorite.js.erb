@@ -1,0 +1,9 @@
+var work_of_artId = '<%= @work_of_art.id %>'
+
+
+
+function toggleLikeButton(work_of_artId, innerHTML) {
+    let likeButton = document.querySelector(`.like-icon[data-id='${work_of_artId}']`)
+    likeButton.classList.toggle('red');
+  }
+  toggleLikeButton(work_of_artId);

@@ -6,7 +6,11 @@
       resources :work_of_arts_favorites, only: [:create, :destroy]
     end
   end
-  resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy]
+  resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy] do
+    member do
+      post 'toggle_favorite', to: "work_of_arts#toggle_favorite"
+    end
+  end
   resources :collabs do
     resources :users_collabs, only: [:new]
     resources :exhibitions, only: [:new]

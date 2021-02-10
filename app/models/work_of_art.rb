@@ -1,4 +1,5 @@
 class WorkOfArt < ApplicationRecord
+  acts_as_favoritable
   belongs_to :user
   belongs_to :collab, optional: true
 
