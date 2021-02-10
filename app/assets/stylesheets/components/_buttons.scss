@@ -1,3 +1,7 @@
+.btn {
+  font-family: "Novar";
+}
+
 .btn-search {
   background: none;
   font-family: "FuturaPTMedium";
@@ -36,6 +40,37 @@
 
   .btn-search:hover:after {
     width: 100%;
+  }
+}
+
+.btn-exhibition {
+  display: flex;
+  justify-content: space-between;
+
+  .btn-outline-primary {
+    margin-bottom: 0;
+    width: 35%;
+  }
+}
+
+.btn-profile {
+  display: flex;
+  justify-content: space-between;
+
+  .btn-outline-primary {
+    margin-bottom: 0;
+    width: 45%;
+  }
+}
+
+.btn-work-of-art {
+  display: flex;
+  justify-content: space-between;
+
+  .btn-outline-warning, .btn-outline-primary {
+    margin-top: 8px;
+    margin-bottom: 0;
+    width: 25%;
   }
 }
 

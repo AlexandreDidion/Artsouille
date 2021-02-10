@@ -11,22 +11,12 @@
   }
 
   .work-of-art-card-infos {
+    width: 400px;
     position: absolute;
     flex-direction: column;
     text-align: left;
     position: relative;
     margin-bottom: 20px;
-
-    .btn-work-of-art {
-      display: flex;
-      justify-content: space-between;
-
-      .btn-outline-warning, .btn-outline-primary {
-        margin-top: 8px;
-        margin-bottom: 0;
-        width: 25%;
-      }
-    }
 
     .favorite-icon {
       position: absolute;

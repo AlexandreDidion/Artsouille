@@ -1,25 +1,74 @@
-.container-exhibition-cards {
-  .divider {
-    margin: 75px 100px;
+// The following code is specific to INDEX of Exhibitions.
+
+.exhibition-headers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
-  .exhibition-card {
+  h2 {
+    width: 150px;
+    text-align: center;
+  }
+}
+.exhibition-list-infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  h3, h4 {
+    margin-bottom: 0;
+    width: 250px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .btn-outline-primary {
+    width: 10%;
+    margin-bottom: 0;
+  }
+}
+
+.divider {
+  margin: 25px 0;
+  border-color: black;
+}
+
+
+// The following code is specific to SHOW of Exhibitions.
+
+
+.exhibition-card {
+  display: flex;
+  justify-content: space-evenly;
+
+  img {
+    max-width: 400px;
+    max-height: 600px;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+
+  img:hover {
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+
+  .exhibition-card-items {
     display: flex;
-    justify-content: space-evenly;
-
-    img {
-      max-width: 300px;
-      max-height: 500px;
-      -webkit-transition: .2s ease-in-out;
-      transition: .2s ease-in-out;
-    }
-
-    img:hover {
-      -webkit-filter: brightness(60%);
-      filter: brightness(60%);
-      -webkit-transition: .2s ease-in-out;
-      transition: .2s ease-in-out;
-    }
+    flex-direction: column;
+    justify-content: space-between;
 
     .exhibition-card-infos {
       width: 400px;

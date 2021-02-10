@@ -1,17 +1,22 @@
 <div class="<%= page_background_class %>">
-<br>
- <div class="container-exhibition-cards">
+  <div class="container">
+  <br>
+  <br>
+    <div class="exhibition-headers">
+      <h2><%= link_to "Past", "#" %></h2>
+      <div style="border-left:1px solid black;height:40px"></div>
+      <h2><%= link_to "Current", "#" %></h2>
+      <div style="border-left:1px solid black;height:40px"></div>
+      <h2><%= link_to "Future", "#" %></h2>
+    </div>
+    <br>
+    <br>
     <% @exhibitions.each do |exhibition| %>
-    <div class="exhibition-card">
-      <%= link_to image_tag("dodoma.png") %>
-      <div class="exhibition-card-infos">
-        <h3><%= link_to exhibition.name, exhibition_path(exhibition) %></h3>
-        <hr>
-        <h4><%= link_to exhibition.category, "#" %></h4>
-        <hr>
-        <p><%= link_to exhibition.description, "#" %></p>
-        <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
-      </div>
+    <div class="exhibition-list-infos">
+      <h3><%= link_to exhibition.name, exhibition_path(exhibition) %></h3>
+      <h4><%= exhibition.start_date %><%= exhibition.end_date %></h4>
+      <h4><%= exhibition.address %></h4>
+      <%= link_to "Get info", exhibition_path(exhibition), class: "btn btn-outline-primary" %>
     </div>
     <hr class="divider">
     <% end %>
