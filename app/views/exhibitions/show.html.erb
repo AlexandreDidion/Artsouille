@@ -1,6 +1,13 @@
 <div class="<%= page_background_class %>">
   <div class="container">
     <div class="work-of-art-card">
+      <% if @exhibition.photos.attached? %>
+        <% @exhibition.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, crop: :fill %>
+        <% end %>
+      <% else %>
+        <%= image_tag('dodoma.png') %>
+      <% end %>
       <h3><%= @exhibition.name %></h3>
       <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
       <p><%= @exhibition.description %></p>
