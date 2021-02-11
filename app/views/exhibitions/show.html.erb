@@ -1,6 +1,11 @@
 <div class="<%= page_background_class %>">
 <br>
-
+  <div class="btn-arrow-left">
+  <%= link_to exhibitions_path do %>
+    <i> &#10229; Back to Exhibitions</i>
+  <% end %>
+  </div>
+  <br>
  <div class="container-exhibition-cards">
     <div class="exhibition-card">
       <%= link_to image_tag("dodoma.png") %>
@@ -16,10 +21,6 @@
           <hr>
           <p><%= @exhibition.description %></p>
           <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
-        </div>
-        <div class="btn-exhibition">
-          <%= link_to "Collabs", collabs_path, class: "btn btn-outline-primary" %>
-          <%= link_to "Exhibitions", exhibitions_path, class: "btn btn-outline-primary" %>
         </div>
       </div>
     </div>
