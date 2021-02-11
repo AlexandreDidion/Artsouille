@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem; margin: 10px">
+        <% @favorite_work_of_arts.each do |art| %>
+            <% if art.photo.attached? %>
+                <%= cl_image_tag art.photo.key, crop: :fill %>
+            <% else %>
+                <%= image_tag('dodoma.png') %>
+            <% end %>
+            <h3> <%= art.id %> </h3>
+            <p> <%= art.description %> </p>
+        <% end %>   
+        </div>
+    </div>
+</div>           
+      
+        
+        

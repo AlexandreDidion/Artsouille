@@ -5,7 +5,6 @@ class WorkOfArtsController < ApplicationController
 
   def index
     @work_of_arts = WorkOfArt.all
-    @favorite_work_of_arts = current_user.favorited_by_type('WorkOfArt')
   end
 
   def show; end
@@ -42,6 +41,10 @@ class WorkOfArtsController < ApplicationController
   def toggle_favorite
     @work_of_art = WorkOfArt.find_by(id: params[:id])
     current_user.favorited?(@work_of_art)  ? current_user.unfavorite(@work_of_art) : current_user.favorite(@work_of_art)
+  end
+
+  def my_favorites
+    @favorite_work_of_arts = current_user.favorited_by_type('WorkOfArt')
   end
 
   private

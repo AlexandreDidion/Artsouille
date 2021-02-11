@@ -11,6 +11,7 @@
       post 'toggle_favorite', to: "work_of_arts#toggle_favorite"
     end
   end
+  get 'myfavorites', to: "work_of_arts#my_favorites"
   resources :collabs do
     resources :users_collabs, only: [:new]
     resources :exhibitions, only: [:new]
