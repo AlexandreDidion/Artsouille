@@ -1,7 +1,7 @@
 class ExhibitionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_collab, only: [:new]
-  before_action :set_exhibition, only: [:show, :destroy]
+  before_action :set_collab, only: [:new, :create]
+  before_action :set_exhibition, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query] == 'my_exhibitions'
@@ -21,6 +21,32 @@ class ExhibitionsController < ApplicationController
 
   def show; end
 
+  def new
+    @exhibition = Exhibition.new
+  end
+
+  def create
+    @exhibition = Exhibition.new(exhibition_params)
+    @exhibition.collab = @collab
+    if @exhibition.save
+      redirect_to exhibition_path(@exhibition), notice: 'The exhibition has been created!'
+    else
+      render 'new'
+    end
+  end
+
+  def edit; end
+
+  def update
+    @exhibition.update(exhibition_params)
+    redirect_to exhibition_path(@exhibition), notice: 'Duly updated'
+  end
+
+  def destroy
+    @exhibition.destroy
+    redirect_to exhibitions_path, notice: 'Your exhibition has been deleted successfully!'
+  end
+
   private
 
   def set_collab
@@ -32,6 +58,6 @@ class ExhibitionsController < ApplicationController
   end
 
   def exhibition_params
-    params.require(:exhibition).permit(:collab_id, :name, :start_date, :end_date, :description, :category, :address)
+    params.require(:exhibition).permit(:name, :start_date, :end_date, :description, :category, :address, photos: [])
   end
 end

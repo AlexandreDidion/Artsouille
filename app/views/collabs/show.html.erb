@@ -10,6 +10,7 @@
   <% end %>
   <% if @collab.users.include?(current_user) %>
     <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab) %>
+    <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition) %>
   <% end %>
   <%= link_to "Back", collabs_path %>
 </div>
