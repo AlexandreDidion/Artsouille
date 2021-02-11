@@ -8,6 +8,11 @@
   .artist-card .artist-card-infos {
     display: flex;
     position: relative;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
 
   .artist-card-infos {
