@@ -18,6 +18,11 @@
     position: relative;
     margin-bottom: 20px;
 
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
     .favorite-icon {
       position: absolute;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
