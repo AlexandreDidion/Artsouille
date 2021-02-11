@@ -5,6 +5,7 @@ class WorkOfArtsController < ApplicationController
 
   def index
     @work_of_arts = WorkOfArt.all
+    @favorite_work_of_arts = current_user.favorited_by_type('WorkOfArt')
   end
 
   def show; end
