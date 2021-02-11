@@ -13,10 +13,10 @@
   end
   get 'myfavorites', to: "work_of_arts#my_favorites"
   resources :collabs do
-    resources :users_collabs, only: [:new]
-    resources :exhibitions, only: [:new]
+    resources :user_collab_relationships, only: [:new]
+    resources :exhibitions, only: [:new, :create]
   end
-  resources :exhibitions, except: [:new]
-  resources :users_collabs, only: [:create, :destroy]
+  resources :exhibitions, except: [:new, :create]
+  resources :user_collab_relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

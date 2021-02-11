@@ -3,7 +3,7 @@ class CollabsController < ApplicationController
 
   def index
     if params[:query] == 'my_collabs'
-      @collabs = Collab.joins(:users_collabs).where('user_id = ?', current_user)
+      @collabs = Collab.joins(:user_collab_relationships).where('user_id = ?', current_user)
     else
       @collabs = Collab.all
     end
@@ -18,7 +18,7 @@ class CollabsController < ApplicationController
   def create
     @collab = Collab.new(collab_params)
     if @collab.save
-      UsersCollab.create(collab: @collab, user: current_user)
+      UserCollabRelationship.create(collab: @collab, user: current_user)
       redirect_to collab_path(@collab), notice: 'Ready to start a new collab!'
     else
       render 'new'

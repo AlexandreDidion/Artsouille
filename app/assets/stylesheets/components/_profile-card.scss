@@ -8,20 +8,26 @@
   }
 }
 
-.profile-card-infos {
-  max-width: 400px;
-  position: relative;
-  text-align: justify;
+.profile-card-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .favorite-icon {
-    position: absolute;
-    height: 35px;
-    width: 35px;
-    right: 0px;
-    top: 0px;
-  }
+  .profile-card-infos {
+    width: 400px;
+    position: relative;
+    text-align: justify;
 
-  p {
-    margin-bottom: 8px;
+    .favorite-icon {
+      position: absolute;
+      height: 35px;
+      width: 35px;
+      right: 0px;
+      top: 0px;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
   }
 }
