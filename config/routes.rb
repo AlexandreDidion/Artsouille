@@ -2,9 +2,16 @@
   root to: 'pages#home'
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update] do
-    resources :work_of_arts, only: [:index], module: :users
+    resources :work_of_arts, only: [:index], module: :users do
+      resources :work_of_arts_favorites, only: [:create, :destroy]
+    end
   end
-  resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy]
+  resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy] do
+    member do
+      post 'toggle_favorite', to: "work_of_arts#toggle_favorite"
+    end
+  end
+  get 'myfavorites', to: "work_of_arts#my_favorites"
   resources :collabs do
     resources :user_collab_relationships, only: [:new]
     resources :exhibitions, only: [:new, :create]

@@ -10,11 +10,17 @@
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+          <% unless current_user == art.user %>
+          <div class="favorite-heart">
+            <%= link_to toggle_favorite_work_of_art_path(art), remote: true, method: :post do %>
+            <%= render 'work_of_arts/like_button', work_of_art: art %>
+            <% end %>
+          </div>
+          <% end %>
           <p>by <u> <%= link_to user_path(art.user) do %>
                       <%= art.user.first_name %>
                       <%= art.user.last_name %>
                     <% end %> </u></p>
-          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <br>
         <br>
