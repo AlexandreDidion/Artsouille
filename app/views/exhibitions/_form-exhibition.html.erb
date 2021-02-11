@@ -1,9 +1,17 @@
-<%= simple_form_for @exhibition do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.input :address %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.button :submit, class:"btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <%= simple_form_for [@collab, @exhibition] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :category %>
+        <%= f.input :address %>
+        <%= f.input :start_date, as: :date %>
+        <%= f.input :end_date, as: :date %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.button :submit, class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
