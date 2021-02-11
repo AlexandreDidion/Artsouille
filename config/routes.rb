@@ -2,9 +2,7 @@
   root to: 'pages#home'
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update] do
-    resources :work_of_arts, only: [:index], module: :users do
-      resources :work_of_arts_favorites, only: [:create, :destroy]
-    end
+    resources :work_of_arts, only: [:index], module: :users
   end
   resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy] do
     member do
