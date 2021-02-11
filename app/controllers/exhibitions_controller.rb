@@ -44,7 +44,7 @@ class ExhibitionsController < ApplicationController
 
   def destroy
     @exhibition.destroy
-    redirect_to collab_path(@collab), notice: 'Your exhibition has been deleted successfully!'
+    redirect_to exhibitions_path, notice: 'Your exhibition has been deleted successfully!'
   end
 
   private
