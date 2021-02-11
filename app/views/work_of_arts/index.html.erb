@@ -10,7 +10,10 @@
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
-          <p>by <u><%= art.user.first_name %> <%= art.user.last_name %></u></h3>
+          <p>by <u> <%= link_to user_path(art.user) do %>
+                      <%= art.user.first_name %>
+                      <%= art.user.last_name %>
+                    <% end %> </u></p>
           <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <br>
@@ -18,5 +21,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
