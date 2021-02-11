@@ -6,10 +6,10 @@
   end
   resources :work_of_arts, only: [:show, :new, :create, :index, :update, :edit, :destroy]
   resources :collabs do
-    resources :users_collabs, only: [:new]
+    resources :user_collab_relationships, only: [:new]
     resources :exhibitions, only: [:new, :create]
   end
   resources :exhibitions, except: [:new, :create]
-  resources :users_collabs, only: [:create, :destroy]
+  resources :user_collab_relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,5 @@
 .navbar-container {
-  background-color: #f6f6f6;
+  background-color: #f4f4f4;
   padding: 0 25px;
 }
 
@@ -13,6 +13,7 @@
   box-shadow: none;
 
   .nav-link {
+    margin-right: 50px;
     font-family: "Novar";
     color: black;
     font-weight: bold;
@@ -23,7 +24,7 @@
   flex-grow: 0;
 }
 
-.nav-item:hover {
+.nav-link:hover {
   text-decoration: underline;
   text-underline-position: under;
 }

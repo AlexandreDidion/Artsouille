@@ -1,6 +1,13 @@
 <div class="<%= page_background_class %>">
-  <div class="container">
-    <div class="work-of-art-card">
+<br>
+  <div class="btn-arrow-left">
+  <%= link_to exhibitions_path do %>
+    <i> &#10229; Back to Exhibitions</i>
+  <% end %>
+  </div>
+  <br>
+ <div class="container-exhibition-cards">
+    <div class="exhibition-card">
       <% if @exhibition.photos.attached? %>
         <% @exhibition.photos.each do |photo| %>
           <%= cl_image_tag photo.key, crop: :fill %>
@@ -8,16 +15,37 @@
       <% else %>
         <%= image_tag('dodoma.png') %>
       <% end %>
-      <h3><%= @exhibition.name %></h3>
-      <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
-      <p><%= @exhibition.description %></p>
-      <% if @exhibition.collab.users.include?(current_user) %>
-        <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn-outline-primary' %>
-        <%= link_to "Delete", @exhibition, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-outline-primary" %>
-      <% end %>
+      <div class="exhibition-card-items">
+        <div class="exhibition-card-infos">
+          <h3><%= @exhibition.name %></h3>
+          <hr>
+          <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
+          <hr>
+          <h4><%= @exhibition.address %></h4>
+          <hr>
+          <p><%= @exhibition.category %></p>
+          <hr>
+          <p><%= @exhibition.description %></p>
+          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+        </div>
+        <% if @exhibition.collab.users.include?(current_user) %>
+          <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn-outline-primary' %>
+          <%= link_to "Delete", @exhibition, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-outline-primary" %>
+        <% end %>
+      </div>
     </div>
-    <%= link_to "All collabs", collabs_path, class: 'btn-outline-primary' %>
-    <%= link_to "All exhibitions", exhibitions_path, class: 'btn-outline-primary' %>
-    <br>
   </div>
+
+  <br>
+  <br>
+
+  <div class="map-index">
+    <div id="map"
+      style="width: 75%; height: 500px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <br>
+
 </div>
