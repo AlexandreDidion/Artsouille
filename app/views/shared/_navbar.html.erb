@@ -2,7 +2,6 @@
   <hr class="navbar-hr">
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,22 +23,16 @@
           <%= link_to "Exhibitions", exhibitions_path, class: "nav-link" %>
         </li>
       </ul>
-
-      <div class="searchbar">
-        <form action="">
-          <input type="search" placeholder="Find an artist, artwork, exhibition...">
-          <i class="fa fa-search"></i>
-        </form>
-      </div>
-
-      <%= simple_form_for :search, url: users_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :name, input_html: {value: ""}, label: false %>
-        <%= f.submit "Search", class: "btn btn-primary" %>
-      <% end %>
     </div>
 
     <div>
       <ul class="navbar-nav mr-auto">
+              <%= simple_form_for :search, url: users_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, input_html: {value: "", style: 'width: 300px'}, placeholder: "Find an artist, artwork, exhibition...", label: false %>
+        <%= button_tag(type: 'submit', class: "btn btn-outline-info") do %>
+          <i class="fa fa-search"></i>
+          <% end %>
+      <% end %>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <%= image_tag "account-logo.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

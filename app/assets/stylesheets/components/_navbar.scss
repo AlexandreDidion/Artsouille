@@ -13,6 +13,7 @@
   box-shadow: none;
 
   .nav-link {
+    margin-right: 50px;
     font-family: "Novar";
     color: black;
     font-weight: bold;
@@ -23,7 +24,7 @@
   flex-grow: 0;
 }
 
-.nav-item:hover {
+.nav-link:hover {
   text-decoration: underline;
   text-underline-position: under;
 }
