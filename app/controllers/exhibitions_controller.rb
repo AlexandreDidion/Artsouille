@@ -28,7 +28,7 @@ class ExhibitionsController < ApplicationController
   def create
     @exhibition = Exhibition.new(exhibition_params)
     @exhibition.collab = @collab
-    if @exhibition.save!
+    if @exhibition.save
       redirect_to exhibition_path(@exhibition), notice: 'The exhibition has been created!'
     else
       render 'new'

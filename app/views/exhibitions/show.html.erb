@@ -1,10 +1,15 @@
 <div class="<%= page_background_class %>">
-  <div class="work-of-art-card">
-    <h3><%= @exhibition.name %></h3>
-    <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
-    <p><%= @exhibition.description %></p>
+  <div class="container">
+    <div class="work-of-art-card">
+      <h3><%= @exhibition.name %></h3>
+      <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
+      <p><%= @exhibition.description %></p>
+      <% if @exhibition.collab.users.include?(current_user) %>
+        <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn-outline-primary' %>
+      <% end %>
+    </div>
+    <%= link_to "All collabs", collabs_path, class: 'btn-outline-primary' %>
+    <%= link_to "All exhibitions", exhibitions_path, class: 'btn-outline-primary' %>
+    <br>
   </div>
-  <%= link_to "All collabs", collabs_path, class: 'btn btn-primary' %>
-  <%= link_to "All exhibitions", exhibitions_path, class: 'btn btn-primary' %>
-  <br>
 </div>

@@ -1,6 +1,6 @@
 class Exhibition < ApplicationRecord
   belongs_to :collab
-  has_many :users, through: :collab
+  has_many :users, through: :users_collabs
 
   has_many_attached :photos
 
