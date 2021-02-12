@@ -26,7 +26,7 @@
           <hr>
           <p>See my exhibitions</p>
           <hr>
-          <p>Want to collab? Send a message!</p>
+          <p>Want to collab? <%= link_to 'Send a message!', new_message_path(receiver_id: @user.id) unless current_user == @user  %></p>
           <br>
           <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
