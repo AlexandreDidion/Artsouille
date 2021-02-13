@@ -38,6 +38,7 @@ class CollabsController < ApplicationController
     redirect_to collabs_path, notice: 'Your collab has come to an end.'
   end
 
+
   private
 
   def set_collab
