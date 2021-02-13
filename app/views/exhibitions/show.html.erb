@@ -29,8 +29,10 @@
           <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <% if @exhibition.collab.users.include?(current_user) %>
-          <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn-outline-primary' %>
-          <%= link_to "Delete", @exhibition, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-outline-primary" %>
+          <div class="btn-work-of-art">
+            <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn btn-outline-primary' %>
+            <%= link_to "Delete", @exhibition, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-outline-warning" %>
+          </div>
         <% end %>
       </div>
     </div>
