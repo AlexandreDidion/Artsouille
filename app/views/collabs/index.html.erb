@@ -1,12 +1,26 @@
-<div class="container">
-  <% @collabs.each do |collab| %>
-    <div class="work-of-art-card">
-      <%= link_to collab.name, collab_path(collab) %>
-    </div>
-  <% end %>
-  <%= link_to "New Collab", new_collab_path, class: 'btn btn-primary' %>
+<div class="<%= page_background_class %>">
+  <br>
+  <div class="container">
+    <br>
+    <% @collabs.each do |collab| %>
+      <div class="collab-list-infos">
+        <h3><%= link_to collab.name, collab_path(collab) %></h3>
+        <h4>Some description</h4>
+        <h4>And maybe something else?</h4>
+        <%= link_to "Send message", "#", class: 'btn btn-outline-primary' %>
+      </div>
+      <hr class="divider">
+    <% end %>
+  </div>
+  <br>
+  <div class="btn-container">
+    <%= link_to "New Collab", new_collab_path, class: 'btn btn-outline-primary' %>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
-
-
 
 

@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_105604) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
   end
 
   create_table "conversations", force: :cascade do |t|
