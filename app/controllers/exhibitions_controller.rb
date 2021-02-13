@@ -5,7 +5,7 @@ class ExhibitionsController < ApplicationController
 
   def index
     if params[:query].present?
-      @exhibitions = Exhibition.where('collab_id = ?', params[:query])
+      @exhibitions = Exhibition.where('collab_id IN (?)', User.find(params[:query]).collabs.map(&:id))
     else
       @exhibitions = Exhibition.all
     end
