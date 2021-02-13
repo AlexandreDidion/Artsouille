@@ -4,12 +4,13 @@
     <% @work_of_arts.each do |art| %>
       <div class="work-of-art-card">
         <% if art.photo.attached? %>
-          <%= cl_image_tag art.photo.key, crop: :fill %>
+          <%= link_to image_tag(art.photo), work_of_art_path(art), crop: :fill %>
         <% else %>
-          <%= image_tag('dodoma.png') %>
+          <%= link_to image_tag('dodoma.png'), work_of_art_path(art) %>
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+          <p><%= art.art_type %></p>
           <% unless current_user == art.user %>
           <div class="favorite-heart">
             <%= link_to toggle_favorite_work_of_art_path(art), remote: true, method: :post do %>
@@ -17,10 +18,7 @@
             <% end %>
           </div>
           <% end %>
-          <p>by <u> <%= link_to user_path(art.user) do %>
-                      <%= art.user.first_name %>
-                      <%= art.user.last_name %>
-                    <% end %> </u></p>
+          <p>by <u> <%= link_to art.user.username, user_path(art.user) %> </u></p>
         </div>
         <br>
         <br>
