@@ -2,6 +2,7 @@
   <%= simple_form_for @work_of_art do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :art_type, collection: @work_of_art.set_art_types %>
     <%= f.input :creation_date, as: :date %>
     <%= f.input :photo, as: :file %>
     <%= f.input_field :user, as: :hidden, value: current_user %>
