@@ -26,10 +26,6 @@ class UserCollabRelationshipsController < ApplicationController
   def update
     @user_collab_relationship.update(user_collab_relationship_params)
     redirect_to collabs_path
-    #   redirect to collab_path(@user_collab_relationship.collab)
-    # else
-    #   redirect_to collabs_path
-    # end
   end
 
   private

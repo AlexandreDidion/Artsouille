@@ -1,5 +1,29 @@
 <div class="<%= page_background_class %>">
   <br>
+  <% if params[:query] == 'my_collabs' %>
+  <div class="request">
+      <h1>My collabs</h1>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+          <% @collabs.each do |collab| %>
+            <tr>
+              <td><%= collab.name %> </td>
+              <td><%= collab.description %> </td>
+              <td><%= link_to 'Accept', user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "accepted" }), method: :put , class: 'btn btn-outline-primary' %> /
+                <%= link_to 'Reject', user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "rejected" }), method: :put , class: 'btn btn-outline-primary' %></td>
+            </tr>
+        </table>
+
+
+      <% end %>
+
+  </div>
+
+<% else %>
   <div class="container">
     <br>
     <% @collabs.each do |collab| %>
@@ -21,6 +45,7 @@
   <br>
   <br>
   <br>
+  <% end %>
 </div>
 
 
