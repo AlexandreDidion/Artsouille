@@ -16,6 +16,7 @@
       <div class="work-of-art-card-infos">
         <h3><%= @work_of_art.user.first_name %> - <%= @work_of_art.user.last_name %></h3>
         <h4><%= @work_of_art.name %></h4>
+        <p><%= @work_of_art.creation_date.strftime('%Y') unless art.creation_date.nil?%></p>
         <p><%= @work_of_art.description %></p>
         <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
       </div>
