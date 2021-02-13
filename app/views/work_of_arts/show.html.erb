@@ -14,7 +14,10 @@
         <%= image_tag('dodoma.png') %>
       <% end %>
       <div class="work-of-art-card-infos">
-        <h3><%= @work_of_art.user.first_name %> - <%= @work_of_art.user.last_name %></h3>
+        <h3> <%= link_to user_path(@work_of_art.user) do %>
+            <%= @work_of_art.user.first_name %> - <%= @work_of_art.user.last_name %>
+            <% end %>
+        </h3>
         <h4><%= @work_of_art.name %></h4>
         <p><%= @work_of_art.description %></p>
           <% unless current_user == @work_of_art.user %>
