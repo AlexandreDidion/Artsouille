@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
   before_action :check_participating, except: [:index]
 
   def index
-    @conversations = Conversation.where('author_id = ? OR receiver_id = ?', current_user, current_user).order(:updated_at)
+    @conversations = Conversation.where('author_id = ? OR receiver_id = ?', current_user, current_user).order("updated_at ASC")
   end
 
   def show

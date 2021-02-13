@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
       @message.conversation = @conversation
     end
     @message.save!
+    SendMessageJob.perform_later(@message)
     flash[:success] = "Your message was sent!"
     redirect_to conversation_path(@conversation)
   end

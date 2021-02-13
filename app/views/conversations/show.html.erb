@@ -1,9 +1,10 @@
 <div>
   <h3> Conversation between <%= @conversation.author.username %> and <%= @conversation.receiver.username  %></h3>
-  <% @conversation.messages.each do |message| %>
-    <p><%= message.content %></p>
-    <p><%= message.user.username %></p>
-  <% end %>
+  <div id="messages" data-conversation-id="<%= @conversation.id %>">
+    <% @conversation.messages.each do |message| %>
+      <p><%= message.user.username %> : <%= message.content %></p>
+    <% end %>
+  </div>
 </div>
 
 <div class="container">
