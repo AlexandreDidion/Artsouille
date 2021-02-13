@@ -17,6 +17,10 @@
         <div class="profile-card-infos">
           <h3><%= @user.username  %></h3>
           <hr>
+          <% if @user.first_name.present? %>
+            <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+            <hr>
+          <% end %>
           <h4><%= @user.art_type  %></h4>
           <hr>
           <p><%= @user.city  %>, <%= @user.country  %></p>
@@ -54,6 +58,7 @@
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+          <p><%= art.art_type %></p>
           <p><%= art.description %></p>
           <% if current_user == @user %>
             <div class="btn-work-of-art">

@@ -1,6 +1,21 @@
+.favorite-heart a {
+  color: black;
+  position: absolute;
+  right: 20px;
+  top: -45px;
+}
+
+.favorite-heart:hover a {
+  color: #d34444;
+}
+
+.favorited {
+  color: #d34444;
+}
+
 .favorite-icon {
-  width: 50px;
   height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
