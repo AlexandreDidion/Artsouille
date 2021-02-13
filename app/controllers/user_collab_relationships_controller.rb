@@ -1,5 +1,6 @@
 class UserCollabRelationshipsController < ApplicationController
-  before_action :set_collab, only: [:update]
+  before_action :set_user_collab_relationship, only: [:update]
+
   def new
     @collab = Collab.find(params[:collab_id])
     user_to_removed = @collab.users
@@ -23,10 +24,19 @@ class UserCollabRelationshipsController < ApplicationController
   end
 
   def update
-
+    @user_collab_relationship.update(user_collab_relationship_params)
+    redirect_to collabs_path
+    #   redirect to collab_path(@user_collab_relationship.collab)
+    # else
+    #   redirect_to collabs_path
+    # end
   end
 
   private
+
+  def set_user_collab_relationship
+    @user_collab_relationship = UserCollabRelationship.find(params[:id])
+  end
 
   def user_collab_relationship_params
     params.require(:user_collab_relationship).permit(:user_id, :collab_id, :status)

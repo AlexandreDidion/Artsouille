@@ -7,7 +7,7 @@
         <h3><%= link_to collab.name, collab_path(collab) %></h3>
         <h4>Some description</h4>
         <h4>And maybe something else?</h4>
-        <%= link_to "Send message", "#", class: 'btn btn-outline-primary' %>
+        <%= link_to "Join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "accepted" }), method: :post , class: 'btn btn-outline-primary' %>
       </div>
       <hr class="divider">
     <% end %>

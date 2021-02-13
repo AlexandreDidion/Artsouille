@@ -15,6 +15,6 @@
     resources :exhibitions, only: [:new, :create]
   end
   resources :exhibitions, except: [:new, :create]
-  resources :user_collab_relationships, only: [:create, :destroy]
+  resources :user_collab_relationships, only: [:create, :destroy, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
