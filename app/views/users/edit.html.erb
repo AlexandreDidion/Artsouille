@@ -13,6 +13,7 @@
                       required: false %>
           <%= f.input :art_type,
                       label: "Category",
+                      collection: @user.set_art_types,
                       autofocus: true,
                       placeholder: "Painter",
                       required: false %>
