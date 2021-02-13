@@ -17,10 +17,7 @@
             <% end %>
           </div>
           <% end %>
-          <p>by <u> <%= link_to user_path(art.user) do %>
-                      <%= art.user.first_name %>
-                      <%= art.user.last_name %>
-                    <% end %> </u></p>
+          <p>by <u> <%= link_to art.user.username, user_path(art.user) %> </u></p>
         </div>
         <br>
         <br>
