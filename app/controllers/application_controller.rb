@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :country, :city])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :username, :description])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :username, :description, :art_type])
   end
 
   def after_sign_in_path_for(resource)
@@ -24,5 +24,7 @@ class ApplicationController < ActionController::Base
     return 'background_blue' if params[:action] == 'show' && params[:controller] == 'work_of_arts'
     return 'background_green' if params[:action] == 'index' && params[:controller] == 'exhibitions'
     return 'background_green' if params[:action] == 'show' && params[:controller] == 'exhibitions'
+    return 'background_purple' if params[:action] == 'index' && params[:controller] == 'collabs'
+    return 'background_purple' if params[:action] == 'show' && params[:controller] == 'collabs'
   end
 end
