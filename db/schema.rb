@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_02_11_202650) do
+ActiveRecord::Schema.define(version: 2021_02_13_133828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +55,8 @@ ActiveRecord::Schema.define(version: 2021_02_11_202650) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "city"
+    t.string "country"
     t.index ["collab_id"], name: "index_exhibitions_on_collab_id"
   end
 
@@ -81,6 +82,22 @@ ActiveRecord::Schema.define(version: 2021_02_11_202650) do
     t.integer "followee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "to_do_items", force: :cascade do |t|
+    t.string "content"
+    t.bigint "to_do_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["to_do_id"], name: "index_to_do_items_on_to_do_id"
+  end
+
+  create_table "to_dos", force: :cascade do |t|
+    t.string "title"
+    t.bigint "collab_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["collab_id"], name: "index_to_dos_on_collab_id"
   end
 
   create_table "user_collab_relationships", force: :cascade do |t|
@@ -122,6 +139,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_202650) do
     t.bigint "collab_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "art_type"
     t.index ["collab_id"], name: "index_work_of_arts_on_collab_id"
     t.index ["user_id"], name: "index_work_of_arts_on_user_id"
   end
@@ -137,6 +155,8 @@ ActiveRecord::Schema.define(version: 2021_02_11_202650) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "exhibitions", "collabs"
+  add_foreign_key "to_do_items", "to_dos"
+  add_foreign_key "to_dos", "collabs"
   add_foreign_key "user_collab_relationships", "collabs"
   add_foreign_key "user_collab_relationships", "users"
   add_foreign_key "work_of_arts", "collabs"
