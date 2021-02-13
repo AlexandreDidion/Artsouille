@@ -28,7 +28,7 @@
           <p>Biography</p>
           <p><%= @user.description  %></p>
           <hr>
-          <p>See my exhibitions</p>
+          <p><%= link_to 'See my exhibitions', exhibitions_path(query: @user.id) %></p>
           <hr>
           <p>Want to collab? Send a message!</p>
           <br>
