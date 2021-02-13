@@ -18,7 +18,13 @@
         <h4><%= @work_of_art.name %></h4>
         <p><%= @work_of_art.art_type %></p>
         <p><%= @work_of_art.description %></p>
-        <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
+          <% unless current_user == @work_of_art.user %>
+          <div class="favorite-heart">
+            <%= link_to toggle_favorite_work_of_art_path(@work_of_art), remote: true, method: :post do %>
+            <%= render 'work_of_arts/like_button', work_of_art: @work_of_art %>
+            <% end %>
+          </div>
+          <% end %>
       </div>
     </div>
   </div>
