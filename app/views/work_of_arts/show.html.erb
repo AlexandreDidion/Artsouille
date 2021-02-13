@@ -16,6 +16,7 @@
       <div class="work-of-art-card-infos">
         <h3> <%= link_to @work_of_art.user.username, user_path(@work_of_art.user) %></h3>
         <h4><%= @work_of_art.name %></h4>
+        <p><%= @work_of_art.creation_date.strftime('%Y') unless art.creation_date.nil?%></p>
         <p><%= @work_of_art.art_type %></p>
         <p><%= @work_of_art.description %></p>
           <% unless current_user == @work_of_art.user %>
