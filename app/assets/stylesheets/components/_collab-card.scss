@@ -1,0 +1,63 @@
+.page-info {
+  margin: auto;
+  padding: 16px;
+  width: 600px;
+  text-align: justify;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  .btn-outline-primary {
+    font-family: "Novar";
+    width: 30%;
+    margin-bottom: 0;
+  }
+}
+
+.container-collab-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 33.333333%;
+
+  img {
+    max-width: 400px;
+    max-height: 600px;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+
+  img:hover {
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%);
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    }
+
+  .collab-card .collab-card-infos {
+    display: flex;
+    position: relative;
+  }
+
+  .collab-card-infos {
+    position: absolute;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    margin-bottom: 20px;
+
+    h3 {
+      margin-top: 8px;
+    }
+
+    h3 a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .btn-outline-primary {
+      font-family: "Novar";
+      width: 40%;
+      margin-top: 8px;
+    }
+  }
+}
