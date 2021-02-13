@@ -1,0 +1,23 @@
+<div class="<%= page_background_class %>">
+  <div class="container">
+    <br>
+    <% @user_collab_relationships.each do |user_collab_relationship| %>
+      <div class="collab-list-infos">
+        <h3><%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %></h3>
+        <h4>Some description</h4>
+        <h4>And maybe something else?</h4>
+        <% if user_collab_relationship.pending? %>
+          <%= link_to "Accept this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: user_collab_relationship.collab_id, user_id: current_user.id, status: "accepted" }), method: :post , class: 'btn btn-outline-primary' %>
+          <%= link_to "Reject this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: user_collab_relationship.collab_id, user_id: current_user.id, status: "rejected" }), method: :post , class: 'btn btn-outline-primary' %>
+        <% end %>
+      </div>
+      <hr class="divider">
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

@@ -2,10 +2,10 @@ class CollabsController < ApplicationController
   before_action :set_collab, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query] == 'my_collabs'
-      @collabs = Collab.joins(:user_collab_relationships).where('user_id = ?', current_user)
+    if params[:my_collabs]
+      @collabs = Collab.joins(:user_collab_relationships).where(user_collab_relationships: { user: current_user, status: [1, 2] })
     else
-      @collabs = Collab.all
+      @collabs = Collab.joins(:user_collab_relationships).where.not(id: current_user.user_collab_relationships.pluck(:collab_id))
     end
   end
 
