@@ -20,7 +20,11 @@
   <div class="container-collab-cards">
     <% @collabs.each do |collab| %>
       <div class="collab-card">
-          <%= link_to image_tag("artist_2.png"), "#" %>
+        <% if collab.photo.attached? %>
+          <%= cl_image_tag collab.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag('artist_2.png') %>
+        <% end %>
         <div class="collab-card-infos">
           <h3><%= link_to collab.name, collab_path(collab) %></h3>
           <h4>Some description</h4>
