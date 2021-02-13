@@ -54,6 +54,7 @@
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+          <p><%= art.art_type %></p>
           <p><%= art.description %></p>
           <% if current_user == @user %>
             <div class="btn-work-of-art">
