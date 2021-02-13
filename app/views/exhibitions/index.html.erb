@@ -14,16 +14,13 @@
     <% @exhibitions.each do |exhibition| %>
     <div class="exhibition-list-infos">
       <h3><%= link_to exhibition.name, exhibition_path(exhibition) %></h3>
-      <h4><%= exhibition.start_date %><%= exhibition.end_date %></h4>
-      <h4><%= exhibition.address %></h4>
+      <h4>From <%= exhibition.start_date.strftime('%A %d %B %Y') %> to <%= exhibition.end_date.strftime('%A %d %B %Y') %></h4>
+      <h4><%= exhibition.address %> - <%= exhibition.city  %>, <%= exhibition.country  %></h4>
       <%= link_to "Get info", exhibition_path(exhibition), class: "btn btn-outline-primary" %>
     </div>
     <hr class="divider">
     <% end %>
   </div>
-
-  <%= link_to "Homepage", root_path, class: 'btn btn-primary' %>
-
 
   <div class="map-index">
     <div id="map"
