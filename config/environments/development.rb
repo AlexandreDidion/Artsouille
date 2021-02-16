@@ -55,7 +55,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.assets.check_precompiled_asset = false
-
+  
   # When enabled, an exception is raised for missing assets. This option is enabled by default.
 
   # Raises error for missing translations.

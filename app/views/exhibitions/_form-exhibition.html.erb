@@ -4,7 +4,7 @@
       <%= simple_form_for [@collab, @exhibition] do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.input :category %>
+        <%= f.input :category, collection: @exhibition.set_art_types %>
         <%= f.input :address %>
         <%= f.input :start_date, as: :date %>
         <%= f.input :end_date, as: :date %>
