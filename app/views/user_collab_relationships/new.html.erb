@@ -4,6 +4,7 @@
       <%= simple_form_for @user_collab_relationship, url:user_collab_relationships_path do |f| %>
         <%= f.input :user_id, collection: @filtered_users, label_method: lambda {|u| u.username}  %>
         <%= f.input_field :collab_id, as: :hidden, value: @user_collab_relationship.collab_id %>
+        <%= f.input_field :status, as: :hidden, value: "accepted" %>
         <%= f.button :submit, 'Add this artist', class:'btn btn-primary' %>
       <% end %>
     </div>
