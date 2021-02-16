@@ -1,18 +1,19 @@
 <div class="<%= page_background_class %>">
   <div class="container">
+  <% if @accepted_users %>
     <h2><%= @collab.name %></h2>
-    <% @collab.users.each do |user| %>
-      <div class="work-of-art-card">
-        <%= user.username %>
-        <% if @collab.users.include?(current_user) %>
-          <%= link_to "Remove this artist", user_collab_relationship_path(@collab.user_collab_relationships.find {|uc| uc.user == user }), method: :delete, data: {confirm: "Remove artist from the collab?"} %>
-        <% end %>
-      </div>
-    <% end %>
-    <% if @collab.users.include?(current_user) %>
+    <% @accepted_collab.each do |collab| %>
+        <div class="work-of-art-card">
+          <%= collab.user.username %>
+          <%= link_to "Remove this artist", user_collab_relationship_path(@collab.user_collab_relationships.find {|uc| uc.user == collab.user }), method: :delete, data: {confirm: "Remove artist from the collab?"} %>
+          <%  %>
+        </div>
+      <% end %>
       <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab) %>
       <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition) %>
-    <% end %>
     <%= link_to "Back", collabs_path %>
+  <% else %>
+  <h2>Your request is pending !</h2>
+  <% end %>
   </div>
 </div>

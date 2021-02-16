@@ -9,7 +9,10 @@ class CollabsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @accepted_collab = @collab.user_collab_relationships.where(status: "accepted")
+    @accepted_users = @accepted_collab.any? { |collab| collab.user == current_user }
+  end
 
   def new
     @collab = Collab.new
@@ -37,7 +40,6 @@ class CollabsController < ApplicationController
     @collab.destroy
     redirect_to collabs_path, notice: 'Your collab has come to an end.'
   end
-
 
   private
 

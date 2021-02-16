@@ -28,10 +28,9 @@ class UserCollabRelationshipsController < ApplicationController
   end
 
   def update
-    @user_collab_relationship.update(user_collab_relationship_params)
-    if @user_collab_relationship.accepted?
-      redirect_to collab_path(@user_collab_relationship.collab_id)
-    else
+    if @user_collab_relationship.update(status: "accepted")
+      redirect_to collab_path(@user_collab_relationship.collab)
+    elsif @user_collab_relationship.update(status: "rejected")
       redirect_to collabs_path
     end
   end
