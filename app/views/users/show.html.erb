@@ -17,6 +17,10 @@
         <div class="profile-card-infos">
           <h3><%= @user.username  %></h3>
           <hr>
+          <% if @user.first_name.present? %>
+            <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+            <hr>
+          <% end %>
           <h4><%= @user.art_type  %></h4>
           <hr>
           <p><%= @user.city  %>, <%= @user.country  %></p>
@@ -24,11 +28,10 @@
           <p>Biography</p>
           <p><%= @user.description  %></p>
           <hr>
-          <p>See my exhibitions</p>
+          <p><%= link_to 'See my exhibitions', exhibitions_path(query: @user.id) %></p>
           <hr>
           <p>Want to collab? Send a message!</p>
           <br>
-          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <% if current_user == @user  %>
         <div class="btn-profile">
@@ -54,7 +57,15 @@
         <% end %>
         <div class="work-of-art-card-infos">
           <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+          <p><%= art.art_type %></p>
           <p><%= art.description %></p>
+          <% unless current_user == art.user %>
+          <div class="favorite-heart">
+            <%= link_to toggle_favorite_work_of_art_path(art), remote: true, method: :post do %>
+            <%= render 'work_of_arts/like_button', work_of_art: art %>
+            <% end %>
+          </div>
+          <% end %>
           <% if current_user == @user %>
             <div class="btn-work-of-art">
               <%= link_to "Edit", edit_work_of_art_path(art), class: "btn btn-outline-primary" %>
@@ -65,4 +76,5 @@
       </div>
     <% end %>
   </div>
+  <br>
 </div>

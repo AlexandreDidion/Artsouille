@@ -21,7 +21,7 @@ class CollabsController < ApplicationController
   def create
     @collab = Collab.new(collab_params)
     if @collab.save
-      UserCollabRelationship.create(collab: @collab, user: current_user)
+      UserCollabRelationship.create(collab: @collab, user: current_user, status: "accepted")
       redirect_to collab_path(@collab), notice: 'Ready to start a new collab!'
     else
       render 'new'
@@ -48,6 +48,6 @@ class CollabsController < ApplicationController
   end
 
   def collab_params
-    params.require(:collab).permit(:name, user_ids: [])
+    params.require(:collab).permit(:name, :photo, user_ids: [])
   end
 end

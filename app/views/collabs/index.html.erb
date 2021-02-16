@@ -1,23 +1,43 @@
 <div class="<%= page_background_class %>">
-  <div class="container">
-    <br>
+  <br>
+  <div class="page-info">
+    <p>
+      This is the page where you will find the different collaborative groups
+      present on Artsouille, gathering together artists from all over the world
+      and of all backgrounds.
+      <br>
+      <br>
+      If you are interested in a collaboration you can either create a new group
+      or send a message to an existing one.
+      <br>
+      <br>
+      Let's make something beautiful together!
+    <p>
+    <div class="btn-page-info">
+      <%= link_to "New Collab", new_collab_path, class: 'btn btn-outline-primary' %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="container-collab-cards">
     <% @collabs.each do |collab| %>
-      <div class="collab-list-infos">
-        <h3><%= collab.name %></h3>
-        <h4><%= collab.description %></h4>
-        <h4>And maybe something else?</h4>
-        <%= link_to "Join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
+      <div class="collab-card">
+        <% if collab.photo.attached? %>
+          <%= cl_image_tag collab.photo.key, crop: :fill %>
+        <% else %>
+          <%= image_tag('artist_2.png') %>
+        <% end %>
+        <div class="collab-card-infos">
+          <h3><%= collab.name %></h3>
+          <h4><%= collab.description %></h4>
+          <h4>And maybe something else?</h4>
+          <div class="btn-collab-card">
+            <%= link_to "Join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
+          </div>
+        </div>
+
       </div>
-      <hr class="divider">
     <% end %>
   </div>
-  <br>
-  <div class="btn-container">
-    <%= link_to "New Collab", new_collab_path, class: 'btn btn-outline-primary' %>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
   <br>
 </div>

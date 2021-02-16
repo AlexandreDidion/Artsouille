@@ -19,24 +19,24 @@
         <div class="exhibition-card-infos">
           <h3><%= @exhibition.name %></h3>
           <hr>
-          <h4><%= @exhibition.start_date %> - <%= @exhibition.end_date %></h4>
+          <h4>From <%= @exhibition.start_date.strftime('%d %B %Y') %> to <%= @exhibition.end_date.strftime('%d %B %Y') %></h4>
           <hr>
-          <h4><%= @exhibition.address %></h4>
+          <h4><%= @exhibition.address %> - <%= @exhibition.city  %>, <%= @exhibition.country  %></h4>
           <hr>
           <p><%= @exhibition.category %></p>
           <hr>
           <p><%= @exhibition.description %></p>
-          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <% if @exhibition.collab.users.include?(current_user) %>
-          <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn-outline-primary' %>
-          <%= link_to "Delete", @exhibition, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn-outline-primary" %>
+          <div class="btn-work-of-art">
+            <%= link_to "Edit", edit_exhibition_path(@exhibition), class: 'btn btn-outline-primary' %>
+            <%= link_to "Delete", @exhibition, data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-outline-warning" %>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 
-  <br>
   <br>
 
   <div class="map-index">

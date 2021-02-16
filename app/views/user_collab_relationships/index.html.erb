@@ -3,7 +3,7 @@
     <br>
     <% @user_collab_relationships.each do |user_collab_relationship| %>
     <div>
-      <% if user_collab_relationship.collab.users.include? current_user %>
+      <% unless user_collab_relationship.collab.users.include? current_user %>
         <% if user_collab_relationship.pending? %>
             <%= user_collab_relationship.collab.name %>
             <%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %>

@@ -20,7 +20,6 @@
 
     a {
       text-decoration: none;
-      color: black;
     }
 
     .favorite-icon {
@@ -31,10 +30,19 @@
 
     h3 {
       margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    h3 a {
+      color: black;
     }
 
     p {
-      margin-bottom: 8px;
+      margin-bottom: 0;
+    }
+
+    p a {
+      color: black;
     }
   }
 
@@ -51,18 +59,4 @@
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
   }
-}
-
-.favorite-heart a {
-  color: black; 
-  text-decoration: none;
-}
-
-.favorite-heart:hover a {
-  color: #d34444;
-}
-
-
-.red {
-  color: #ff0000;
 }
