@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Deleting all database'
 
+WorkOfArt.destroy_all
 User.destroy_all
 Exhibition.destroy_all
 UserCollabRelationship.destroy_all
-WorkOfArt.destroy_all
+ToDo.destroy_all
 Collab.destroy_all
 
 puts 'Database deleted'
@@ -53,7 +54,8 @@ puts 'Creating users...'
 
   user_collab_relationship = UserCollabRelationship.create!(
     collab: collab,
-    user: user
+    user: user,
+    status: "accepted"
   )
 
   work_of_art = WorkOfArt.create!(
