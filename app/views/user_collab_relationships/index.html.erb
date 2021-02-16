@@ -2,9 +2,6 @@
   <div class="container">
     <br>
     <% @user_collab_relationships.each do |user_collab_relationship| %>
-    <div>
-      user_collab_relationship.collab.users.select{|user| user.}
-    </div>
       <div class="collab-list-infos">
         <% if user_collab_relationship.accepted? %>
           <h3><%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %></h3>
@@ -17,6 +14,14 @@
       <% end %>
       </div>
       <hr class="divider">
+      <div>
+        <% @collabs_to_accept.each do |cr| %>
+          <%= cr.collab.name %>
+          <%= link_to cr.user.username, user_path(cr.user) %>
+          <%= link_to "Accept this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-primary' %>
+          <%= link_to "Reject this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"},method: :patch, class: 'btn btn-outline-primary' %>
+        <% end %>
+      </div>
   <% end %>
   </div>
   <br>
@@ -26,9 +31,3 @@
   <br>
   <br>
 </div>
-<!-- @user_collab_relationships = UserCollabRelationship.includes(:collab).where(user: current_user)
-
-    <%# = user_collab_relationship.collab.name %>
-            <%#= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %>
-            <%#= link_to "Accept this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-primary' %>
-            <%#= link_to "Reject this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "rejected"},method: :patch, class: 'btn btn-outline-primary' %> -->

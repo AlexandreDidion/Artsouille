@@ -3,6 +3,8 @@ class UserCollabRelationshipsController < ApplicationController
 
   def index
     @user_collab_relationships = UserCollabRelationship.includes(:collab).where(user: current_user)
+    @collabs_to_accept =
+      @user_collab_relationships.where(status: 'accepted').map { |cr| cr.collab.user_collab_relationships.where(status: 'pending') }.flatten
   end
 
   def new
