@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_133828) do
     t.bigint "collab_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 1
     t.index ["collab_id"], name: "index_user_collab_relationships_on_collab_id"
     t.index ["user_id"], name: "index_user_collab_relationships_on_user_id"
   end
