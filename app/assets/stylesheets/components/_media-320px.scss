@@ -3,48 +3,51 @@
   .background_yellow {
     padding-top: 10px;
   }
+
   .dropdown {
     position: absolute;
 
     img {
       position: absolute;
-      right: 0px;
-      top: -20px;
+      right: -138px;
+      top: 5px;
     }
 
     .dropdown-menu {
       padding: 0px 0px 0px 6px;
-      width: 300px;
-      height: 112px;
-      width: 50px;
+      height: 155px;
       font-size: 14px;
       line-height: 0.4rem;
       position: absolute;
-      right: 0px;
-      top: -20px;
+      right: -132px;
+      top: 70px;
     }
   }
 
-  .searchbar{
-    form {
-      left: -5px;
-      transform: translate(0%);
+  .navbar-lewagon {
+
+    .mr-auto {
+      display: flex;
+      align-items: center;
     }
+    .navbar-nav {
 
-    form:hover{
-      width: 270px;
+      .form-inline {
+
+        .form-control {
+          height: 40px;
+          position: relative;
+          top: 8px;
+          right: 1px;
+          max-width: 175px;
+        }
+      }
     }
   }
 
-  h1 {
-    font-size: 32px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  h4 {
+  .btn-arrow-left {
+    margin-left: 25px;
+    width: 150px;
     font-size: 14px;
   }
 
@@ -56,6 +59,16 @@
       margin: auto;
       max-width: 250px;
     }
+
+    .btn-profile {
+      margin: auto;
+      flex-direction: row;
+      width: 250px;
+
+      .btn-outline-primary {
+        font-size:14px;
+      }
+    }
   }
 
   .profile-card-infos {
@@ -65,57 +78,174 @@
     margin-top: 20px;
 
     p {
-    font-size: 13px;
-    }
-
-    .favorite-icon {
-      width: 30px;
-      height: 30px;
-      right: 2px;
+      font-size: 13px;
     }
   }
 
   .artist-card {
     flex-direction: column;
-    max-height: 450px;
+    width: 250px;
+    height: 450px;
+    margin-bottom: 20px;
 
     img {
       display: block;
       margin: auto;
-      max-width: 250px;
+      width: 250px;
     }
 
     .artist-card-infos {
+      margin-bottom: 0;
 
       p {
         font-size: 13px;
-      }
-
-      .favorite-icon {
-        width: 30px;
-        height: 30px;
-        right: 7px;
-        top: -35px;
       }
     }
   }
 
   .work-of-art-card {
+    width: 250px;
+    height: 450px;
+
     img {
-      max-width: 250px;
+      width: 250px;
     }
 
     .work-of-art-card-infos {
+      width: 250px;
+
       p {
         font-size: 13px;
       }
 
-      .favorite-icon {
-        width: 30px;
-        height: 30px;
-        right: 7px;
+      .favorite-heart a {
+        font-size: 12px;
+        right: 15px;
         top: -35px;
       }
+
+      .btn-outline-primary, .btn-outline-warning {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .page-info {
+    margin: auto;
+    max-width: 250px;
+
+    p {
+      font-size: 14px;
+    }
+
+    .btn-page-info {
+      width: 250px;
+
+      .btn-outline-primary {
+        font-size: 14px;
+        width: 40%;
+      }
+    }
+  }
+
+  .collab-card {
+    width: 250px;
+    height: 350px;
+
+    img {
+      width: 250px;
+    }
+
+    .collab-card-infos {
+      width: 250px;
+
+      h3 {
+        font-size: 16px;
+      }
+
+      h4 {
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      .btn-collab-card {
+        width: 250px;
+
+        .btn-outline-primary {
+          font-size: 14px;
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .container {
+
+    .exhibition-headers {
+      margin: auto;
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .exhibition-list-infos {
+
+    h3 {
+      max-width: 80px;
+      font-size: 16px;
+    }
+
+    h4 {
+      max-width: 90px;
+      font-size: 14px;
+    }
+
+    .btn-exhibition-info {
+
+      .btn-outline-primary {
+        padding: 6px;
+        width: 40px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .exhibition-card {
+    flex-direction: column;
+
+    img {
+      display: block;
+      margin: auto;
+      width: 250px;
+    }
+
+    .exhibition-card-items {
+      margin-top: 20px;
+
+      .exhibition-card-infos {
+        display: block;
+        margin: auto;
+        max-width: 250px;
+      }
+    }
+  }
+
+  .map-index {
+    margin: auto;
+    width: 350px;
+
+    .mapboxgl-ctrl {
+      width: 200px;
+      margin: 10px
+    }
+
+    .mapboxgl-ctrl {
+      width: 30px;
     }
   }
 }
