@@ -19,14 +19,13 @@
         <div class="exhibition-card-infos">
           <h3><%= @exhibition.name %></h3>
           <hr>
-          <h4>From <%= @exhibition.start_date.strftime('%A %d %B %Y') %> to <%= @exhibition.end_date.strftime('%A %d %B %Y') %></h4>
+          <h4>From <%= @exhibition.start_date.strftime('%d %B %Y') %> to <%= @exhibition.end_date.strftime('%d %B %Y') %></h4>
           <hr>
           <h4><%= @exhibition.address %> - <%= @exhibition.city  %>, <%= @exhibition.country  %></h4>
           <hr>
           <p><%= @exhibition.category %></p>
           <hr>
           <p><%= @exhibition.description %></p>
-          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <% if @exhibition.collab.users.include?(current_user) %>
           <div class="btn-work-of-art">
@@ -38,7 +37,6 @@
     </div>
   </div>
 
-  <br>
   <br>
 
   <div class="map-index">
