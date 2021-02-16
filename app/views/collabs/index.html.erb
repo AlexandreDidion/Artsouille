@@ -13,7 +13,9 @@
       <br>
       Let's make something beautiful together!
     <p>
-    <%= link_to "New Collab", new_collab_path, class: 'btn btn-outline-primary' %>
+    <div class="btn-page-info">
+      <%= link_to "New Collab", new_collab_path, class: 'btn btn-outline-primary' %>
+    </div>
   </div>
   <br>
   <br>
@@ -29,12 +31,13 @@
           <h3><%= link_to collab.name, collab_path(collab) %></h3>
           <h4>Some description</h4>
           <h4>And maybe something else?</h4>
-          <%= link_to "Send message", "#", class: 'btn btn-outline-primary' %>
+          <div class="btn-collab-card">
+            <%= link_to "Send message", "#", class: 'btn btn-outline-primary' %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
-  <br>
   <br>
 </div>
 
