@@ -4,8 +4,8 @@ class ExhibitionsController < ApplicationController
   before_action :set_exhibition, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query] == 'my_exhibitions'
-      @exhibitions = Exhibition.where('collab_id IN (?)', current_user.collabs.map(&:id))
+    if params[:query].present?
+      @exhibitions = Exhibition.where('collab_id IN (?)', User.find(params[:query]).collabs.map(&:id))
     else
       @exhibitions = Exhibition.all
     end
