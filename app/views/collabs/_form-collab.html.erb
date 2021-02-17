@@ -3,6 +3,7 @@
     <div class="col-6">
       <%= simple_form_for @collab do |f| %>
         <%= f.input :name %>
+        <%= f.input :description %>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit, class:"btn btn-primary" %>
       <% end %>

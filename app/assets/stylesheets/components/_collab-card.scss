@@ -22,16 +22,7 @@
   img {
     max-width: 400px;
     max-height: 600px;
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
   }
-
-  img:hover {
-    -webkit-filter: brightness(60%);
-    filter: brightness(60%);
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
-    }
 
   .collab-card .collab-card-infos {
     display: flex;
@@ -60,4 +51,43 @@
       margin-top: 8px;
     }
   }
+}
+
+.container-collab-image img {
+  display: block;
+  margin: auto;
+  max-width: 400px;
+  max-height: 600px;
+}
+
+.collab-card-members-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .collab-card-info {
+    padding: 6px 12px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 400px;
+
+    .collab-members {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .btn-outline-warning {
+        width: 20%;
+        margin-bottom: 0;
+        padding: 4px 10px;
+      }
+    }
+  }
+}
+
+.collab-divider {
+  border-color: black;
+  margin: 0 75px;
 }

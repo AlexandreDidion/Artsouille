@@ -30,7 +30,6 @@
         <div class="collab-card-infos">
           <h3><%= collab.name %></h3>
           <h4><%= collab.description %></h4>
-          <h4>And maybe something else?</h4>
           <div class="btn-collab-card">
             <%= link_to "Join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
           </div>
