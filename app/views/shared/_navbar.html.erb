@@ -43,7 +43,7 @@
               <%= link_to "My artworks", user_work_of_arts_path(current_user), class: "dropdown-item nav-link" %>
               <%= link_to "My favorites", myfavorites_path, class: "dropdown-item nav-link" %>
               <%= link_to "My collabs", user_collab_relationships_path, class: "dropdown-item nav-link" %>
-              <%= link_to "My exhibitions", exhibitions_path(query: 'my_exhibitions'), class: "dropdown-item nav-link" %>
+              <%= link_to "My exhibitions", exhibitions_path(current_user: current_user.id), class: "dropdown-item nav-link" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item nav-link" %>
             </div>
           </li>
