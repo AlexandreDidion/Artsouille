@@ -145,6 +145,15 @@ ActiveRecord::Schema.define(version: 2021_02_13_133828) do
     t.index ["user_id"], name: "index_work_of_arts_on_user_id"
   end
 
+  create_table "work_of_arts_favorites", force: :cascade do |t|
+    t.bigint "work_of_art_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_work_of_arts_favorites_on_user_id"
+    t.index ["work_of_art_id"], name: "index_work_of_arts_favorites_on_work_of_art_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "exhibitions", "collabs"
   add_foreign_key "to_do_items", "to_dos"
@@ -153,4 +162,6 @@ ActiveRecord::Schema.define(version: 2021_02_13_133828) do
   add_foreign_key "user_collab_relationships", "users"
   add_foreign_key "work_of_arts", "collabs"
   add_foreign_key "work_of_arts", "users"
+  add_foreign_key "work_of_arts_favorites", "users"
+  add_foreign_key "work_of_arts_favorites", "work_of_arts"
 end

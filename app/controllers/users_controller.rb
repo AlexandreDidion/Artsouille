@@ -14,7 +14,7 @@ class UsersController < ApplicationController
           OR work_of_arts.name @@ :query \
           OR work_of_arts.description @@ :query \
         "
-      @users = User.joins(:work_of_arts).where(sql_query, query: "%#{params[:search][:name]}%")
+      @users = User.joins(:work_of_arts).where(sql_query, query: "%#{params[:search][:name]}%").distinct
     else
       @users = User.all
     end
