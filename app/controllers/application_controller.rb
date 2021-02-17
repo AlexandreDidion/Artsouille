@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
   helper_method :page_background_class
 
   def page_background_class
-    return 'background_yellow' if params[:action] == 'home' && params[:controller] == 'pages'
     return 'background_pink' if params[:action] == 'index' && params[:controller] == 'users'
     return 'background_pink' if params[:action] == 'show' && params[:controller] == 'users'
     return 'background_blue' if params[:action] == 'index' && params[:controller] == 'work_of_arts'
@@ -26,5 +25,6 @@ class ApplicationController < ActionController::Base
     return 'background_green' if params[:action] == 'show' && params[:controller] == 'exhibitions'
     return 'background_yellow' if params[:action] == 'index' && params[:controller] == 'collabs'
     return 'background_yellow' if params[:action] == 'show' && params[:controller] == 'collabs'
+    return 'background_yellow' if params[:action] == 'index' && params[:controller] == 'user_collab_relationships'
   end
 end

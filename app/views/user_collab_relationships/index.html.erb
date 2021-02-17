@@ -1,37 +1,35 @@
 <div class="<%= page_background_class %>">
+
   <div class="container">
-    <br>
+  <br>
     <% @user_collab_relationships.each do |user_collab_relationship| %>
-    <div>
+    <div class=collab-list-infos>
       <% unless user_collab_relationship.collab.users.include? current_user %>
         <% if user_collab_relationship.pending? %>
             <%= user_collab_relationship.collab.name %>
             <%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %>
-            <%= link_to "Accept this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-primary' %>
-            <%= link_to "Reject this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "rejected"},method: :patch, class: 'btn btn-outline-primary' %>
+            <%= link_to "Accept this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-success' %>
+            <%= link_to "Reject this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "rejected"},method: :patch, class: 'btn btn-outline-warning' %>
         <% end %>
       <% end %>
-    </div>
-      <div>
-        <% if user_collab_relationship.accepted? %>
-          <h3><%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %></h3>
-          <h4><%= user_collab_relationship.collab.description %></h4>
-          <h4>And maybe something else?</h4>
+
+      <% if user_collab_relationship.accepted? %>
+        <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
+        <h4> <%= user_collab_relationship.collab.description %> </h4>
+        <div class="btn-collab-view">
+          <%= link_to "View this collab", collab_path(user_collab_relationship.collab_id), class: 'btn btn-outline-primary' %>
+        </div>
       <% elsif user_collab_relationship.pending? %>
-        <h3><%= user_collab_relationship.collab.name %> </h3>
-        <h4><%= user_collab_relationship.collab.description %></h4>
-        <h4>Your request has not been accepted yet!</h4>
+        <h3> <%= user_collab_relationship.collab.name %> </h3>
+        <h4> <%= user_collab_relationship.collab.description %> </h4>
+        <p>Your request has not been accepted yet!</p>
       <% end %>
-      </div>
-      <hr class="divider">
-  <% end %>
+    </div>
+    <hr class="divider">
+    <% end %>
   </div>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+
 </div>
 
 
