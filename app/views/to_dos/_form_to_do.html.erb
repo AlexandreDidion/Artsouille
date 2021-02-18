@@ -1,10 +1,17 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <%= simple_form_for [@collab, @to_do] do |f| %>
-        <%= f.input :title %>
-        <%= f.button :submit, class:"btn btn-primary" %>
-      <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login gradient-border">
+        <h2>Add a to-do list</h2>
+        <%= simple_form_for [@collab, @to_do] do |f| %>
+          <div class="form-inputs">
+            <%= f.input :title %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Add this to-do", class: "btn btn-outline-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
