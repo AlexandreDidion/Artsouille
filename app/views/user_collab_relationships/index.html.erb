@@ -4,15 +4,6 @@
   <br>
     <% @user_collab_relationships.each do |user_collab_relationship| %>
     <div class=collab-list-infos>
-      <% unless user_collab_relationship.collab.users.include? current_user %>
-        <% if user_collab_relationship.pending? %>
-            <%= user_collab_relationship.collab.name %>
-            <%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %>
-            <%= link_to "Accept this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-success' %>
-            <%= link_to "Reject this collab", user_collab_relationship_path(user_collab_relationship), user_collab_relationship: {collab_id: user_collab_relationship.collab.id , user_id: user_collab_relationship.user.id, status: "rejected"},method: :patch, class: 'btn btn-outline-warning' %>
-        <% end %>
-      <% end %>
-
       <% if user_collab_relationship.accepted? %>
         <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
         <h4> <%= user_collab_relationship.collab.description %> </h4>
@@ -24,12 +15,37 @@
         <h4> <%= user_collab_relationship.collab.description %> </h4>
         <p>Your request has not been accepted yet!</p>
       <% end %>
-    </div>
+      <% @collabs_to_accept.each do |cr| %>
+          <div>
+            <%= cr.collab.name %>
+            <%= link_to cr.user.username, user_path(cr.user) %>
+            <div btn-collab-view>
+            <%= link_to "Accept this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-success' %>
+            <%= link_to "Reject this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}, method: :patch, class: 'btn btn-outline-warning' %>
+            </div>
+            <hr class="divider">
+          </div>
+       <% end %>
+
     <hr class="divider">
     <% end %>
+        </div>
   </div>
     <br>
     <br>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
