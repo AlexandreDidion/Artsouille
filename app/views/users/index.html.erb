@@ -1,8 +1,10 @@
 <div class="<%= page_background_class %>">
+  <br>
   <% if @users.empty? %>
-      <div class="container-artist-cards">
-        <h2> Well.. we didn't find anything for "<%= params[:search][:name] %>" </h2>
-      </div>
+  <br>
+  <div class="container-artist-cards">
+    <h2 id="no-result"> Sorry, we didn't find anything for "<%= params[:search][:name] %>" </h2>
+  </div>
   <% end %>
   <div class="container-artist-cards">
     <% @users.each do |user| %>
@@ -28,6 +30,8 @@
            data-markers="<%= @markers.to_json %>"
            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+  <br>
+  <br>
 </div>
 
 

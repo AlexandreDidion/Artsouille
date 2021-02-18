@@ -48,6 +48,6 @@ class CollabsController < ApplicationController
   end
 
   def collab_params
-    params.require(:collab).permit(:name, :photo, user_ids: [])
+    params.require(:collab).permit(:name, :description, :photo, user_ids: [])
   end
 end

@@ -15,15 +15,11 @@
 
   .profile-card-infos {
     width: 400px;
-    position: relative;
     text-align: justify;
 
-    .favorite-icon {
-      position: absolute;
-      height: 35px;
-      width: 35px;
-      right: 0px;
-      top: 0px;
+    a {
+      text-decoration: none;
+      color: black;
     }
 
     p {

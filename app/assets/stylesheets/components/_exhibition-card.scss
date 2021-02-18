@@ -71,15 +71,6 @@
   img {
     max-width: 400px;
     max-height: 600px;
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
-  }
-
-  img:hover {
-    -webkit-filter: brightness(60%);
-    filter: brightness(60%);
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
   }
 
   .exhibition-card-items {
@@ -91,15 +82,6 @@
       width: 400px;
       position: relative;
       text-align: justify;
-
-      .favorite-icon {
-        position: absolute;
-        height: 35px;
-        width: 35px;
-        right: 0px;
-        top: 0px;
-        pointer-events: none;
-      }
 
       a {
         color: inherit;

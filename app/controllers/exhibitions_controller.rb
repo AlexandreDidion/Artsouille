@@ -4,8 +4,8 @@ class ExhibitionsController < ApplicationController
   before_action :set_exhibition, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @exhibitions = Exhibition.where('collab_id IN (?)', User.find(params[:query]).collabs.map(&:id))
+    if params[:current_user].present?
+      @exhibitions = Exhibition.where('collab_id IN (?)', User.find(params[:current_user]).collabs.map(&:id))
     else
       @exhibitions = Exhibition.all
     end
@@ -19,7 +19,14 @@ class ExhibitionsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @markers =
+      [{
+        lat: @exhibition.latitude,
+        lng: @exhibition.longitude,
+        infowindow: render_to_string(partial: "infowindow", locals: { exhibition: @exhibition })
+      }]
+  end
 
   def new
     @exhibition = Exhibition.new
@@ -58,6 +65,6 @@ class ExhibitionsController < ApplicationController
   end
 
   def exhibition_params
-    params.require(:exhibition).permit(:name, :start_date, :end_date, :description, :category, :address, photos: [])
+    params.require(:exhibition).permit(:name, :start_date, :end_date, :description, :category, :address, :city, :country, photos: [])
   end
 end
