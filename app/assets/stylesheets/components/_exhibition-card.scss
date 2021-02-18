@@ -71,15 +71,6 @@
   img {
     max-width: 400px;
     max-height: 600px;
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
-  }
-
-  img:hover {
-    -webkit-filter: brightness(60%);
-    filter: brightness(60%);
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
   }
 
   .exhibition-card-items {
