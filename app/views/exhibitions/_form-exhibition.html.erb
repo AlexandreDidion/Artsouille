@@ -9,6 +9,8 @@
             <%= f.input :description %>
             <%= f.input :category, collection: @exhibition.set_art_types %>
             <%= f.input :address %>
+            <%= f.input :city %>
+            <%= f.input :country %>
             <%= f.input :start_date, as: :date %>
             <%= f.input :end_date, as: :date %>
             <%= f.input :photos, as: :file, input_html: { multiple: true } %>
