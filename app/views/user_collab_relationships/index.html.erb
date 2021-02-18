@@ -21,8 +21,8 @@
         <div>
           <%= cr.collab.name %>
           <%= link_to cr.user.username, user_path(cr.user) %>
-          <%= link_to "Accept this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}, method: :patch, class: 'btn-outline-warning' %>
-          <%= link_to "Reject this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}, method: :patch, class: 'btn-outline-warning' %>
+          <%= link_to "Accept this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn-outline-warning' %>
+          <%= link_to "Reject this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}), method: :patch, class: 'btn-outline-warning' %>
           <hr class="divider">
         </div>
      <% end %>
