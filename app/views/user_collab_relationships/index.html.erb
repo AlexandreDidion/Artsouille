@@ -12,7 +12,7 @@
         <% end %>
       <% end %>
     </div>
-      <div class="collab-list-infos">
+      <div>
         <% if user_collab_relationship.accepted? %>
           <h3><%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %></h3>
           <h4><%= user_collab_relationship.collab.description %></h4>
