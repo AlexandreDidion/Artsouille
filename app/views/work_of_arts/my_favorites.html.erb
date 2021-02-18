@@ -1,15 +1,18 @@
-<div class="container-work-of-art-cards">
-  <% @favorite_work_of_arts.each do |art| %>
-  <div class="work-of-art-card">
-    <% if art.photo.attached? %>
-      <%= link_to image_tag(art.photo), work_of_art_path(art), crop: :fill %>
-    <% else %>
-      <%= link_to image_tag('dodoma.png'), work_of_art_path(art) %>
-    <% end %>
-    <div class="work-of-art-card-infos">
-      <h3><%= link_to art.name, work_of_art_path(art) %></h3>
-      <p>by <u> <%= link_to art.user.username, user_path(art.user) %> </u></p>
+<div class="<%= page_background_class %>">
+  <br>
+  <div class="container-work-of-art-cards">
+    <% @favorite_work_of_arts.each do |art| %>
+    <div class="work-of-art-card">
+      <% if art.photo.attached? %>
+        <%= link_to image_tag(art.photo), work_of_art_path(art), crop: :fill %>
+      <% else %>
+        <%= link_to image_tag('dodoma.png'), work_of_art_path(art) %>
+      <% end %>
+      <div class="work-of-art-card-infos">
+        <h3><%= link_to art.name, work_of_art_path(art) %></h3>
+        <p>by <u> <%= link_to art.user.username, user_path(art.user) %> </u></p>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
