@@ -3,6 +3,8 @@ class UserCollabRelationshipsController < ApplicationController
 
   def index
     @user_collab_relationships = UserCollabRelationship.includes(:collab).where(user: current_user)
+    @collabs_to_accept =
+      @user_collab_relationships.where(status: 'accepted').map { |cr| cr.collab.user_collab_relationships.where(status: 'pending') }.flatten
   end
 
   def new
@@ -28,9 +30,11 @@ class UserCollabRelationshipsController < ApplicationController
   end
 
   def update
-    if @user_collab_relationship.update(status: "accepted")
+    if user_collab_relationship_params[:status] == "accepted"
+      @user_collab_relationship.update(status: "accepted")
       redirect_to collab_path(@user_collab_relationship.collab)
-    elsif @user_collab_relationship.update(status: "rejected")
+    elsif user_collab_relationship_params[:status] == "rejected"
+      @user_collab_relationship.update(status: "rejected")
       redirect_to collabs_path
     end
   end
