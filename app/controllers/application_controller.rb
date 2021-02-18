@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
 
   def page_background_class
     return 'background_grey' if params[:action] == 'home' && params[:controller] == 'pages'
+    return 'background_blue' if params[:action] == 'index' && params[:controller] == 'users/work_of_arts'
+    return 'background_blue' if params[:action] == 'my_favorites' && params[:controller] == 'work_of_arts'
     return 'background_pink' if params[:action] == 'index' && params[:controller] == 'users'
     return 'background_pink' if params[:action] == 'show' && params[:controller] == 'users'
     return 'background_blue' if params[:action] == 'index' && params[:controller] == 'work_of_arts'
