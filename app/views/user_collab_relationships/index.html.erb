@@ -1,7 +1,7 @@
 <div class="<%= page_background_class %>">
 
   <div class="container">
-  <br>
+    <br>
     <div class=collab-list-infos>
       <% @user_collab_relationships.each do |user_collab_relationship| %>
 
@@ -23,25 +23,25 @@
 
     <div class=collab-list-infos >
       <% @collabs_to_accept.each do |cr| %>
-          <div>
-            <h3><%= cr.collab.name %></h3>
-            <h4><%= link_to cr.user.username, user_path(cr.user) %></h4>
-            <div btn-collab-view>
-            <%= link_to "Accept this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-success' %>
-            <%= link_to "Reject this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}, method: :patch, class: 'btn btn-outline-warning' %>
-            </div>
-            <hr class="divider">
+        <div>
+          <h3><%= cr.collab.name %></h3>
+          <h4><%= link_to cr.user.username, user_path(cr.user) %></h4>
+          <div btn-collab-view>
+            <%= link_to "Accept this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn btn-outline-success' %>
+            <%= link_to "Reject this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}), method: :patch, class: 'btn btn-outline-warning' %>
           </div>
-       <% end %>
+          <hr class="divider">
+        </div>
+      <% end %>
     </div>
   </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
 
 
 
