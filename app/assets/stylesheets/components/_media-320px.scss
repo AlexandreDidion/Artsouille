@@ -66,6 +66,7 @@
       width: 250px;
 
       .btn-outline-primary {
+        padding: 4px 10px;
         font-size:14px;
       }
     }
@@ -82,6 +83,9 @@
     }
   }
 
+  #no-result {
+    font-size: 20px;
+  }
   .artist-card {
     flex-direction: column;
     width: 250px;
@@ -126,6 +130,7 @@
 
       .btn-outline-primary, .btn-outline-warning {
         font-size: 14px;
+        padding: 4px 10px;
       }
     }
   }
@@ -232,6 +237,10 @@
         margin: auto;
         max-width: 250px;
       }
+
+      .btn-work-of-art {
+        justify-content: space-evenly;
+      }
     }
   }
 
@@ -246,6 +255,65 @@
 
     .mapboxgl-ctrl {
       width: 30px;
+    }
+  }
+
+  .collab-list-infos {
+    .btn-collab-view {
+     .btn-outline-primary {
+      padding: 0;
+      }
+    }
+  }
+
+  .container-collab-image {
+
+    img {
+      display: block;
+      margin: auto;
+      width: 250px;
+    }
+  }
+
+  .collab-card-members-todo {
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    .collab-card-info {
+
+      .collab-members {
+        margin-bottom: 0;
+
+        .btn-outline-warning {
+          width: 40%;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .container-btn-collab {
+    display: flex;
+    justify-content: space-around;
+
+    .btn-outline-primary {
+      padding: 4px 8px;
+      width: 30%;
+      font-size: 14px;
     }
   }
 }
