@@ -52,16 +52,15 @@
       </ul>
       <% end %>
       <% end %>
+      <div class="container-btn-collab">
+        <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab), class: "btn btn-outline-primary" %>
+        <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition), class: "btn btn-outline-primary" %>
+        <%= link_to "Add a brainstorming", new_collab_to_do_path(@collab), class: "btn btn-outline-primary" %>
+      </div>
       <% else %>
       <h2>Your request is pending !</h2>
     <% end %>
     </div>
   </div>
-
   <br>
-  <div class="container-btn-collab">
-    <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab), class: "btn btn-outline-primary" %>
-    <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition), class: "btn btn-outline-primary" %>
-    <%= link_to "Add a brainstorming", new_collab_to_do_path(@collab), class: "btn btn-outline-primary" %>
-  </div>
 </div>
