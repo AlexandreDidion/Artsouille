@@ -32,4 +32,14 @@
     text-decoration: underline;
     text-underline-position: under;
   }
+
+  .dropdown-menu {
+    position: relative;
+    top: 57px;
+    right: -1px;
+  }
+
+  .dropdown-menu a:hover {
+    background: white;
+  }
 }
