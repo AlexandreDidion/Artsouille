@@ -1,12 +1,15 @@
 <div class="<%= page_background_class %>">
+
   <div class="container">
     <br>
     <% @user_collab_relationships.each do |user_collab_relationship| %>
       <div class="collab-list-infos">
         <% if user_collab_relationship.accepted? %>
-          <h3><%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %></h3>
-          <h4><%= user_collab_relationship.collab.description %></h4>
-          <h4>And maybe something else?</h4>
+          <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
+          <h4> <%= user_collab_relationship.collab.description %> </h4>
+          <div class="btn-collab-view">
+            <%= link_to "View this collab", collab_path(user_collab_relationship.collab_id), class: 'btn btn-outline-primary' %>
+          </div>
       <% elsif user_collab_relationship.pending? %>
         <h3><%= user_collab_relationship.collab.name %> </h3>
         <h4><%= user_collab_relationship.collab.description %></h4>
@@ -21,16 +24,30 @@
         <div>
           <%= cr.collab.name %>
           <%= link_to cr.user.username, user_path(cr.user) %>
-          <%= link_to "Accept this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn-outline-warning' %>
-          <%= link_to "Reject this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}), method: :patch, class: 'btn-outline-warning' %>
+          <div btn-collab-view>
+          <%= link_to "Accept this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}, method: :patch, class: 'btn btn-outline-success' %>
+          <%= link_to "Reject this collab", user_collab_relationship_path(cr), user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}, method: :patch, class: 'btn btn-outline-warning' %>
+          </div>
           <hr class="divider">
         </div>
      <% end %>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -113,3 +113,13 @@
   }
 }
 
+.container-btn-collab {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+
+  .btn-outline-primary {
+    width: 15%;
+  }
+}
+

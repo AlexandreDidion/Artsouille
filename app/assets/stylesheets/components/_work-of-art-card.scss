@@ -22,12 +22,6 @@
       text-decoration: none;
     }
 
-    .favorite-icon {
-      position: absolute;
-      right: -25px;
-      top: -30px;
-    }
-
     h3 {
       margin-top: 8px;
       margin-bottom: 0;
@@ -58,5 +52,9 @@
     filter: brightness(60%);
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
+  }
+
+  #image-woa-show {
+    pointer-events: none;
   }
 }
