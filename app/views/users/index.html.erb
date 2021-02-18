@@ -1,4 +1,5 @@
 <div class="<%= page_background_class %>">
+  <br>
   <% if @users.empty? %>
   <br>
   <div class="container-artist-cards">
@@ -29,6 +30,8 @@
            data-markers="<%= @markers.to_json %>"
            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+  <br>
+  <br>
 </div>
 
 
