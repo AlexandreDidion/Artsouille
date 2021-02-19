@@ -147,3 +147,34 @@
   }
 }
 
+.btn-collab-validation {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  .btn-reject {
+    font-size: 14px;
+    width: 50%;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .btn-accept {
+    font-size: 14px;
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+
+.btn-collab-view {
+  text-align: center;
+  width: 300px;
+
+  .btn-outline-primary {
+    font-size: 14px;
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
