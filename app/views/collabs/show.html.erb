@@ -44,13 +44,12 @@
 
         <div class="card-to-do">
           <% @collab.to_dos.each do |to_do| %>
-            <h3><%= to_do.title %>  <%= link_to "<i class='fas fa-pen'></i>".html_safe, edit_to_do_path(to_do) %></h3>
+            <h3><%= to_do.title %>  <%= link_to 'Destroy Table', to_do_path(to_do),  method: :delete, data: {confirm: 'Destroy the table?'}, class: "btn btn-outline-primary" %></h3>
             <ul>
               <% to_do.to_do_items.each do |item| %>
                 <li> <h4> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
                 to_do_item_path(item),
-                method: :delete,
-                data: { confirm: "Remove this idea?" }  %> </h4></li>
+                method: :delete %> </h4></li>
               <% end %>
               <li> <%= link_to "<i class='fas fa-plus-circle'></i>".html_safe, new_to_do_to_do_item_path(to_do) %></li>
             </ul>
