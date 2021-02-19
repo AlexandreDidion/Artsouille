@@ -1,70 +1,79 @@
 <div class="<%= page_background_class %>">
   <br>
   <div class="btn-arrow-left">
-  <%= link_to collabs_path do %>
+    <%= link_to collabs_path do %>
     <i> &#10229; Back to Collabs</i>
-  <% end %>
+    <% end %>
   </div>
   <br>
 
   <div class="container-collab-image">
-  <% if @collab.photo.attached? %>
+    <% if @collab.photo.attached? %>
     <%= cl_image_tag @collab.photo.key, crop: :fill %>
-  <% else %>
+    <% else %>
     <%= image_tag('artist_2.png') %>
-  <% end %>
+    <% end %>
   </div>
 
   <br>
   <hr class="collab-divider">
   <br>
 
-  <div class="collab-card-members-todo">
-    <div class="collab-card-info">
-    <% if @accepted_users %>
-      <h3><%= @collab.name %></h3>
-      <hr>
-      <h4><%= @collab.description %></h4>
-      <hr>
-      <h4 style="margin-bottom:8px"> Members: </h4>
-      <% @accepted_collab.each do |collab| %>
-      <div class="collab-members">
-        <p style="margin-bottom:0"> <%= collab.user.username %> </p>
-        <% if @collab.users.include?(current_user) %>
-          <%= link_to "Remove", user_collab_relationship_path(@collab.user_collab_relationships.find {|uc| uc.user == collab.user }), method: :delete, data: {confirm: "Remove this artist from the collab?"}, class: "btn btn-outline-warning" %>
-        <% end %>
+  <% if @accepted_users %>
+
+    <div class="collab-accepted-users">
+      <div class="collab-card-members-todo">
+        <div class="collab-card-info">
+          <h3><%= @collab.name %></h3>
+          <hr>
+          <h4><%= @collab.description %></h4>
+          <hr>
+          <h4 style="margin-bottom:8px"> Members: </h4>
+
+          <% @accepted_collab.each do |collab| %>
+            <div class="collab-members">
+              <p style="margin-bottom:0"> <%= collab.user.username %> </p>
+              <% if @collab.users.include?(current_user) %>
+              <%= link_to "Remove", user_collab_relationship_path(@collab.user_collab_relationships.find {|uc| uc.user == collab.user }), method: :delete, data: {confirm: "Remove this artist from the collab?"}, class: "btn btn-outline-warning" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="vertical-divider" style="border-left:1px solid black;"></div>
+
+        <div class="card-to-do">
+          <% @collab.to_dos.each do |to_do| %>
+            <h3><%= to_do.title %>  <%= link_to "<i class='fas fa-pen'></i>".html_safe, edit_to_do_path(to_do) %></h3>
+            <ul>
+              <% to_do.to_do_items.each do |item| %>
+                <li> <h4> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
+                to_do_item_path(item),
+                method: :delete,
+                data: { confirm: "Remove this idea?" }  %> </h4></li>
+              <% end %>
+              <li> <%= link_to "<i class='fas fa-plus-circle'></i>".html_safe, new_to_do_to_do_item_path(to_do) %></li>
+            </ul>
+          <% end %>
+        </div>
+
       </div>
-    <% end %>
-    </div>
-    <div class="vertical-divider" style="border-left:1px solid black;"></div>
-    <% if @collab.users.include?(current_user) %>
-    <div class="card-to-do">
-      <% @collab.to_dos.each do |to_do| %>
-      <h3><%= to_do.title %>  <%= link_to "<i class='fas fa-pen'></i>".html_safe, edit_to_do_path(to_do) %></h3>
-      <ul>
-        <% to_do.to_do_items.each do |item| %>
-        <li> <h4> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
-                                            to_do_item_path(item),
-                                            method: :delete,
-                                            data: { confirm: "Remove this idea?" }  %> </h4></li>
-        <% end %>
-        <li> <%= link_to "<i class='fas fa-plus-circle'></i>".html_safe, new_to_do_to_do_item_path(to_do) %></li>
-      </ul>
-      <% end %>
-      <% end %>
 
       <div class="container-btn-collab">
         <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab), class: "btn btn-outline-primary" %>
         <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition), class: "btn btn-outline-primary" %>
         <%= link_to "Add a brainstorming", new_collab_to_do_path(@collab), class: "btn btn-outline-primary" %>
       </div>
+    </div>
 
-      <% else %>
+  <% else %>
+
+  <div class="container-pending">
+    <div class="collab-pending-users">
       <h2>Your request is pending !</h2>
-      <%= link_to "Back to Collabs", collabs_path %>
-    <% end %>
     </div>
   </div>
-  <br>
 
+  <% end %>
+  <br>
 </div>
