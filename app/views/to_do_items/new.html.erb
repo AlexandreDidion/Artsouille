@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login gradient-border">
-        <h2>Add a to-do item</h2>
+        <h2>Add an idea</h2>
         <%= simple_form_for [@to_do, @to_do_item] do |f| %>
           <div class="form-inputs">
             <%= f.input :content %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, "Add this item", class: "btn btn-outline-primary" %>
+            <%= f.button :submit, "Add this idea", class: "btn btn-outline-primary" %>
           </div>
         <% end %>
       </div>
