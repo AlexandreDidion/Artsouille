@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-body">
-    <h2><strong><%= exhibition.name %></strong> </h2>
-    <h3><%= exhibition.start_date %> - <%= exhibition.end_date %> </h3>
+    <h2><strong><%= link_to exhibition.name, exhibition_path(exhibition) %></strong> </h2>
+    <h3><%= exhibition.start_date.strftime('%d %B %Y') %> - <%= exhibition.end_date.strftime('%d %B %Y') %> </h3>
     <p>Address: <%= exhibition.address %></p>
   </div>
 </div>
