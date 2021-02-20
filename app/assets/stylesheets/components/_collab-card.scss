@@ -17,11 +17,15 @@
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  flex-basis: 33.333333%;
 
   img {
-    max-width: 600px;
-    max-height: 500px;
+    width: 300px;
+    max-height: 400px;
+  }
+
+  .collab-card {
+    height: auto;
+    width: 300px;
   }
 
   .collab-card .collab-card-infos {

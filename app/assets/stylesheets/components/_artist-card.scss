@@ -6,7 +6,7 @@
 
   .artist-card {
     height: auto;
-    width: 400px;
+    width: 300px;
   }
 
   .artist-card .artist-card-infos {
@@ -37,8 +37,8 @@
   }
 
   img {
-    max-width: 400px;
-    max-height: 500px;
+    width: 300px;
+    max-height: 400px;
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
   }
