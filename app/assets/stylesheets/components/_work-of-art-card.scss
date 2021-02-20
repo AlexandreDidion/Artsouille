@@ -3,11 +3,10 @@
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  flex-basis: 33.333333%;
 
   .work-of-art-card {
     height: auto;
-    width: 400px;
+    width: 300px;
   }
 
   .work-of-art-card .work-of-art-card-infos {
@@ -16,7 +15,7 @@
   }
 
   .work-of-art-card-infos {
-    width: 400px;
+    width: 300px;
     position: absolute;
     flex-direction: column;
     text-align: left;
@@ -37,6 +36,7 @@
     }
 
     p {
+      text-align: justify;
       margin-bottom: 0;
     }
 
@@ -46,8 +46,8 @@
   }
 
   img {
-    max-width: 400px;
-    max-height: 500px;
+    width: 300px;
+    max-height: 400px;
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
   }
