@@ -1,6 +1,6 @@
 class ToDosController < ApplicationController
   before_action :set_to_do, only: [:edit, :update, :destroy]
-  before_action :set_collab, only: [:new, :create, :destroy]
+  before_action :set_collab, only: [:new, :create]
 
   def new
     @to_do = ToDo.new
@@ -25,7 +25,7 @@ class ToDosController < ApplicationController
 
   def destroy
     @to_do.destroy
-    redirect_to collab_path(@collab)
+    redirect_to collab_path(@to_do.collab)
   end
 
   private
