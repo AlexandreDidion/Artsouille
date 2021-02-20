@@ -16,6 +16,10 @@
       font-size: 18px;
       margin-bottom: 0;
     }
+
+    span {
+      color: red;
+    }
   }
 
   .links {
@@ -33,4 +37,9 @@
       padding: 0px 10px;
     }
   }
+}
+
+.text-footer span:hover {
+  color: #fa0101;
+  font-size: 28px;
 }
