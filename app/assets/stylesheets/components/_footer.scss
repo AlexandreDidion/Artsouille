@@ -24,7 +24,7 @@
 
    .links a {
     text-decoration: none;
-    color: black;
+    color: #1a1c20;
   }
 
   .links ul li {
@@ -35,14 +35,13 @@
     text-align: center;
     cursor: pointer;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid #1a1c20;
     float: left;
     transition: all 0.5s ease;
   }
 
-  .links ul li .fa {
-    color: black;
-    margin-top: 20px;
+  .links ul li .fab {
+    color: #1a1c20;
     transition: all 0.5s ease;
   }
 
@@ -83,14 +82,14 @@
   }
 
   .links ul li:hover.github {
-    border: 2px solid black;
-    box-shadow: 0 0 15px black;
+    border: 2px solid #161C23;
+    box-shadow: 0 0 15px #161C23;
     transition: all 0.5s ease;
   }
 
-  .links ul li:hover.fa-github-square {
-    color: black;
-    text-shadow: 0 0 15px black;
+  .links ul li:hover .fa-github-square {
+    color: #161C23;
+    text-shadow: 0 0 15px #161C23;
     transition: all 0.5s ease;
   }
 
@@ -99,12 +98,12 @@
     position: absolute;
     bottom: 0;
     height: 60px;
-    background: black;
+    background: #1a1c20;
     width: 100%;
 
     p {
       margin: 8px 0;
-      color: white;
+      color: #f4f4f4;
       font-size: 14px;
       word-spacing: 2px;
     }
