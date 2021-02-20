@@ -30,8 +30,8 @@
           <hr>
           <p>My collabs :</p>
           <ul>
-            <% @user.collabs.each do |collab|%>
-              <li> <%= link_to collab.name, collab_path(collab) %> </li>
+            <% @user.user_collab_relationships.where(status: 'accepted').each do |usercollab|%>
+              <li> <%= link_to usercollab.collab.name, collab_path(usercollab.collab) %> </li>
             <% end %>
           <ul>
           <hr>
