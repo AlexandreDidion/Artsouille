@@ -30,7 +30,7 @@ class UserCollabRelationshipsController < ApplicationController
     if @user_collab_relationship.user_id == current_user.id
       redirect_to collabs_path
     else
-    redirect_to collab_path(@user_collab_relationship.collab_id)
+      redirect_to collab_path(@user_collab_relationship.collab_id)
     end
   end
 
