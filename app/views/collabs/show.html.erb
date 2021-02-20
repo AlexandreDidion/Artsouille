@@ -24,13 +24,13 @@
     <div class="collab-accepted-users">
       <div class="collab-card-members-todo">
         <div class="collab-card-info">
-          <h3><%= @collab.name %></h3>
-
-          <%= link_to "Delete this collab", collab_path(@collab), method: :delete, data: { confirm: "Are you sure?", disable_with: "Processing..." }, class: "btn btn-outline-danger" %>
-
-
-          <%= link_to 'Edit', edit_collab_path(@collab), class: "btn btn-outline-primary" %>
-
+          <div class="collab-name-button">
+            <h3><%= @collab.name %></h3>
+            <div class="collab-edit-delete-btn">
+              <%= link_to 'Edit collab', edit_collab_path(@collab), class: "btn btn-outline-primary" %>
+              <%= link_to "Delete collab", collab_path(@collab), method: :delete, data: { confirm: "Are you sure?", disable_with: "Processing..." }, class: "btn btn-outline-danger" %>
+            </div>
+          </div>
           <hr>
           <h4><%= @collab.description %></h4>
           <hr>
@@ -50,7 +50,10 @@
 
         <div class="card-to-do">
           <% @collab.to_dos.each do |to_do| %>
-            <h3><%= to_do.title %>  <%= link_to 'Destroy Table', to_do_path(to_do),  method: :delete, data: {confirm: 'Destroy the table?'}, class: "btn btn-outline-primary" %></h3>
+          <div class="card-to-do-title-button">
+            <h3><%= to_do.title %></h3>
+              <%= link_to 'Delete table', to_do_path(to_do),  method: :delete, data: {confirm: 'Destroy the table?'}, class: "btn btn-outline-danger" %>
+          </div>
             <ul>
               <% to_do.to_do_items.each do |item| %>
                 <li> <h4> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,

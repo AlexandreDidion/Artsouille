@@ -2,12 +2,26 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   width: 400px;
+  padding: 6px 12px;
 
   h3 {
-    margin: 8px;
+    margin-bottom: 0;
   }
-
   ul {
     margin-bottom: 0;
+  }
+
+  .card-to-do-title-button {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+
+    .btn-outline-danger {
+      margin-bottom: 0;
+      width: 30%;
+      padding: 4px 10px;
+    }
   }
 }
