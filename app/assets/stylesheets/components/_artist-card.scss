@@ -3,7 +3,11 @@
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  flex-basis: 33.333333%;
+
+  .artist-card {
+    height: auto;
+    width: 400px;
+  }
 
   .artist-card .artist-card-infos {
     display: flex;
@@ -34,7 +38,7 @@
 
   img {
     max-width: 400px;
-    max-height: 600px;
+    max-height: 500px;
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
   }
