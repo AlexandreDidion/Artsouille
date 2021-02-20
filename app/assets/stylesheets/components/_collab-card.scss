@@ -71,6 +71,37 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     width: 400px;
 
+    .collab-name-button {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 8px;
+
+      h3 {
+        margin-bottom: 0;
+      }
+
+      .collab-edit-delete-btn {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+
+
+        .btn-outline-danger {
+          width: 47%;
+          padding: 4px 10px;
+          margin-bottom: 0;
+        }
+
+        .btn-outline-primary {
+          width: 47%;
+          padding: 4px 10px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
     .collab-members {
       display: flex;
       justify-content: space-between;
