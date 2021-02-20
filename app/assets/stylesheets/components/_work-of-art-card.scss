@@ -5,6 +5,11 @@
   flex-wrap: wrap;
   flex-basis: 33.333333%;
 
+  .work-of-art-card {
+    height: auto;
+    width: 400px;
+  }
+
   .work-of-art-card .work-of-art-card-infos {
     display: flex;
     position: relative;
@@ -42,7 +47,7 @@
 
   img {
     max-width: 400px;
-    max-height: 600px;
+    max-height: 500px;
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
   }
