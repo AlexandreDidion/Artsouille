@@ -5,7 +5,7 @@ class CollabsController < ApplicationController
     if params[:my_collabs]
       @collabs = Collab.joins(:user_collab_relationships).where(user_collab_relationships: { user: current_user, status: [1, 2] })
     else
-      @collabs = Collab.joins(:user_collab_relationships).where.not(id: current_user.user_collab_relationships.pluck(:collab_id))
+      @collabs = Collab.all
     end
   end
 
