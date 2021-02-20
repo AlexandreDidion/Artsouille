@@ -23,9 +23,9 @@
     <% @collabs.each do |collab| %>
       <div class="collab-card">
         <% if collab.photo.attached? %>
-          <%= cl_image_tag collab.photo.key, crop: :fill %>
+          <%= link_to image_tag(collab.photo), collab_path(collab.id), crop: :fill %>
         <% else %>
-          <%= image_tag('artist_2.png') %>
+          <%= link_to image_tag('artist_2.png'), collab_path(collab.id) %>
         <% end %>
 
         <div class="collab-card-infos">
