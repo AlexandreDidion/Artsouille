@@ -1,5 +1,12 @@
 <div class="<%= page_background_class %>">
   <br>
+  <div class="btn-arrow-left">
+  <%= link_to work_of_arts_path do %>
+    <i> &#10229; Back to Artworks</i>
+  <% end %>
+  </div>
+  <br>
+  <br>
   <div class="container-work-of-art-cards">
     <% @favorite_work_of_arts.each do |art| %>
     <div class="work-of-art-card">
