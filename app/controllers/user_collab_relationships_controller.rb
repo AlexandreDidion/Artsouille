@@ -24,9 +24,14 @@ class UserCollabRelationshipsController < ApplicationController
   end
 
   def destroy
-    @users_collab_relationship = UserCollabRelationship.find(params[:id])
-    @users_collab_relationship.destroy
-    redirect_to collab_path(@users_collab_relationship.collab)
+    @user_collab_relationship = UserCollabRelationship.find(params[:id])
+    @user_collab_relationship.destroy
+
+    if @user_collab_relationship.user_id == current_user.id
+      redirect_to collabs_path
+    else
+    redirect_to collab_path(@user_collab_relationship.collab_id)
+    end
   end
 
   def update
