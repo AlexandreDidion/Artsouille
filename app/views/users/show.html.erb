@@ -28,6 +28,13 @@
           <p>Biography</p>
           <p><%= @user.description  %></p>
           <hr>
+          <p>My collabs :</p>
+          <ul>
+            <% @user.collabs.each do |collab|%>
+              <li> <%= link_to collab.name, collab_path(collab) %> </li>
+            <% end %>
+          <ul>
+          <hr>
           <h4><%= link_to 'See my exhibitions', exhibitions_path(query: @user.id) %></h4>
           <br>
         </div>
