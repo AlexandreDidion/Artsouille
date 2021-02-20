@@ -20,6 +20,14 @@
             <% end %>
           </div>
           <% end %>
+          
+          <% if current_user == art.user %>
+            <div class="btn-work-of-art">
+              <%= link_to "Edit", edit_work_of_art_path(art), class: "btn btn-outline-primary" %>
+              <%= link_to "Delete", work_of_art_path(art), data: { confirm: "Are you sure?" }, :method => :delete, class: "btn btn-outline-warning" %>
+            </div>
+          <% end %>
+          
           <p>by <u> <%= link_to art.user.username, user_path(art.user) %> </u></p>
         </div>
         <br>
