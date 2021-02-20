@@ -61,8 +61,8 @@
 
       <div class="container-btn-collab">
         <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab), class: "btn btn-outline-primary" %>
-        <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition), class: "btn btn-outline-primary" %>
-        <%= link_to "Add a brainstorming", new_collab_to_do_path(@collab), class: "btn btn-outline-primary" %>
+        <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition), class: "btn btn-outline-primary", data: { toggle: 'tooltip', placement: 'top', title: 'Show the results of your collaboration' }  %>
+        <%= link_to "Add a brainstorming", new_collab_to_do_path(@collab), class: "btn btn-outline-primary", data: { toggle: 'tooltip', placement: 'top', title: 'Share a list of ideas' }  %>
       </div>
     </div>
 
