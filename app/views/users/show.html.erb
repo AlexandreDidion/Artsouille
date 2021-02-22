@@ -27,15 +27,15 @@
             <h4>Undefined</h4>
           <% end %>
           <hr>
-          <p><%= @user.city  %>, <%= @user.country  %></p>
+          <h4><%= @user.city  %>, <%= @user.country  %></h4>
           <hr>
-          <p>About</p>
+          <h4>About</h4>
           <p> <%= @user.description  %> </p>
           <hr>
-          <p>My collabs</p>
+          <h4>My collabs</h4>
           <ul>
             <% @user.user_collab_relationships.where(status: 'accepted').each do |usercollab|%>
-              <li><h4> <%= link_to usercollab.collab.name, collab_path(usercollab.collab) %> </h4></li>
+              <li><p> <%= link_to usercollab.collab.name, collab_path(usercollab.collab) %> </p></li>
             <% end %>
           <ul>
           <hr>
