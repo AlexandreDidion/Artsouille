@@ -7,12 +7,20 @@
         <h1>You don't collaborate with any artist for the moment...</h1>
       </div>
     <% else %>
+    <br>
+    <br>
+    <div class="collab-active-and-requests">
+      <h2>Active collabs</h2>
+    </div>
+    <br>
+    <br>
+    <br>
       <% @user_collab_relationships.each do |user_collab_relationship| %>
         <div class= "collab-list-infos">
           <% if user_collab_relationship.accepted? %>
             <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
             <h4> <%= user_collab_relationship.collab.description %> </h4>
-            <p class="founder">by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
+            <p class="founder">Created by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
             <div class="btn-collab-view">
               <%= link_to "View this collab", collab_path(user_collab_relationship.collab_id), class: 'btn btn-outline-primary' %>
             </div>
@@ -20,18 +28,25 @@
           <% elsif user_collab_relationship.pending? %>
             <h3> <%= user_collab_relationship.collab.name %> </h3>
             <h4> <%= user_collab_relationship.collab.description %> </h4>
-            <p class="founder">by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
+            <p class="founder">Created by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
             <p class="request-not-accepted-yet">Your request has not been accepted yet!</p>
           <% end %>
         </div>
       <hr class="divider">
       <% end %>
-
+      <br>
+      <br>
+      <div class="collab-active-and-requests">
+        <h2>Received requests</h2>
+      </div>
+      <br>
+      <br>
+      <br>
       <% @collabs_to_accept.each do |cr| %>
         <div class="collab-request-infos">
           <h3> <%= link_to cr.collab.name, collab_path(cr.collab_id) %> </h3>
           <h4> <%= cr.collab.description %> </h4>
-          <p class="founder">by <u><%= link_to cr.user.username, user_path(cr.user) %></u> </p>
+          <p class="founder">Sent by <u><%= link_to cr.user.username, user_path(cr.user) %></u> </p>
           <div class="btn-collab-validation">
             <%= link_to "Accept this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn btn-outline-success btn-accept' %>
             <%= link_to "Reject this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}), method: :patch, class: 'btn btn-outline-warning btn-reject' %>
