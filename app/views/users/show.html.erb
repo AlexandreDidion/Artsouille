@@ -65,7 +65,7 @@
 
   <div class="container-work-of-art-cards">
     <% if @user.work_of_arts.empty? %>
-      <h4>You haven't add any artwork yet. Click <%= link_to 'here', new_work_of_art_path(@work_of_art) %> to do so.</h4>
+      <h4>You haven't added any artwork yet. Click <%= link_to 'here', new_work_of_art_path(@work_of_art) %> to do so.</h4>
     <% end %>
     <% @user.work_of_arts.each do |art| %>
       <div class="work-of-art-card">
