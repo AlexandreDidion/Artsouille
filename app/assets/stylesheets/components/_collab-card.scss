@@ -18,10 +18,10 @@
 }
 
 .container-collab-cards {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 
   img {
     width: 300px;
@@ -29,13 +29,11 @@
   }
 
   .collab-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     height: auto;
     width: 300px;
-  }
-
-  .collab-card .collab-card-infos {
-    display: flex;
-    position: relative;
   }
 
   .collab-card-infos {
