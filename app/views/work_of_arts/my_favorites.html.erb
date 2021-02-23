@@ -7,10 +7,15 @@
   </div>
   <br>
   <br>
+  <% if @favorite_work_of_arts.empty? %>
+  <div class="no-favourite">
+    <h2> It seems there is nothing yet!
+      <br>
+    We are sure you'll find something to like from <%= link_to 'those artworks', work_of_arts_path %>.
+    </h2>
+  </div>
+  <% end %>
   <div class="container-work-of-art-cards">
-    <% if @favorite_work_of_arts.empty? %>
-      <h2> It seems there is nothing yet! We are sure you'll find something to like from <%= link_to 'those artworks', work_of_arts_path %></h2>
-    <% end %>
     <% @favorite_work_of_arts.each do |art| %>
     <div class="work-of-art-card">
       <% if art.photo.attached? %>
