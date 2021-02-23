@@ -33,9 +33,9 @@
           <p> <%= @user.description  %> </p>
           <hr>
           <h4>My collabs</h4>
-          <ul>
+          <ul class="collab-tags" >
             <% @user.user_collab_relationships.where(status: 'accepted').each do |usercollab|%>
-              <li><p> <%= link_to usercollab.collab.name, collab_path(usercollab.collab) %> </p></li>
+              <li><p> <%= link_to usercollab.collab.name, collab_path(usercollab.collab), class: "collab-tag" %> </p></li>
             <% end %>
           <ul>
           <hr>
