@@ -35,7 +35,7 @@ class WorkOfArtsController < ApplicationController
 
   def destroy
     @work_of_art.destroy
-    redirect_to work_of_arts_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
+    redirect_to request.referrer, notice: 'Your artwork has been deleted successfully.'
   end
 
   def toggle_favorite
