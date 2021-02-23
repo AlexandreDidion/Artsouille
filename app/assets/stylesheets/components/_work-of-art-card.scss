@@ -76,21 +76,20 @@
   }
 }
 
-  img {
-    width: 300px;
-    max-height: 400px;
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
-  }
+ img {
+   width: 300px;
+   max-height: 400px;
+   -webkit-transition: .2s ease-in-out;
+   transition: .2s ease-in-out;
+ }
 
-  img:hover {
-    -webkit-filter: brightness(60%);
-    filter: brightness(60%);
-    -webkit-transition: .2s ease-in-out;
-    transition: .2s ease-in-out;
-  }
+ img:hover {
+   -webkit-filter: brightness(60%);
+   filter: brightness(60%);
+   -webkit-transition: .2s ease-in-out;
+   transition: .2s ease-in-out;
+ }
 
-  #image-woa-show {
-    pointer-events: none;
-  }
-}
+ #image-woa-show {
+   pointer-events: none;
+ }
