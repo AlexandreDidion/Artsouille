@@ -11,6 +11,8 @@ class CollabsController < ApplicationController
 
   def show
     @accepted_collab = @collab.user_collab_relationships.where(status: "accepted")
+    pending_collab = @collab.user_collab_relationships.where(status: "pending")
+    @pending_users = pending_collab.any? { |collab| collab.user == current_user }
     @accepted_users = @accepted_collab.any? { |collab| collab.user == current_user }
   end
 
