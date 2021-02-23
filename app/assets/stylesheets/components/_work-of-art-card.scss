@@ -10,6 +10,7 @@
   }
 
   .work-of-art-card-infos {
+    //align-self: center;
     width: 400px;
     position: relative;
 
@@ -18,12 +19,15 @@
     }
 
     h3 {
-      margin-top: 8px;
       margin-bottom: 0;
     }
 
     h3 a {
       color: black;
+    }
+    
+    h4 {
+      margin-bottom: 0;
     }
 
     p {
