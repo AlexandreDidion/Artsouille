@@ -90,13 +90,11 @@
 
   <% else %>
 
-  <div class="container-pending">
-    <div class="collab-pending-users">
-      <h2>You can't see more information because you're not a member.</h2>
-      <br>
-      <div class="btn-collab-card">
-        <%= link_to "Ask to join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: @collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
-      </div>
+  <div class="collab-pending-users">
+    <h2>You can't see more information because you're not a member.</h2>
+    <br>
+    <div class="btn-collab-card">
+      <%= link_to "Ask to join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: @collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
     </div>
   </div>
 
