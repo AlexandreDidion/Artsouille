@@ -207,7 +207,8 @@
   text-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   padding: 10px 25px;
   font-family: "Gravity-Bold";
-  font-size: 20px;
+  font-size: 24px;
+  letter-spacing: 0.075em;
   background: transparent;
   outline: none !important;
   cursor: pointer;
@@ -218,7 +219,6 @@
 
 .btn-apply {
   width: 200px;
-  font-size: 24px;
   height: 60px;
   line-height: 60px;
   padding: 0;
