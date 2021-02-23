@@ -202,3 +202,86 @@
     width: 50%;
   }
 }
+
+.homepage-btn {
+  text-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  padding: 10px 25px;
+  font-family: "Gravity-Bold";
+  font-size: 20px;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-apply {
+  width: 200px;
+  font-size: 24px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  border: none;
+
+  a {
+    text-decoration: none;
+    color: #f4f4f4;
+  }
+}
+
+.btn-apply span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-apply:before,
+.btn-apply:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-apply:before {
+  height: 50%;
+  width: 2px;
+}
+.btn-apply:after {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  width: 20%;
+  height: 2px;
+}
+.btn-apply:hover:before {
+  height: 100%;
+}
+.btn-apply:hover:after {
+  width: 100%;
+}
+.btn-apply span:before,
+.btn-apply span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-apply span:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  width: 2px;
+  height: 50%;
+}
+.btn-apply span:after {
+
+  width: 20%;
+  height: 2px;
+}
+.btn-apply span:hover:before {
+  height: 100%;
+}
+.btn-apply span:hover:after {
+  width: 100%;
+}

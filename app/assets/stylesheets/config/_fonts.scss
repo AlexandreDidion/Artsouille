@@ -16,11 +16,6 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 // $my-font: "Font Name";
 
 @font-face {
-  font-family: 'Lena';
-  src: asset-url('Lena.ttf');
-}
-
-@font-face {
   font-family: 'Novar';
   src: asset-url('Novar.ttf');
 }
@@ -38,4 +33,9 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 @font-face {
   font-family: 'FuturaPTMedium';
   src: asset-url('FuturaPTMedium.otf');
+}
+
+@font-face {
+  font-family: 'Gravity-Bold';
+  src: asset-url('Gravity-Bold.otf');
 }
