@@ -1,3 +1,25 @@
+#container-woa-cards-show {
+ display: block;
+ margin: auto;
+
+ #woa-card-show {
+  width: 400px;
+  display:block;
+  margin: auto;
+
+  .work-of-art-card-infos {
+    width: 400px;
+  }
+ }
+}
+
+#favorite-heart-show a {
+  right: 15px;
+  top: -40px;
+  color: black;
+  position: absolute;
+}
+
 .container-work-of-art-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -10,6 +32,17 @@
     flex-direction: column;
     height: auto;
     width: 300px;
+
+    .artwork-show img {
+      width: 400px;
+      max-height: 533px;
+    }
+  }
+
+  .work-of-art-card .work-of-art-card-infos {
+    display: flex;
+    position: relative;
+  }
 
   .work-of-art-card-infos {
     display: flex;

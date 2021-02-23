@@ -56,12 +56,19 @@
           </div>
             <ul>
               <% to_do.to_do_items.each do |item| %>
-                <li> <h4> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
+                <li> <h4 id="to-do-item-<%= item.id %>"> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
                 to_do_item_path(item),
                 method: :delete %> </h4></li>
               <% end %>
-              <li> <%= link_to "<i class='fas fa-plus-circle'></i>".html_safe, new_to_do_to_do_item_path(to_do) %></li>
             </ul>
+            <%= simple_form_for [to_do, @to_do_item], remote: true do |f| %>
+              <div class="form-inputs">
+                <%= f.input :content, label: 'Next idea:' %>
+              </div>
+              <div class="form-actions">
+                <%= f.button :submit, "Add this idea", class: "btn btn-outline-primary" %>
+              </div>
+            <% end %>
           <% end %>
         </div>
 
@@ -76,10 +83,9 @@
 
   <% else %>
 
-  <div class="container-pending">
-    <div class="collab-pending-users">
-      <h2>Your request is pending !</h2>
-    </div>
+  <div class="collab-pending-users">
+    <br>
+    <h2>Your request is pending!</h2>
   </div>
 
   <% end %>

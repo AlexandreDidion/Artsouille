@@ -10,6 +10,7 @@ class CollabsController < ApplicationController
   end
 
   def show
+    @to_do_item = ToDoItem.new
     @accepted_collab = @collab.user_collab_relationships.where(status: "accepted")
     @accepted_users = @accepted_collab.any? { |collab| collab.user == current_user }
   end

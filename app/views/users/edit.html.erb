@@ -18,9 +18,14 @@
                       placeholder: "Painter",
                       required: false %>
           <%= f.input :description,
-                      label: "Biography",
+                      label: "About",
                       placeholder: "Culpa aspernatur maxime id aperiam est sit ad minus vel.",
                       required: false %>
+          <%= f.input :country,
+                      priority: ["BE", "FR", "GB"],
+                      prompt: "Select a country",
+                      required: false,
+                      input_html: { autocomplete: "Select country" } %>
           <%= f.input :city,
                       placeholder: "Vienna",
                       required: false %>

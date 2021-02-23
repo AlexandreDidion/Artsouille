@@ -14,12 +14,8 @@
     <% @exhibitions.each do |exhibition| %>
     <div class="exhibition-list-infos">
       <h3><%= link_to exhibition.name, exhibition_path(exhibition) %></h3>
-      <h4>From <%= exhibition.start_date.strftime('%d %B %Y') %>
-        <br>
-        to <%= exhibition.end_date.strftime('%d %B %Y') %></h4>
-      <h4><%= exhibition.address %> -
-        <br>
-        <%= exhibition.city  %>, <%= exhibition.country  %></h4>
+      <h4><%= exhibition.description %></h4>
+      <h4 id="category"><%= exhibition.category %></h4>
       <div class="btn-exhibition-info">
         <%= link_to "Get info", exhibition_path(exhibition), class: "btn btn-outline-primary" %>
       </div>
