@@ -9,7 +9,7 @@ class ToDoItemsController < ApplicationController
     @to_do_item = ToDoItem.new(to_do_items_params)
     @to_do_item.to_do = @to_do
     if @to_do_item.save
-      redirect_to collab_path(@to_do.collab)
+      redirect_to collab_path(@to_do.collab, anchor: "to-do-item-#{@to_do_item.id}")
     else
       render 'new'
     end
