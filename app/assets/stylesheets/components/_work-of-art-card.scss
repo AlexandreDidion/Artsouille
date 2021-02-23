@@ -21,12 +21,15 @@
 }
 
 .container-work-of-art-cards {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 
   .work-of-art-card {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     height: auto;
     width: 300px;
 
@@ -42,8 +45,8 @@
   }
 
   .work-of-art-card-infos {
+    display: flex;
     width: 300px;
-    position: absolute;
     flex-direction: column;
     text-align: left;
     position: relative;
@@ -71,6 +74,7 @@
       color: black;
     }
   }
+}
 
   img {
     width: 300px;
