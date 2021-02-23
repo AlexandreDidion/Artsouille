@@ -3,8 +3,9 @@
 <br>
   <div class="container">
     <% if @user_collab_relationships.empty? %>
-      <div class="page-info">
-        <h1>You don't collaborate with any artist for the moment...</h1>
+      <div class="page-info-user-collab">
+        <br>
+        <h2>You don't collaborate with any artist for the moment...</h2>
       </div>
     <% else %>
       <% @user_collab_relationships.each do |user_collab_relationship| %>
