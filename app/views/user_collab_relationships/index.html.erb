@@ -37,13 +37,16 @@
       <% end %>
       <br>
       <br>
+    <div class="collab-active-and-requests">
+      <h2>Received requests</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+      <% if @collabs_to_accept.empty? %>
+        <h3 style="text-align: center;"> You haven't received any request. </h3>
+      <% end %>
       <% @collabs_to_accept.each do |cr| %>
-      <div class="collab-active-and-requests">
-        <h2>Received requests</h2>
-      </div>
-      <br>
-      <br>
-      <br>
         <div class="collab-request-infos">
           <h3> <%= link_to cr.collab.name, collab_path(cr.collab_id) %> </h3>
           <h4> <%= cr.collab.description %> </h4>
