@@ -65,12 +65,19 @@
   }
 }
 
-.container-collab-image img {
-  display: block;
-  margin: auto;
-  width: 400px;
-  max-height: 533px;
-  pointer-events: none;
+.container-collab-image {
+
+  img {
+    display: block;
+    margin: auto;
+    width: 400px;
+    max-height: 533px;
+    pointer-events: none;
+  }
+
+  h3, h4 {
+    text-align: center;
+  }
 }
 
 .collab-card-members-todo {
@@ -84,34 +91,22 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     width: 400px;
 
-    .collab-name-button {
+    .collab-edit-delete-btn {
       display: flex;
       justify-content: space-between;
-      flex-direction: row;
-      align-items: center;
       margin-top: 8px;
 
-      h3 {
+
+      .btn-outline-danger {
+        width: 40%;
+        padding: 4px 10px;
         margin-bottom: 0;
       }
 
-      .collab-edit-delete-btn {
-        display: flex;
-        justify-content: space-between;
-        width: 350px;
-
-
-        .btn-outline-danger {
-          width: 49%;
-          padding: 4px 10px;
-          margin-bottom: 0;
-        }
-
-        .btn-outline-primary {
-          width: 49%;
-          padding: 4px 10px;
-          margin-bottom: 0;
-        }
+      .btn-outline-primary {
+        width: 40%;
+        padding: 4px 10px;
+        margin-bottom: 0;
       }
     }
 

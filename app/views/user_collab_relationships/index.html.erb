@@ -27,7 +27,7 @@
             </div>
 
           <% elsif user_collab_relationship.pending? %>
-            <h3> <%= user_collab_relationship.collab.name %> </h3>
+            <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
             <h4> <%= user_collab_relationship.collab.description %> </h4>
             <p class="founder">Created by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
             <p class="request-not-accepted-yet">Your request has not been accepted yet!</p>
