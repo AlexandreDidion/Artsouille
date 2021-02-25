@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Artsouille</title>
+    <title>Artsouille - Collab and Share</title>
+    <meta name="description" content="Platform to meet new artists, create collectives and share artworks">
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Artsouille - Collab and Share" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="www.artsouille.com" />
+    <meta property="og:image" content="<%= image_tag('meta_tag_facebook.png') %>" />
+    <meta property="og:description" content="Platform to meet new artists, create collectives and share artworks" />
+    <meta property="og:site_name" content="Artsouille" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon_2.png'), :rel => 'icon', :type =>  'image/png' %>
@@ -14,7 +22,7 @@
 
   <body>
     <div class="<%= page_background_class %>" id="page-container">
-      <div id="content-wrap">
+      <div class="no-padding-top <%= 'content-wrap' unless params[:action] == 'home' && params[:controller] == 'pages' %>">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
         <%= yield %>

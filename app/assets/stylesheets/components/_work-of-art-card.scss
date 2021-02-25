@@ -1,23 +1,43 @@
-#container-woa-cards-show {
- display: block;
- margin: auto;
+.woa-card-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
- #woa-card-show {
-  width: 400px;
-  display:block;
-  margin: auto;
+  .artwork-show img {
+    width: 400px;
+    max-height: 533px;
+    pointer-events: none;
+  }
 
   .work-of-art-card-infos {
     width: 400px;
-  }
- }
-}
+    position: relative;
 
-#favorite-heart-show a {
-  right: 15px;
-  top: -40px;
-  color: black;
-  position: absolute;
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    h3 a {
+      color: black;
+    }
+    
+    h4 {
+      margin-bottom: 0;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 0;
+    }
+
+    p a {
+      color: black;
+    }
+  }
 }
 
 .container-work-of-art-cards {
@@ -32,11 +52,6 @@
     flex-direction: column;
     height: auto;
     width: 300px;
-
-    .artwork-show img {
-      width: 400px;
-      max-height: 533px;
-    }
   }
 
   .work-of-art-card .work-of-art-card-infos {
@@ -76,20 +91,41 @@
   }
 }
 
- img {
-   width: 300px;
-   max-height: 400px;
-   -webkit-transition: .2s ease-in-out;
-   transition: .2s ease-in-out;
+img {
+ width: 300px;
+ max-height: 400px;
+ -webkit-transition: .2s ease-in-out;
+ transition: .2s ease-in-out;
  }
 
- img:hover {
-   -webkit-filter: brightness(60%);
-   filter: brightness(60%);
-   -webkit-transition: .2s ease-in-out;
-   transition: .2s ease-in-out;
+img:hover {
+ -webkit-filter: brightness(60%);
+ filter: brightness(60%);
+ -webkit-transition: .2s ease-in-out;
+ transition: .2s ease-in-out;
  }
 
- #image-woa-show {
+#image-woa-show {
    pointer-events: none;
  }
+
+.no-artwork {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  a {
+    padding: 0 5px;
+  }
+}
+
+.no-favourite {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  h2 {
+    margin: auto;
+  }
+}
+
