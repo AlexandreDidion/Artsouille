@@ -2,14 +2,18 @@
   <div class="container">
   <br>
   <br>
-<!--     <div class="exhibition-headers">
-      <h2><%= link_to "Past", "#" %></h2>
-      <div class="vertical-lign" style="border-left:1px solid black;height:40px"></div>
-      <h2><%= link_to "Current", "#" %></h2>
-      <div class="vertical-lign" style="border-left:1px solid black;height:40px"></div>
-      <h2><%= link_to "Future", "#" %></h2>
-    </div> -->
-    <br>
+    <div class="exhibition-headers">
+      <p class="name-tab">Name</p>
+
+      <p class="description-tab">Description</p>
+
+      <p class="type-tab">Type</p>
+
+      <p class="location-tab">Location</p>
+
+      <p class="info-tab"><span></span></p>
+    </div>
+    <hr class="exhibition-headers-divider">
     <br>
     <% @exhibitions.each do |exhibition| %>
     <div class="exhibition-list-infos">
