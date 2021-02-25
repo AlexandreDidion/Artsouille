@@ -138,7 +138,6 @@
   }
 }
 
-
 .collab-divider {
   border-color: black;
   margin: 0 75px;
@@ -211,13 +210,12 @@
       display: flex;
       justify-content: center;
 
-
       .btn-outline-primary {
         margin-bottom: 0;
       }
 
-      .btn-view-this-collab {
-        width: 65%;
+      .btn-outline-success {
+        margin-bottom: 0;
       }
     }
   }
