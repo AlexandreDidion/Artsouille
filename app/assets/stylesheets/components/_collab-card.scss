@@ -206,8 +206,19 @@
       text-align: center;
     }
 
-    .btn-outline-primary {
-      margin-bottom: 0;
+    .btn-collab-card {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+
+
+      .btn-outline-primary {
+        margin-bottom: 0;
+      }
+
+      .btn-view-this-collab {
+        width: 65%;
+      }
     }
   }
 
