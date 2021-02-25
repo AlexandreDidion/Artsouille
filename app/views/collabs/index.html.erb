@@ -23,17 +23,25 @@
   <br>
   <div class="container">
     <% @collabs.each do |collab| %>
-    <% unless collab.users.include?(current_user) %>
     <div class="collab-list-infos">
-      <h3><%= link_to collab.name, collab_path(collab) %></h3>
-      <h4><%= collab.description %></h4>
-      <p class="founder"> Created by <u><%= collab.users.first.username %></u> </p>
+    <% if collab.users.include? current_user %>
+     <h3><%= link_to collab.name, collab_path(collab.id) %></h3>
+      <% else %>
+       <h3><%= collab.name %></h3>
+    <% end %>
+    <h4><%= collab.description %></h4>
+    <% unless collab.users.include? current_user  %>
       <div class="btn-collab-card">
         <%= link_to "Ask to join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
       </div>
+    <% end %>
+    <% if collab.users.include? current_user %>
+      <div class="btn-collab-card">
+        <%= link_to "View this collab", collab_path(collab), class: 'btn btn-outline-primary btn-view-this-collab' %>
+      </div>
+    <% end %>
     </div>
     <hr class="divider">
-    <% end %>
   <% end %>
   </div>
 </div>

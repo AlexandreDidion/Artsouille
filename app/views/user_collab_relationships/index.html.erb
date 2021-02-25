@@ -16,24 +16,25 @@
     <br>
     <br>
     <br>
+
       <% @user_collab_relationships.each do |user_collab_relationship| %>
-        <div class= "collab-list-infos">
           <% if user_collab_relationship.accepted? %>
+          <div class= "collab-list-infos">
             <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
             <h4> <%= user_collab_relationship.collab.description %> </h4>
-            <p class="founder">Created by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
             <div class="btn-collab-view">
               <%= link_to "View this collab", collab_path(user_collab_relationship.collab_id), class: 'btn btn-outline-primary' %>
             </div>
-
+          </div>
+          <hr class="divider">
           <% elsif user_collab_relationship.pending? %>
+          <div class= "collab-list-infos">
             <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
             <h4> <%= user_collab_relationship.collab.description %> </h4>
-            <p class="founder">Created by <u><%= link_to user_collab_relationship.user.username, user_path(user_collab_relationship.user) %></u> </p>
             <p class="request-not-accepted-yet">Your request has not been accepted yet!</p>
+          </div>
+          <hr class="divider">
           <% end %>
-        </div>
-      <hr class="divider">
       <% end %>
       <br>
       <br>
