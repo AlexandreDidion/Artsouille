@@ -13,6 +13,9 @@
     <% else %>
     <%= image_tag('artist_2.png') %>
     <% end %>
+    <br>
+    <h3><%= @collab.name %></h3>
+    <h4><%= @collab.description %></h4>
   </div>
 
   <br>
@@ -24,18 +27,12 @@
     <div class="collab-accepted-users">
       <div class="collab-card-members-todo">
         <div class="collab-card-info">
-          <div class="collab-name-button">
-            <h3><%= @collab.name %></h3>
-            <div class="collab-edit-delete-btn">
-              <%= link_to 'Edit collab', edit_collab_path(@collab), class: "btn btn-outline-primary" %>
-              <%= link_to "Delete collab", collab_path(@collab), method: :delete, data: { confirm: "Are you sure?", disable_with: "Processing..." }, class: "btn btn-outline-danger" %>
-            </div>
+          <div class="collab-edit-delete-btn">
+            <%= link_to 'Edit collab', edit_collab_path(@collab), class: "btn btn-outline-primary" %>
+            <%= link_to "Delete collab", collab_path(@collab), method: :delete, data: { confirm: "Are you sure?", disable_with: "Processing..." }, class: "btn btn-outline-danger" %>
           </div>
           <hr>
-          <h4><%= @collab.description %></h4>
-          <hr>
           <h4 style="margin-bottom:8px"> Members: </h4>
-
           <% @accepted_collab.each do |collab| %>
             <div class="collab-members">
               <p style="margin-bottom:0"> <%= collab.user.username %> </p>
