@@ -34,7 +34,7 @@
             <% else %>
              <h3><%= collab.name %></h3>
           <% end %>
-          <h4><%= collab.description %></h4>
+          <h4><%= collab.description.truncate(50, separator: ' ') unless collab.description.nil?  %></h4>
           <% unless collab.users.include? current_user  %>
             <div class="btn-collab-card">
               <%= link_to "Ask to join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>

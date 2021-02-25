@@ -14,8 +14,9 @@
     <% @exhibitions.each do |exhibition| %>
     <div class="exhibition-list-infos">
       <h3><%= link_to exhibition.name, exhibition_path(exhibition) %></h3>
-      <h4><%= exhibition.description %></h4>
+      <h4><%= exhibition.description.truncate(50, separator: ' ') %></h4>
       <h4 id="category"><%= exhibition.category %></h4>
+      <h4><%= exhibition.city %>, <%= exhibition.country %></h4>
       <div class="btn-exhibition-info">
         <%= link_to "Get info", exhibition_path(exhibition), class: "btn btn-outline-primary" %>
       </div>
