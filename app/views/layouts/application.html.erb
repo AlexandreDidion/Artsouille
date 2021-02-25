@@ -14,7 +14,7 @@
 
   <body>
     <div class="<%= page_background_class %>" id="page-container">
-      <div id="content-wrap">
+      <div class="no-padding-top <%= 'content-wrap' unless params[:action] == 'home' && params[:controller] == 'pages' %>">
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
         <%= yield %>

@@ -19,7 +19,13 @@
   min-height: 100vh;
 }
 
-#content-wrap {
+.no-padding-top {
+  padding-top: 0;
+  padding-bottom: 150px;
+}
+.content-wrap {
   padding-top: 90px;
   padding-bottom: 150px;
 }
+
+

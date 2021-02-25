@@ -1,5 +1,5 @@
-<div class="navbar-container fixed-top <%= page_background_class %>">
-  <hr class="navbar-hr">
+<div class="navbar-container <%= 'fixed-top' unless params[:action] == 'home' && params[:controller] == 'pages' %> <%= page_background_class %>" id="padding-top-navbar-container">
+  <hr class="navbar-hr" id="top-divider">
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
