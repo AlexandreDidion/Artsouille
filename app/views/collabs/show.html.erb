@@ -51,6 +51,7 @@
             <h3><%= to_do.title %></h3>
               <%= link_to 'Delete table', to_do_path(to_do),  method: :delete, data: {confirm: 'Destroy the table?'}, class: "btn btn-outline-danger" %>
           </div>
+          <hr>
             <ul>
               <% to_do.to_do_items.each do |item| %>
                 <li> <h4 id="to-do-item-<%= item.id %>"> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
