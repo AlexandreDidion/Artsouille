@@ -252,12 +252,16 @@
   }
 }
 
-.collab-pending-users h2 {
-  text-align: center;
-  margin-bottom: 0;
-}
 
-.btn-collab-card {
-  margin: auto;
-  width: 15%;
+.collab-pending-users {
+
+  h2 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .btn-collab-card {
+    width: 15%;
+    margin: auto;
+  }
 }
