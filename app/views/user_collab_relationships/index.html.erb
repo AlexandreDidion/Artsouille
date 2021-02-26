@@ -21,7 +21,7 @@
           <% if user_collab_relationship.accepted? %>
           <div class= "collab-list-infos">
             <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
-            <h4> <%= user_collab_relationship.collab.description %> </h4>
+            <h4> <%= user_collab_relationship.collab.description.truncate(50, separator: ' ') unless user_collab_relationship.collab.description.nil? %> </h4>
             <div class="btn-collab-view">
               <%= link_to "View this collab", collab_path(user_collab_relationship.collab_id), class: 'btn btn-outline-primary' %>
             </div>
@@ -30,7 +30,7 @@
           <% elsif user_collab_relationship.pending? %>
           <div class= "collab-list-infos">
             <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
-            <h4> <%= user_collab_relationship.collab.description %> </h4>
+            <h4> <%= user_collab_relationship.collab.description.truncate(50, separator: ' ') unless user_collab_relationship.collab.description.nil? %> </h4>
             <p class="request-not-accepted-yet">Your request has not been accepted yet!</p>
           </div>
           <hr class="divider">
@@ -50,7 +50,7 @@
       <% @collabs_to_accept.each do |cr| %>
         <div class="collab-request-infos">
           <h3> <%= link_to cr.collab.name, collab_path(cr.collab_id) %> </h3>
-          <h4> <%= cr.collab.description %> </h4>
+          <h4> <%= cr.collab.description.truncate(50, separator: ' ') unless cr.collab.description.nil? %> </h4>
           <p class="founder">Sent by <u><%= link_to cr.user.username, user_path(cr.user) %></u> </p>
           <div class="btn-collab-validation">
             <%= link_to "Accept this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn btn-outline-success btn-accept' %>
