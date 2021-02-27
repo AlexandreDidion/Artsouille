@@ -1,8 +1,10 @@
 .banner {
   height: 100vh;
   background-image: url(debashis.jpg);
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
+  display: flex;
+  justify-content: center;
 
   .homepage-title {
     display: flex;
