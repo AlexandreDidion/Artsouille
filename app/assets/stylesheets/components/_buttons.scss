@@ -282,3 +282,72 @@
 .btn-apply span:hover:after {
   width: 100%;
 }
+
+.btn-my-profile {
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  border: none;
+
+  a {
+    text-decoration: none;
+    color: #f4f4f4;
+  }
+}
+
+.btn-my-profile span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-my-profile:before,
+.btn-my-profile:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-my-profile:before {
+  height: 50%;
+  width: 2px;
+}
+.btn-my-profile:after {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  width: 20%;
+  height: 2px;
+}
+.btn-my-profile:hover:before {
+  height: 100%;
+}
+.btn-my-profile:hover:after {
+  width: 100%;
+}
+.btn-my-profile span:before,
+.btn-my-profile span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-my-profile span:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  width: 2px;
+  height: 50%;
+}
+.btn-my-profile span:after {
+
+  width: 20%;
+  height: 2px;
+}
+.btn-my-profile span:hover:before {
+  height: 100%;
+}
+.btn-my-profile span:hover:after {
+  width: 100%;
+}
