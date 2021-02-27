@@ -51,7 +51,7 @@
         <div class="collab-request-infos">
           <h3> <%= link_to cr.collab.name, collab_path(cr.collab_id) %> </h3>
           <h4> <%= cr.collab.description.truncate(50, separator: ' ') unless cr.collab.description.nil? %> </h4>
-          <p class="founder">Sent by <u><%= link_to cr.user.username, user_path(cr.user) %></u> </p>
+          <p>Sent by <u><%= link_to cr.user.username, user_path(cr.user) %></u> </p>
           <div class="btn-collab-validation">
             <%= link_to "Accept this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn btn-outline-success btn-accept' %>
             <%= link_to "Reject this collab", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}), method: :patch, class: 'btn btn-outline-warning btn-reject' %>

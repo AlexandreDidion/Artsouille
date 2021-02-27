@@ -6,20 +6,16 @@
         <%= simple_form_for @user do |f| %>
         <div class="form-inputs">
           <%= f.input :first_name,
-                      placeholder: "Gustave",
                       required: false %>
           <%= f.input :last_name,
-                      placeholder: "Klimt",
                       required: false %>
           <%= f.input :art_type,
                       label: "Category",
                       collection: @user.set_art_types,
                       autofocus: true,
-                      placeholder: "Painter",
                       required: false %>
           <%= f.input :description,
                       label: "About",
-                      placeholder: "Culpa aspernatur maxime id aperiam est sit ad minus vel.",
                       required: false %>
           <%= f.input :country,
                       priority: ["BE", "FR", "GB"],
@@ -27,7 +23,6 @@
                       required: false,
                       input_html: { autocomplete: "Select country" } %>
           <%= f.input :city,
-                      placeholder: "Vienna",
                       required: false %>
           <%= f.input :photo, as: :file %>
         </div>

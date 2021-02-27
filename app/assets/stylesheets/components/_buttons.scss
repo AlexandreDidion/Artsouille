@@ -176,18 +176,16 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  min-width: 300px;
 
   .btn-reject {
-    font-size: 14px;
-    width: 50%;
+    width: 55%;
     margin-bottom: 0;
     margin-top: 8px;
   }
 
   .btn-accept {
-    font-size: 14px;
-    width: 50%;
+    width: 55%;
     margin-bottom: 0;
   }
 }
