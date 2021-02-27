@@ -39,7 +39,7 @@
             <% end %>
           </ul>
           <hr>
-          <h4> <%= link_to 'See my exhibitions', exhibitions_path(query: @user.id) %> </h4>
+          <h4> <%= link_to 'See my exhibitions', exhibitions_path(current_user: @user.id) %> </h4>
           <br>
         </div>
         <% if current_user == @user  %>
