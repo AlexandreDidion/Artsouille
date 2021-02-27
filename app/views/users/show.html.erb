@@ -64,7 +64,7 @@
   <br>
     <% if @user.work_of_arts.empty? && @user == current_user%>
       <h4 class="no-artwork">You haven't added any artwork yet. Click <%= link_to 'here', new_work_of_art_path(@work_of_art) %> to do so.</h4>
-      <% else %>
+      <% elsif @user.work_of_arts.empty? && @user != current_user %>
       <h4 class="no-artwork">This artist doesn't have any artwork yet.</h4>
     <% end %>
     <div class="container-work-of-art-cards">
