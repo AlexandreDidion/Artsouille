@@ -11,10 +11,18 @@
     <h3>Because Art is too important not to share.</h3>
     <br>
     <br>
+    <% if user_signed_in? %>
+    <button class="homepage-btn btn-my-profile">
+      <%= link_to user_path(current_user) do %>
+        <span>MY PROFILE</span>
+      <% end %>
+    </button>
+    <% else %>
     <button class="homepage-btn btn-apply">
       <%= link_to new_user_registration_path do %>
         <span>JOIN US</span>
       <% end %>
     </button>
+    <% end %>
   </div>
 </div>
