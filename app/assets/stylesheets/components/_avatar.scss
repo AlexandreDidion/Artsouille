@@ -3,6 +3,12 @@
   margin-right: 8px;
   border-radius: 50%;
 }
+
+.avatar:hover {
+  transition: none;
+  filter: none;
+}
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
