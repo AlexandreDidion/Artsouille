@@ -4,18 +4,30 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-bottom: 50px;
-  align-items: center;
 
-  a {
-    color: inherit;
-    text-decoration: none;
+  .name-tab {
+    width: 200px;
   }
 
-  h2 {
-    margin-bottom: 0;
+  .description-tab {
+    width: 250px;
+  }
+
+  .info-tab {
+    width: 10%;
+  }
+
+  .type-tab {
     width: 150px;
-    text-align: center;
+  }
+
+  .location-tab {
+    width: 250px;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 20px;
   }
 }
 .exhibition-list-infos {
@@ -31,7 +43,6 @@
   h3 {
     margin-bottom: 0;
     width: 200px;
-    text-justify: center;
 
     a {
       color: inherit;
@@ -42,7 +53,6 @@
   h4 {
     margin-bottom: 0;
     width: 250px;
-    text-justify: center;
 
     a {
       color: inherit;
@@ -62,6 +72,14 @@
 .divider {
   margin: 25px 0;
   border-color: black;
+}
+
+.exhibition-headers-divider {
+  border-color: black;
+  clear: both;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
 }
 
 

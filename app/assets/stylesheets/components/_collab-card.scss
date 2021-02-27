@@ -65,7 +65,6 @@
   }
 }
 
-
 .container-collab-image {
 
   img {
@@ -138,7 +137,6 @@
   }
 }
 
-
 .collab-divider {
   border-color: black;
   margin: 0 75px;
@@ -180,6 +178,7 @@
     h4 {
       margin-bottom: 0;
       width: 300px;
+      text-align: justify;
 
       a {
         color: inherit;
@@ -197,10 +196,6 @@
       }
     }
 
-    .founder {
-      width: 200px;
-    }
-
     .request-not-accepted-yet {
       width: 300px;
       text-align: center;
@@ -211,13 +206,12 @@
       display: flex;
       justify-content: center;
 
-
       .btn-outline-primary {
         margin-bottom: 0;
       }
 
-      .btn-view-this-collab {
-        width: 65%;
+      .btn-outline-success {
+        margin-bottom: 0;
       }
     }
   }
@@ -255,10 +249,6 @@
         color: inherit;
         text-decoration: none;
       }
-    }
-
-    .founder {
-      width: 200px;
     }
   }
 }
