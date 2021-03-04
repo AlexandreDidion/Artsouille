@@ -1,45 +1,3 @@
-.woa-card-show {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  .artwork-show img {
-    width: 400px;
-    max-height: 533px;
-    pointer-events: none;
-  }
-
-  .work-of-art-card-infos {
-    width: 400px;
-    position: relative;
-
-    a {
-      text-decoration: none;
-    }
-
-    h3 {
-      margin-bottom: 0;
-    }
-
-    h3 a {
-      color: black;
-    }
-    
-    h4 {
-      margin-bottom: 0;
-    }
-
-    p {
-      text-align: justify;
-      margin-bottom: 0;
-    }
-
-    p a {
-      color: black;
-    }
-  }
-}
-
 .container-work-of-art-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -105,10 +63,6 @@ img:hover {
  transition: .2s ease-in-out;
  }
 
-#image-woa-show {
-   pointer-events: none;
- }
-
 .no-artwork {
   display: flex;
   justify-content: center;
@@ -126,6 +80,48 @@ img:hover {
 
   h2 {
     margin: auto;
+  }
+}
+
+.woa-card-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .artwork-show img {
+    width: 400px;
+    max-height: 533px;
+    pointer-events: none;
+  }
+
+  .work-of-art-card-infos {
+    width: 400px;
+    position: relative;
+
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    h3 a {
+      color: black;
+    }
+
+    h4 {
+      margin-bottom: 0;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 0;
+    }
+
+    p a {
+      color: black;
+    }
   }
 }
 
