@@ -179,13 +179,13 @@
   width: 300px;
 
   .btn-reject {
-    width: 55%;
+    width: 40%;
     margin-bottom: 0;
     margin-top: 8px;
   }
 
   .btn-accept {
-    width: 55%;
+    width: 40%;
     margin-bottom: 0;
   }
 }
@@ -196,7 +196,7 @@
 
   .btn-outline-primary {
     margin-bottom: 0;
-    width: 50%;
+    width: 30%;
   }
 }
 
@@ -243,6 +243,7 @@
   transition: all 0.3s ease;
 }
 .btn-apply:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   height: 50%;
   width: 2px;
 }
@@ -267,12 +268,12 @@
   transition: all 0.3s ease;
 }
 .btn-apply span:before {
-  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   width: 2px;
   height: 50%;
 }
 .btn-apply span:after {
-
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   width: 20%;
   height: 2px;
 }
@@ -312,11 +313,12 @@
   transition: all 0.3s ease;
 }
 .btn-my-profile:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   height: 50%;
   width: 2px;
 }
 .btn-my-profile:after {
-  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   width: 20%;
   height: 2px;
 }
@@ -341,7 +343,7 @@
   height: 50%;
 }
 .btn-my-profile span:after {
-
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
   width: 20%;
   height: 2px;
 }

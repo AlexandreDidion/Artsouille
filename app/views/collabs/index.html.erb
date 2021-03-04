@@ -28,12 +28,12 @@
       <h4><%= collab.description.truncate(50, separator: ' ') unless collab.description.nil? %></h4>
       <% unless collab.users.include? current_user  %>
         <div class="btn-collab-card">
-          <%= link_to "Ask to join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
+          <%= link_to "Join", user_collab_relationships_path(user_collab_relationship: {collab_id: collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
         </div>
       <% end %>
       <% if collab.users.include? current_user %>
         <div class="btn-collab-card">
-          <%= link_to "View this collab", collab_path(collab), class: 'btn btn-outline-success' %>
+          <%= link_to "View", collab_path(collab), class: 'btn btn-outline-success' %>
         </div>
       <% end %>
     </div>
