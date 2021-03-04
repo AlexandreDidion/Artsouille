@@ -2,10 +2,6 @@
 
   // General Media Queries
 
-  #no-result {
-    font-size: 20px;
-  }
-
   #row-form {
     margin: 0;
   }
@@ -20,6 +16,11 @@
 
   h4 {
     font-size: 18px;
+  }
+
+  .no-result h2, .no-favourite h2 {
+    font-size: 20px;
+    margin: 0 25px;
   }
 
   .btn-arrow-left {
@@ -70,8 +71,8 @@
     .navbar-nav {
       flex-direction: row;
 
-      .nav-link {
-        margin-right: 8px;
+      .navbar-tab {
+        margin: 0 8px 8px 0;
       }
 
       .form-inline {
@@ -79,7 +80,7 @@
 
         .form-control {
           height: 40px;
-          max-width: 175px;
+          width: 175px !important;
         }
       }
     }
@@ -183,12 +184,8 @@
   }
 
   .no-artwork {
-    display: block;
-    margin: 0 50px;
-
-    a {
-      padding: 0;
-    }
+    margin: 0 25px;
+    text-align: center;
   }
 
   // Media Queries for Collab Index
@@ -226,6 +223,7 @@
   // Media Queries for Collab Show
 
   .container-collab-image {
+    margin: 0 25px;
 
     img {
       display: block;

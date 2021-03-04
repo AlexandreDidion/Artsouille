@@ -64,23 +64,13 @@ img:hover {
  }
 
 .no-artwork {
-  display: flex;
-  justify-content: center;
   text-align: center;
-
-  a {
-    padding: 0 5px;
-  }
+  margin: auto;
 }
 
-.no-favourite {
-  display: flex;
-  justify-content: center;
+.no-favourite h2 {
   text-align: center;
-
-  h2 {
-    margin: auto;
-  }
+  margin: auto;
 }
 
 .woa-card-show {

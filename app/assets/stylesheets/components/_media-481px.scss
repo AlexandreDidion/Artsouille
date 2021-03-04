@@ -1,49 +1,118 @@
 @media (min-width: 481px) and (max-width: 767px) {
 
-  .background_yellow {
-    padding-top: 10px;
-  }
+  // General Media Queries
 
-  .dropdown {
-    position: absolute;
-
-    img {
-      position: absolute;
-      right: 0px;
-      top: -20px;
-    }
-
-    .dropdown-menu {
-      padding: 0px 0px 0px 6px;
-      width: 300px;
-      height: 112px;
-      width: 50px;
-      font-size: 14px;
-      line-height: 0.4rem;
-      position: absolute;
-      right: 0px;
-      top: -20px;
-    }
-  }
-
-  .searchbar{
-    form {
-      left: -5px;
-      transform: translate(0%);
-    }
-  }
-
-  h1 {
-    font-size: 32px;
+  p {
+    font-size: 16px;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   h4 {
+    font-size: 18px;
+  }
+
+  .no-result h2, .no-favourite h2 {
+    font-size: 20px;
+    margin: 0 25px;
+  }
+
+  .btn-arrow-left {
+    margin-left: 25px;
+    width: 200px;
     font-size: 16px;
   }
+
+  .btn-outline-primary, .btn-outline-warning, .btn-outline-success, .btn-outline-danger {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  // Media Queries for Navbar
+
+  .dropdown {
+    position: relative;
+    right: -5px;
+    top: -1px;
+
+    .dropdown-menu {
+      padding: 0px 0px 0px 6px;
+      height: 133px;
+      font-size: 14px;
+      line-height: 0.4rem;
+      position: absolute;
+      right: 4px;
+      top: 58px;
+    }
+  }
+
+  .navbar-lewagon {
+
+    .login {
+      margin-right: 0;
+      margin-left: 8px;
+      position: relative;
+      right: 3px;
+    }
+
+    .mr-auto {
+      align-items: center;
+
+      .form-group {
+        margin: 0;
+      }
+    }
+    .navbar-nav {
+      flex-direction: row;
+
+      .navbar-tab {
+        margin: 0 47.5px 8px 0;
+      }
+
+      .form-inline {
+        margin: 0;
+
+        .form-control {
+          height: 40px;
+          width: 340px !important;
+        }
+      }
+    }
+  }
+
+
+  // Media Queries for Homepage
+
+  .banner {
+    background-image: url(debashis-vertical.jpg) !important;
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 18px;
+      text-shadow: 0px 0px 6px rgba(0,0,0,0.7) !important;
+    }
+  }
+
+  // Media Queries for Artist Index
+
+  .container-artist-cards {
+    display: flex;
+    flex-direction: column;
+
+    .artist-card-infos {
+      margin-bottom: 0;
+    }
+  }
+
+  // Media Queries for Artist Show
 
   .profile-card {
     flex-direction: column;
@@ -51,70 +120,361 @@
     img {
       display: block;
       margin: auto;
-      max-width: 325px;
+      width: 300px;
+    }
+
+    .btn-profile {
+      margin: auto;
+      flex-direction: row;
+      width: 300px;
     }
   }
 
-  .profile-card-infos {
-    display: block;
+  .profile-card-items {
+    width: 300px;
     margin: auto;
-    margin-top: 20px;
-    max-width: 325px;
 
-    p {
+    .profile-card-infos {
+      width: 300px;
+      margin-top: 20px;
+    }
+  }
+
+  .divider-profile-portfolio {
+    margin: 0 25px;
+  }
+
+  // Media Queries for Work of Art Index
+
+  .container-work-of-art-cards {
+    display: flex;
+    flex-direction: column;
+
+    .work-of-art-card-infos {
+
+      .favorite-heart a {
+        font-size: 14px;
+        right: 12px;
+        top: -35px;
+      }
+    }
+  }
+
+  // Media Queries for Work of Art Show
+
+  .woa-card-show {
+    flex-direction: column;
+    margin: auto;
+
+    .artwork-show img {
+      display: block;
+      margin: auto;
+      max-width: 300px;
+    }
+
+    .work-of-art-card-infos {
+      display: block;
+      margin: auto;
+      width: 300px;
+      margin-top: 20px;
+    }
+  }
+
+  .no-artwork {
+    margin: 0 25px;
+    text-align: center;
+  }
+
+  // Media Queries for Collab Index
+
+  .page-info {
+    margin: auto;
+    max-width: 450px;
+
+    .btn-page-info {
+      width: 300px;
+
+      .btn-outline-primary {
+        width: 40%;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 25px;
+
+    .collab-list-infos {
+
+      h3 {
+        width: 175px !important;
+        font-size: 20px;
+      }
+
+      h4 {
+        width: 175px !important;
+        font-size: 16px;
+      }
+
+      .btn-collab-card {
+        width: 60px !important;
+      }
+    }
+  }
+
+  // Media Queries for Collab Show
+
+  .container-collab-image {
+    margin: 0 25px;
+
+    img {
+      display: block;
+      margin: auto;
+      max-width: 300px;
+    }
+
+    h3, h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  .collab-divider {
+    margin: 0 25px !important;
+  }
+
+  .collab-pending-users {
+
+    h2 {
+      margin: auto;
+      font-size: 20px;
+      width: 400px;
+    }
+
+    .btn-collab-card {
+      width: 30% !important;
+      margin-bottom: 25px !important;
+
+      .btn-outline-primary {
+        margin: 0;
+      }
+    }
+  }
+
+  .collab-card-members-todo {
+    width: 400px !important;
+    margin: auto;
+    flex-direction: column !important;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    h4 {
       font-size: 14px;
     }
 
-    .favorite-icon {
-      width: 30px;
-      height: 30px;
-      right: 3px;
+    p {
+      font-size: 13px;
+    }
+
+    .collab-card-info {
+      width: 400px !important;
+      margin-bottom: 24px;
+
+      .collab-edit-delete-btn {
+
+        .btn-outline-primary, .btn-outline-danger {
+          width: 30% !important;
+        }
+      }
+
+      .collab-members {
+        margin-bottom: 0;
+
+        .btn-outline-warning {
+          width: 30% !important;
+        }
+      }
+    }
+
+    .collab-to-do-container {
+      width: 400px;
+
+      .card-to-do {
+        width: 400px;
+
+        .btn-outline-danger {
+          width: 30% !important;
+        }
+
+        .btn-outline-primary {
+          margin-bottom: 8px;
+          width: 30% !important;
+        }
+      }
     }
   }
 
-  .artist-card {
-    flex-basis: 50%;
+  .container-btn-collab {
+    display: flex;
+    justify-content: space-around;
+
+    .btn-outline-primary {
+      width: 30%;
+    }
+  }
+
+  // Media Queries for My Collabs
+
+  .collab-active-and-requests {
+    width: 250px;
+    margin: auto;
+
+      h2 {
+        font-size: 24px;
+      }
+  }
+
+  .my-collabs {
+
+    .collab-list-infos {
+      justify-content: space-between !important;
+
+      h3 {
+        width: 175px !important;
+        font-size: 16px;
+      }
+
+      h4, p {
+        width: 175px !important;
+      }
+
+      .btn-collab-view {
+        width: 175px !important;
+
+        .btn-outline-primary {
+          width: 50%;
+        }
+      }
+    }
+
+    .collab-request-infos {
+      justify-content: space-between !important;
+
+      h3 {
+        width: 100px !important;
+        font-size: 18px;
+      }
+
+      h4 {
+        width: 175px !important;
+        font-size: 16px;
+      }
+
+      p {
+        width: 100px !important;
+        padding: 0 !important;
+      }
+
+      .btn-collab-validation {
+        width: 100px !important;
+
+        .btn-outline-success, .btn-outline-warning {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  // Media Queries for Exhibition Index
+
+  .container {
+
+    .exhibition-headers {
+
+      p {
+        font-size: 14px;
+      }
+
+      .name-tab, .description-tab, .type-tab, .location-tab  {
+        width: 100px !important;
+      }
+
+      .info-tab {
+        width: 50px;
+      }
+    }
+
+    .exhibition-list-infos {
+
+      h3, h4 {
+        width: 100px !important;
+        font-size: 14px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      .btn-exhibition-info {
+
+        .btn-outline-primary {
+          padding: 6px;
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  // Media Queries for Exhibition Show
+
+  .exhibition-card {
     flex-direction: column;
 
     img {
       display: block;
       margin: auto;
-      max-width: 200px;
+      width: 300px;
+    }
+
+    .exhibition-card-items {
+      margin-top: 20px;
+
+      .exhibition-card-infos {
+        display: block;
+        margin: auto;
+        max-width: 300px;
+
+        h3, h4, p {
+          margin-bottom: 0 !important;
+        }
       }
 
-    .artist-card-infos {
-      margin: auto;
-      max-width: 200px;
-
-      p {
-        font-size: 14px;
-      }
-
-      .favorite-icon {
-        width: 30px;
-        height: 30px;
-        right: 7px;
-        top: -35px;
+      .btn-work-of-art {
+        width: 300px;
+        margin: auto;
+        margin-top: 8px;
       }
     }
   }
 
-  .work-of-art-card {
-    img {
-      max-width: 200px;
+  // Media Queries for Map
+
+  .map-index {
+    margin: auto;
+
+    .mapboxgl-ctrl {
+      width: 200px;
+      margin: 20px
     }
 
-    .work-of-art-card-infos {
-      p {
-        font-size: 14px;
-      }
-
-      .favorite-icon {
-        width: 30px;
-        height: 30px;
-        right: 7px;
-        top: -35px;
-      }
+    .mapboxgl-ctrl {
+      width: 30px;
     }
   }
 }
+
+
