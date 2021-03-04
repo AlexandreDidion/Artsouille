@@ -1,8 +1,55 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  h1 {
-    font-size: 40px;
+  // General Media Queries
+
+  .no-result h2, .no-favourite h2 {
+    margin: 0 25px;
   }
+
+  .btn-arrow-left {
+    margin-left: 25px;
+    width: 300px;
+  }
+
+  .btn-outline-primary, .btn-outline-warning, .btn-outline-success, .btn-outline-danger {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  // Media Queries for Navbar
+
+  .avatar {
+    margin-right: 0;
+  }
+  .navbar-tab {
+    margin-right: 0 !important;
+  }
+
+  .form-inline {
+     margin-right: 8px !important;
+
+    .form-control {
+      height: 40px;
+      width: 250px !important;
+    }
+  }
+
+  // Media Queries for Homepage
+
+  .banner {
+
+    h3 {
+      text-shadow: 0px 0px 6px rgba(0,0,0,0.7) !important;
+    }
+  }
+
+  // Media Queries for Artist Index
+
+  .container-artist-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Media Queries for Artist Show
 
   .profile-card {
     flex-direction: column;
@@ -10,65 +57,201 @@
     img {
       display: block;
       margin: auto;
+      width: 400px;
+      max-height: 533px;
+    }
+
+    .btn-profile {
+      margin: auto;
+      flex-direction: row;
+      width: 400px;
     }
   }
 
-  .profile-card-infos {
-    display: block;
+  .profile-card-items {
+    width: 400px;
     margin: auto;
-    margin-top: 20px;
+
+    .profile-card-infos {
+      width: 400px;
+      margin-top: 20px;
+    }
   }
 
-  .artist-card {
-    flex-basis: 50%;
+  .divider-profile-portfolio {
+    margin: 0 25px;
+  }
+
+  // Media Queries for Work of Art Index
+
+  .container-work-of-art-cards {
+    grid-template-columns: repeat(2, 1fr);
+
+    .work-of-art-card-infos {
+
+      .favorite-heart a {
+        font-size: 14px;
+        right: 12px;
+        top: -35px;
+      }
+    }
+  }
+
+  // Media Queries for Work of Art Show
+
+  .woa-card-show {
     flex-direction: column;
+    margin: auto;
 
-    img {
+    .artwork-show img {
       display: block;
       margin: auto;
-      max-width: 300px;
-    }
-
-    .artist-card-infos {
-      margin: auto;
-      max-width: 300px;
-
-      p {
-        font-size: 16px;
-      }
-
-      .favorite-icon {
-        width: 40px;
-        height: 40px;
-        right: 9px;
-        top: -47px;
-      }
-    }
-  }
-
-  .work-of-art-card {
-    flex-basis: 50%;
-
-    img {
-      display: block;
-      margin: auto;
-      max-width: 300px;
+      width: 400px;
+      max-height: 533px;
     }
 
     .work-of-art-card-infos {
+      display: block;
       margin: auto;
-      max-width: 300px;
+      width: 400px;
+      margin-top: 20px;
+    }
+  }
+
+  .no-artwork {
+    margin: 0 25px;
+    text-align: center;
+  }
+
+  // No Media Queries for Collab Index
+
+  // Media Queries for Collab Show
+
+  .card-to-do {
+    width: 300px !important;
+
+    .btn-outline-danger {
+      width: 40% !important;
+    }
+  }
+
+  .collab-card-info {
+    width: 300px !important;
+
+    .collab-members {
+      margin-bottom: 0;
+
+      .btn-outline-warning {
+        width: 40% !important;
+      }
+    }
+  }
+
+  .container-btn-collab {
+    display: flex;
+    justify-content: space-around;
+
+    .btn-outline-primary {
+      width: 20%;
+    }
+  }
+
+  // No Media Queries for My Collabs
+
+  // Media Queries for Exhibition Index
+
+  .container {
+
+    .exhibition-headers {
 
       p {
         font-size: 14px;
       }
 
-      .favorite-icon {
-        width: 40px;
-        height: 40px;
-        right: 9px;
-        top: -47px;
+      .name-tab, .description-tab, .location-tab  {
+        width: 150px !important;
+      }
+
+      .type-tab {
+        width: 100px !important;
+      }
+
+      .info-tab {
+        width: 80px;
+      }
+    }
+
+    .exhibition-list-infos {
+
+      #category {
+        width: 100px !important;
+      }
+
+      h3, h4 {
+        width: 150px !important;
+        font-size: 14px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      .btn-exhibition-info {
+
+        .btn-outline-primary {
+          padding: 6px;
+          width: 80px;
+        }
       }
     }
   }
+
+  // Media Queries for Exhibition Show
+
+  .exhibition-card {
+    flex-direction: column;
+
+    img {
+      display: block;
+      margin: auto;
+      width: 400px;
+      max-height: 533px;
+    }
+
+    .exhibition-card-items {
+      margin-top: 20px;
+
+      .exhibition-card-infos {
+        display: block;
+        margin: auto;
+        width: 400px;
+
+        h3, h4, p {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .btn-work-of-art {
+        width: 400px;
+        margin: auto;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  // Media Queries for Map
+
+  .map-index {
+    margin: auto;
+
+    .mapboxgl-ctrl {
+      width: 200px;
+      margin: 20px
+    }
+
+    .mapboxgl-ctrl {
+      width: 30px;
+    }
+  }
+
 }
