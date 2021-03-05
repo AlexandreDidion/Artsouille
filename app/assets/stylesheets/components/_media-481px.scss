@@ -67,8 +67,12 @@
     .navbar-nav {
       flex-direction: row;
 
+      #exhibition-tab {
+        margin-right: 0;
+      }
+
       .navbar-tab {
-        margin: 0 47.5px 8px 0;
+        margin: 0 48.5px 8px 0;
       }
 
       .form-inline {
