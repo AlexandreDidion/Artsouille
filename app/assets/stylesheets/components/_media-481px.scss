@@ -50,10 +50,6 @@
 
   .navbar-lewagon {
 
-    .navbar-collapse {
-      overflow-x: scroll;
-    }
-
     .login {
       margin-right: 0;
       margin-left: 8px;
@@ -69,6 +65,7 @@
       }
     }
     .navbar-nav {
+      flex-wrap: wrap;
       flex-direction: row;
 
       #exhibition-tab {
