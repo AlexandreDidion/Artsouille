@@ -55,7 +55,6 @@
   .navbar-lewagon {
 
     .navbar-collapse {
-      overflow-x: scroll;
 
       .navbar-nav-tab {
         justify-content: space-between;
@@ -79,6 +78,7 @@
     }
 
     .navbar-nav {
+      flex-wrap: wrap;
       flex-direction: row;
 
       #exhibition-tab {
