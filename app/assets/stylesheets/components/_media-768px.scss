@@ -21,7 +21,19 @@
   .avatar {
     margin-right: 0;
   }
+
+  .navbar-nav-tab {
+  }
+
   .navbar-tab {
+    margin-right: 0 !important;
+  }
+
+  .navbar-nav {
+    flex-direction: row !important;
+  }
+
+  .login {
     margin-right: 0 !important;
   }
 
@@ -30,18 +42,11 @@
 
     .form-control {
       height: 40px;
-      width: 250px !important;
+      width: 225px !important;
     }
   }
 
-  // Media Queries for Homepage
-
-  .banner {
-
-    h3 {
-      text-shadow: 0px 0px 6px rgba(0,0,0,0.7) !important;
-    }
-  }
+  // No Media Queries for Homepage
 
   // Media Queries for Artist Index
 
