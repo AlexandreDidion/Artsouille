@@ -54,8 +54,16 @@
 
   .navbar-lewagon {
 
+    .navbar-collapse {
+
+      .navbar-nav-tab {
+        justify-content: space-between;
+        display: flex;
+      }
+    }
+
     .login {
-      margin-right: 0;
+      margin-right: 8px;
       position: relative;
       right: -5px;
     }
@@ -68,7 +76,9 @@
         margin: 0;
       }
     }
+
     .navbar-nav {
+      flex-wrap: wrap;
       flex-direction: row;
 
       #exhibition-tab {
@@ -76,7 +86,8 @@
       }
 
       .navbar-tab {
-        margin: 0 7.2px 8px 0;
+        margin: 0 7px 8px 0;
+        font-size: 14px;
       }
 
       .form-inline {
@@ -103,8 +114,7 @@
 
     h3 {
       text-align: center;
-      font-size: 18px;
-      text-shadow: 0px 0px 6px rgba(0,0,0,0.7) !important;
+      font-size: 16px;
     }
   }
 
