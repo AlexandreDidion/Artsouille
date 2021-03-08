@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Artsouille"
+meta_title: "Artsouille - Collab and Share"
+meta_description: "A platform to help emerging artists find each other, collaborate and co-create. Because Art is too important not to share."
+meta_image: "debashis-meta.jpg" # should exist in `app/assets/images/`
+twitter_account: "@timdavhen"   # required for Twitter Cards
