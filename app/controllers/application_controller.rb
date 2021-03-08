@@ -30,4 +30,10 @@ class ApplicationController < ActionController::Base
     return 'background_yellow' if params[:action] == 'show' && params[:controller] == 'collabs'
     return 'background_yellow' if params[:action] == 'index' && params[:controller] == 'user_collab_relationships'
   end
+
+  # app/controllers/application_controller.rb
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
