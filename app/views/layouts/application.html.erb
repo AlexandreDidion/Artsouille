@@ -2,14 +2,24 @@
 <html>
   <head>
     <title>Artsouille - Collab and Share</title>
-    <meta name="description" content="Platform to meet new artists, create collectives and share artworks">
-    <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="Artsouille - Collab and Share" />
+    <meta name="description" content="A platform to help emerging artists find each other, collaborate and co-create.">
+
+    <!-- LinkedIn + Facebook Open Graph data -->
+    <meta property='og:title' content='Artsouille - Collab and Share'/>
+    <meta property='og:image' content='<%= image_url('meta-image.jpg') %>'/>
+    <meta property='og:description' content='A platform to help emerging artists find each other, collaborate and co-create. Because Art is too important not to share.'/>
+    <meta property='og:url' content='http://www.artsouille.com'/>
+
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="www.artsouille.com" />
-    <meta property="og:image" content="<%= image_url('meta_tag_facebook.png') %>" />
-    <meta property="og:description" content="Platform to meet new artists, create collectives and share artworks" />
     <meta property="og:site_name" content="Artsouille" />
+    <meta name="author" content="Artsouille Team">
+
+    <!-- Twitter Open Graph data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@timdavhen" />
+    <meta name="twitter:title" content="Artsouille - Collab and Share" />
+    <meta name="twitter:description" content="A platform to help emerging artists find each other, collaborate and co-create. Because Art is too important not to share." />
+    <meta name="twitter:image" content="<%= image_url('meta-image.jpg') %>" />
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
