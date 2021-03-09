@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2021_02_12_105604) do
+=======
 ActiveRecord::Schema.define(version: 2021_02_18_132146) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +45,13 @@ ActiveRecord::Schema.define(version: 2021_02_18_132146) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "exhibitions", force: :cascade do |t|
@@ -84,6 +95,16 @@ ActiveRecord::Schema.define(version: 2021_02_18_132146) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "conversation_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+=======
   create_table "to_do_items", force: :cascade do |t|
     t.string "content"
     t.bigint "to_do_id", null: false
@@ -98,6 +119,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_132146) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["collab_id"], name: "index_to_dos_on_collab_id"
+>>>>>>> master
   end
 
   create_table "user_collab_relationships", force: :cascade do |t|
@@ -147,8 +169,13 @@ ActiveRecord::Schema.define(version: 2021_02_18_132146) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "exhibitions", "collabs"
+<<<<<<< HEAD
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
+=======
   add_foreign_key "to_do_items", "to_dos"
   add_foreign_key "to_dos", "collabs"
+>>>>>>> master
   add_foreign_key "user_collab_relationships", "collabs"
   add_foreign_key "user_collab_relationships", "users"
   add_foreign_key "work_of_arts", "collabs"

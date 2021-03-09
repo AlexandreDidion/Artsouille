@@ -19,6 +19,12 @@ class User < ApplicationRecord
   has_many :following_users, foreign_key: :followee_id, class_name: "Follow"
   has_many :followers, through: :following_users
 
+  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
+  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'receiver_id'
+  has_many :senders, through: :received_conversations
+  has_many :receivers, through: :authored_conversations
+  has_many :messages, dependent: :destroy
+
   geocoded_by :city
   after_validation :geocode, if: :will_save_change_to_city?
 end

@@ -39,6 +39,7 @@
             <% end %>
           </ul>
           <hr>
+          <p>Want to collab? <%= link_to 'Send a message!', new_message_path(receiver_id: @user.id) unless current_user == @user  %></p>
           <h4> <%= link_to 'See my exhibitions', exhibitions_path(current_user: @user.id) %> </h4>
           <br>
         </div>

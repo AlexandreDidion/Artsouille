@@ -1,0 +1,5 @@
+<div>
+  Conversation with : <%= conversation.author == current_user ? conversation.receiver.username : conversation.author.username %>
+  <%= conversation.messages.last.content.truncate(30)  %>
+  <%= link_to 'View conversation', conversation_path(conversation) %>
+</div>
