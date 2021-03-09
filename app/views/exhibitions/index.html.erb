@@ -3,27 +3,27 @@
   <br>
   <br>
     <div class="exhibition-headers">
-      <h2><%= link_to "Past", "#" %></h2>
-      <div style="border-left:1px solid black;height:40px"></div>
-      <h2><%= link_to "Current", "#" %></h2>
-      <div style="border-left:1px solid black;height:40px"></div>
-      <h2><%= link_to "Future", "#" %></h2>
+      <p class="name-tab">Name</p>
+      <p class="description-tab">Description</p>
+      <p class="type-tab">Type</p>
+      <p class="location-tab">Location</p>
+      <p class="info-tab"><span></span></p>
     </div>
-    <br>
+    <hr class="exhibition-headers-divider">
     <br>
     <% @exhibitions.each do |exhibition| %>
     <div class="exhibition-list-infos">
       <h3><%= link_to exhibition.name, exhibition_path(exhibition) %></h3>
-      <h4><%= exhibition.start_date %><%= exhibition.end_date %></h4>
-      <h4><%= exhibition.address %></h4>
-      <%= link_to "Get info", exhibition_path(exhibition), class: "btn btn-outline-primary" %>
+      <h4><%= exhibition.description.truncate(50, separator: ' ') %></h4>
+      <h4 id="category"><%= exhibition.category %></h4>
+      <h4><%= exhibition.city %>, <%= exhibition.country %></h4>
+      <div class="btn-exhibition-info">
+        <%= link_to "Get info", exhibition_path(exhibition), class: "btn btn-outline-primary" %>
+      </div>
     </div>
     <hr class="divider">
     <% end %>
   </div>
-
-  <%= link_to "Homepage", root_path, class: 'btn btn-primary' %>
-
 
   <div class="map-index">
     <div id="map"
@@ -32,5 +32,6 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+  <br>
   <br>
 </div>

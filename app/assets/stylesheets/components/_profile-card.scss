@@ -3,8 +3,9 @@
   justify-content: space-evenly;
 
   img {
-    max-width: 400px;
-    max-height: 600px;
+    width: auto;
+    max-height: 400px;
+    pointer-events: none;
   }
 }
 
@@ -15,19 +16,89 @@
 
   .profile-card-infos {
     width: 400px;
-    position: relative;
     text-align: justify;
 
-    .favorite-icon {
-      position: absolute;
-      height: 35px;
-      width: 35px;
-      right: 0px;
-      top: 0px;
+    a {
+      text-decoration: none;
+      color: black;
     }
 
     p {
       margin-bottom: 8px;
     }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font: 12px/1.5 'PT Sans', serif;
+      margin: 25px;
+    }
+
+    .collab-tags {
+      list-style: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      font-family: "Novar";
+
+      .collab-tags li {
+        float: left;
+      }
+
+      .collab-tag {
+        background: #bbbbbb;
+        border-radius: 3px 0 0 3px;
+        color: black;
+        display: inline-block;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 20px 0 23px;
+        position: relative;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        -webkit-transition: color 0.2s;
+      }
+
+      .collab-tag::before {
+        background: #ffe8e8;
+        border-radius: 10px;
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+        content: '';
+        height: 6px;
+        left: 10px;
+        position: absolute;
+        width: 6px;
+        top: 10px;
+      }
+
+      .collab-tag::after {
+        background: #ffe8e8;
+        border-bottom: 13px solid transparent;
+        border-left: 10px solid #bbbbbb;
+        border-top: 13px solid transparent;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .collab-tag:hover {
+        background-color: #1098ad;;
+        color: white;
+      }
+
+      .collab-tag:hover::after {
+         border-left-color: #1098ad;;
+      }
+    }
   }
+}
+
+.divider-profile-portfolio {
+  margin: 0 200px;
+  border-color: black;
 }

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row" id="row-form">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login gradient-border">
+        <h2>Add a Brainstorm table</h2>
+        <%= simple_form_for [@collab, @to_do] do |f| %>
+          <div class="form-inputs">
+            <%= f.input :title %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Brainstorm!", class: "btn btn-outline-primary" %>
+            <%= link_to "Cancel", :back, class: "btn btn-outline-warning" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

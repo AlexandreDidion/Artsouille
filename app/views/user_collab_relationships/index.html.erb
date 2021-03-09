@@ -1,0 +1,67 @@
+<div class="<%= page_background_class %>">
+<br>
+<br>
+  <div class="container">
+    <% if @user_collab_relationships.empty? %>
+      <div class="page-info-user-collab">
+        <br>
+        <h2>You don't collaborate with any artist for the moment...</h2>
+      </div>
+    <% else %>
+    <br>
+    <br>
+    <div class="collab-active-and-requests">
+      <h2>My collabs</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="my-collabs">
+      <% @user_collab_relationships.each do |user_collab_relationship| %>
+          <% if user_collab_relationship.accepted? %>
+          <div class= "collab-list-infos">
+            <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
+            <h4> <%= user_collab_relationship.collab.description.truncate(50, separator: ' ') unless user_collab_relationship.collab.description.nil? %> </h4>
+            <div class="btn-collab-view">
+              <%= link_to "View", collab_path(user_collab_relationship.collab_id), class: 'btn btn-outline-primary' %>
+            </div>
+          </div>
+          <hr class="divider">
+          <% elsif user_collab_relationship.pending? %>
+          <div class= "collab-list-infos">
+            <h3> <%= link_to user_collab_relationship.collab.name, collab_path(user_collab_relationship.collab_id) %> </h3>
+            <h4> <%= user_collab_relationship.collab.description.truncate(50, separator: ' ') unless user_collab_relationship.collab.description.nil? %> </h4>
+            <p class="request-not-accepted-yet">Your request has not been accepted yet!</p>
+          </div>
+          <hr class="divider">
+          <% end %>
+      <% end %>
+      <br>
+      <br>
+      <div class="collab-active-and-requests">
+        <h2>Received requests</h2>
+      </div>
+      <br>
+      <br>
+      <br>
+      <% if @collabs_to_accept.empty? %>
+        <h3 style="text-align: center;"> You haven't received any request. </h3>
+      <% end %>
+      <% @collabs_to_accept.each do |cr| %>
+        <div class="collab-request-infos">
+          <h3> <%= link_to cr.collab.name, collab_path(cr.collab_id) %> </h3>
+          <h4> <%= cr.collab.description.truncate(50, separator: ' ') unless cr.collab.description.nil? %> </h4>
+          <p>Sent by <u><%= link_to cr.user.username, user_path(cr.user) %></u> </p>
+          <div class="btn-collab-validation">
+            <%= link_to "Accept", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "accepted"}), method: :patch, class: 'btn btn-outline-success btn-accept' %>
+            <%= link_to "Reject", user_collab_relationship_path(cr, user_collab_relationship: {collab_id: cr.collab.id , user_id: cr.user.id, status: "rejected"}), method: :patch, class: 'btn btn-outline-warning btn-reject' %>
+          </div>
+        </div>
+        <hr class="divider">
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>

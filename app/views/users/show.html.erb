@@ -11,50 +11,84 @@
       <% if @user.photo.attached? %>
         <%= image_tag @user.photo, crop: :fill %>
       <% else %>
-        <%= link_to image_tag("artist.png") %>
+        <%= image_tag("artist.png") %>
       <% end %>
       <div class="profile-card-items">
         <div class="profile-card-infos">
-          <h3><%= @user.username  %></h3>
+          <h3> <%= @user.username  %> </h3>
           <hr>
-          <h4><%= @user.art_type  %></h4>
+          <% if @user.first_name.present? %>
+            <h4> <%= @user.first_name %> <%= @user.last_name %> </h4>
+            <hr>
+          <% end %>
+          <% if @user.art_type.present? %>
+            <h4>  <%= @user.art_type  %> </h4>
+          <% else %>
+            <h4>Undefined</h4>
+          <% end %>
           <hr>
-          <p><%= @user.city  %>, <%= @user.country  %></p>
+          <h4><%= @user.city  %>, <%= @user.country  %></h4>
           <hr>
-          <p>Biography</p>
-          <p><%= @user.description  %></p>
+          <h4>About</h4>
+          <p> <%= @user.description  %> </p>
           <hr>
-          <p>See my exhibitions</p>
+          <h4>My collabs</h4>
+          <ul class="collab-tags" >
+            <% @user.user_collab_relationships.where(status: 'accepted').each do |usercollab|%>
+              <li><p> <%= link_to usercollab.collab.name, collab_path(usercollab.collab), class: "collab-tag" %> </p></li>
+            <% end %>
+          </ul>
           <hr>
           <p>Want to collab? <%= link_to 'Send a message!', new_message_path(receiver_id: @user.id) unless current_user == @user  %></p>
+          <h4> <%= link_to 'See my exhibitions', exhibitions_path(current_user: @user.id) %> </h4>
           <br>
-          <img src="/assets/heart-icon" alt="heart" class="favorite-icon">
         </div>
         <% if current_user == @user  %>
-        <div class="btn-profile">
-          <%= link_to "Edit my profile", edit_user_path, class: "btn btn-outline-primary btn-edit" %>
-          <%= link_to "Add a new artwork", new_work_of_art_path(@work_of_art), class: "btn btn-outline-primary" %>
-        </div>
+          <div class="btn-profile">
+            <%= link_to "Edit my profile", edit_user_path, class: "btn btn-outline-primary btn-edit" %>
+            <%= link_to "Add a new artwork", new_work_of_art_path(@work_of_art), class: "btn btn-outline-primary" %>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 
   <br>
-  <h3 style="text-align:center">Portfolio</h3>
   <br>
-
-  <div class="container-work-of-art-cards">
+  <br>
+  <hr class="divider-profile-portfolio">
+  <br>
+  <br>
+  <br>
+  <h2 style="text-align:center">Portfolio</h2>
+  <br>
+  <br>
+    <% if @user.work_of_arts.empty? && @user == current_user%>
+      <h4 class="no-artwork">You haven't added any artwork yet.
+      <br>
+      Click <%= link_to 'here', new_work_of_art_path(@work_of_art) %> to do so.</h4>
+      <% elsif @user.work_of_arts.empty? && @user != current_user %>
+      <h4 class="no-artwork">This artist doesn't have any artwork yet.</h4>
+    <% end %>
+    <div class="container-work-of-art-cards">
     <% @user.work_of_arts.each do |art| %>
       <div class="work-of-art-card">
         <% if art.photo.attached? %>
-          <%= image_tag art.photo, crop: :fill %>
+          <%= link_to image_tag(art.photo), work_of_art_path(art), crop: :fill %>
         <% else %>
           <%= link_to image_tag("dodoma.png") %>
         <% end %>
         <div class="work-of-art-card-infos">
-          <h3><%= link_to art.name, work_of_art_path(art) %></h3>
-          <p><%= art.description %></p>
+          <h3> <%= link_to art.name, work_of_art_path(art) %> </h3>
+          <p> <%= art.art_type %> </p>
+          <p> <%= art.description %> </p>
+          <% unless current_user == art.user %>
+          <div class="favorite-heart">
+            <%= link_to toggle_favorite_work_of_art_path(art), remote: true, method: :post do %>
+            <%= render 'work_of_arts/like_button', work_of_art: art %>
+            <% end %>
+          </div>
+          <% end %>
           <% if current_user == @user %>
             <div class="btn-work-of-art">
               <%= link_to "Edit", edit_work_of_art_path(art), class: "btn btn-outline-primary" %>
@@ -65,4 +99,5 @@
       </div>
     <% end %>
   </div>
+  <br>
 </div>

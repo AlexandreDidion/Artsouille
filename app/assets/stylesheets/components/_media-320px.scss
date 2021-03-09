@@ -1,52 +1,135 @@
 @media (min-width: 320px) and (max-width: 480px) {
 
-  .background_yellow {
-    padding-top: 10px;
-  }
-  .dropdown {
-    position: absolute;
+  // General Media Queries
 
-    img {
-      position: absolute;
-      right: 0px;
-      top: -20px;
-    }
-
-    .dropdown-menu {
-      padding: 0px 0px 0px 6px;
-      width: 300px;
-      height: 112px;
-      width: 50px;
-      font-size: 14px;
-      line-height: 0.4rem;
-      position: absolute;
-      right: 0px;
-      top: -20px;
-    }
+  #row-form {
+    margin: 0;
   }
 
-  .searchbar{
-    form {
-      left: -5px;
-      transform: translate(0%);
-    }
-
-    form:hover{
-      width: 270px;
-    }
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-
-  h3 {
+  p {
     font-size: 16px;
   }
 
-  h4 {
-    font-size: 14px;
+  h3 {
+    font-size: 24px;
   }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .no-result h2, .no-favourite h2 {
+    font-size: 20px;
+    margin: 0 25px;
+  }
+
+  .btn-arrow-left {
+    margin-left: 25px;
+    width: 200px;
+    font-size: 16px;
+  }
+
+  .btn-outline-primary, .btn-outline-warning, .btn-outline-success, .btn-outline-danger {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  // Media Queries for Navbar
+
+  .dropdown {
+    position: relative;
+    right: -5px;
+    top: -1px;
+
+    .dropdown-menu {
+      padding: 0px 0px 0px 6px;
+      height: 133px;
+      font-size: 14px;
+      line-height: 0.4rem;
+      position: absolute;
+      right: 5px;
+      top: 58px;
+    }
+  }
+
+  .navbar-lewagon {
+
+    .navbar-collapse {
+
+      .navbar-nav-tab {
+        justify-content: space-between;
+        display: flex;
+      }
+    }
+
+    .login {
+      margin-right: 8px;
+      position: relative;
+      right: -5px;
+    }
+
+    .mr-auto {
+      display: flex;
+      align-items: center;
+
+      .form-group {
+        margin: 0;
+      }
+    }
+
+    .navbar-nav {
+      flex-wrap: wrap;
+      flex-direction: row;
+
+      #exhibition-tab {
+        margin-right: 0;
+      }
+
+      .navbar-tab {
+        margin: 0 7px 8px 0;
+        font-size: 14px;
+      }
+
+      .form-inline {
+        margin: 0;
+
+        .form-control {
+          height: 40px;
+          width: 175px !important;
+        }
+      }
+    }
+  }
+
+  // Media Queries for Homepage
+
+  .banner {
+    background-image: url(debashis-vertical.jpg) !important;
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  // Media Queries for Artist Index
+
+  .container-artist-cards {
+    display: flex;
+    flex-direction: column;
+
+    .artist-card-infos {
+      margin-bottom: 0;
+    }
+  }
+
+  // Media Queries for Artist Show
 
   .profile-card {
     flex-direction: column;
@@ -54,68 +137,343 @@
     img {
       display: block;
       margin: auto;
-      max-width: 250px;
+      width: 300px;
+    }
+
+    .btn-profile {
+      margin: auto;
+      flex-direction: row;
+      width: 300px;
     }
   }
 
-  .profile-card-infos {
-    display: block;
+  .profile-card-items {
+    width: 300px;
     margin: auto;
-    max-width: 250px;
-    margin-top: 20px;
 
-    p {
-    font-size: 13px;
-    }
-
-    .favorite-icon {
-      width: 30px;
-      height: 30px;
-      right: 2px;
+    .profile-card-infos {
+      width: 300px;
+      margin-top: 20px;
     }
   }
 
-  .artist-card {
+  .divider-profile-portfolio {
+    margin: 0 25px;
+  }
+
+  // Media Queries for Work of Art Index
+
+  .container-work-of-art-cards {
+    display: flex;
     flex-direction: column;
-    max-height: 450px;
+
+    .work-of-art-card-infos {
+
+      .favorite-heart a {
+        font-size: 14px;
+        right: 12px;
+        top: -35px;
+      }
+    }
+  }
+
+  // Media Queries for Work of Art Show
+
+  .woa-card-show {
+    flex-direction: column;
+    margin: auto;
+
+    .artwork-show img {
+      display: block;
+      margin: auto;
+      max-width: 300px;
+    }
+
+    .work-of-art-card-infos {
+      display: block;
+      margin: auto;
+      width: 300px;
+      margin-top: 20px;
+    }
+  }
+
+  .no-artwork {
+    margin: 0 25px;
+    text-align: center;
+  }
+
+  // Media Queries for Collab Index
+
+  .page-info {
+    margin: auto;
+    max-width: 300px;
+
+    .btn-page-info {
+      width: 300px;
+
+      .btn-outline-primary {
+        width: 40%;
+      }
+    }
+  }
+
+  .collab-list-infos {
+
+    h3 {
+      width: 100px !important;
+      font-size: 20px;
+    }
+
+    h4 {
+      width: 100px !important;
+      font-size: 16px;
+    }
+
+    .btn-collab-card {
+      width: 60px !important;
+    }
+  }
+
+  // Media Queries for Collab Show
+
+  .container-collab-image {
+    margin: 0 25px;
 
     img {
       display: block;
       margin: auto;
-      max-width: 250px;
+      max-width: 300px;
     }
 
-    .artist-card-infos {
+    h3, h4 {
+      margin-bottom: 0;
+    }
+  }
 
-      p {
-        font-size: 13px;
-      }
+  .collab-divider {
+    margin: 0 25px !important;
+  }
 
-      .favorite-icon {
-        width: 30px;
-        height: 30px;
-        right: 7px;
-        top: -35px;
+  .collab-pending-users {
+
+    h2 {
+      margin: auto;
+      font-size: 20px;
+      width: 300px;
+    }
+
+    .btn-collab-card {
+      width: 40% !important;
+
+      .btn-outline-primary {
+        margin: 0;
       }
     }
   }
 
-  .work-of-art-card {
-    img {
-      max-width: 250px;
+  .collab-card-members-todo {
+    width: 300px !important;
+    margin: auto;
+    flex-direction: column !important;
+
+    h2 {
+      font-size: 20px;
     }
 
-    .work-of-art-card-infos {
-      p {
-        font-size: 13px;
+    h3 {
+      font-size: 16px;
+    }
+
+    h4 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    .collab-card-info {
+      width: 300px !important;
+      margin-bottom: 24px;
+
+      .collab-members {
+        margin-bottom: 0;
+
+        .btn-outline-warning {
+          width: 40% !important;
+        }
+      }
+    }
+
+    .collab-to-do-container {
+      width: 300px;
+
+      .card-to-do {
+        width: 300px;
+
+        .btn-outline-danger {
+          width: 40% !important;
+        }
+
+        .btn-outline-primary {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+
+  .container-btn-collab {
+    display: flex;
+    justify-content: space-around;
+
+    .btn-outline-primary {
+      width: 30%;
+    }
+  }
+
+  // Media Queries for My Collabs
+
+  .collab-active-and-requests {
+    width: 250px;
+    margin: auto;
+
+      h2 {
+        font-size: 24px;
+      }
+  }
+
+  .my-collabs {
+
+    .collab-list-infos {
+      justify-content: space-between !important;
+
+      h3 {
+        width: 100px !important;
+        font-size: 16px;
       }
 
-      .favorite-icon {
-        width: 30px;
-        height: 30px;
-        right: 7px;
-        top: -35px;
+      h4, p {
+        width: 100px !important;
       }
+
+      .btn-collab-view {
+        width: 100px !important;
+
+        .btn-outline-primary {
+          width: 70%;
+        }
+      }
+    }
+
+    .collab-request-infos {
+      justify-content: space-between !important;
+
+      h3 {
+        width: 80px !important;
+        font-size: 16px;
+      }
+
+      h4 {
+        width: 80px !important;
+        font-size: 16px;
+      }
+
+      p {
+        width: 80px !important;
+        padding: 0 !important;
+      }
+
+      .btn-collab-validation {
+        width: 100px !important;
+
+        .btn-outline-success, .btn-outline-warning {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  // Media Queries for Exhibition Index
+
+  .container {
+
+    .exhibition-headers {
+
+      p {
+        font-size: 14px;
+      }
+
+      .name-tab, .description-tab, .type-tab, .location-tab  {
+        width: 75px !important;
+      }
+
+      .info-tab {
+        width: 40px;
+      }
+    }
+
+    .exhibition-list-infos {
+
+      h3, h4 {
+        width: 75px !important;
+        font-size: 14px;
+      }
+
+      .btn-exhibition-info {
+
+        .btn-outline-primary {
+          padding: 6px;
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  // Media Queries for Exhibition Show
+
+  .exhibition-card {
+    flex-direction: column;
+
+    img {
+      display: block;
+      margin: auto;
+      width: 300px;
+    }
+
+    .exhibition-card-items {
+      margin-top: 20px;
+
+      .exhibition-card-infos {
+        display: block;
+        margin: auto;
+        max-width: 300px;
+
+        h3, h4, p {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .btn-work-of-art {
+        width: 300px;
+        margin: auto;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  // Media Queries for Map
+
+  .map-index {
+    margin: auto;
+    width: 350px;
+
+    .mapboxgl-ctrl {
+      width: 200px;
+      margin: 10px
+    }
+
+    .mapboxgl-ctrl {
+      width: 30px;
     }
   }
 }

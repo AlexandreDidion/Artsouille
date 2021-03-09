@@ -6,6 +6,10 @@
     border-color: black;
   }
 
+  #bottom-divider {
+    margin-bottom: 0;
+  }
+
   .navbar-lewagon {
     padding: 0;
     justify-content: space-between;
@@ -20,7 +24,6 @@
     margin-right: 50px;
     font-family: "Novar";
     color: black;
-    font-weight: bold;
   }
 
   a:hover, a:active, a:visited {
@@ -31,5 +34,16 @@
   .active-tab {
     text-decoration: underline;
     text-underline-position: under;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    position: relative;
+    top: 57px;
+    right: -1px;
+  }
+
+  .dropdown-menu a:hover {
+    background: white;
   }
 }

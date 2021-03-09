@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row" id="row-form">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login gradient-border">
         <h2>Log in</h2>
@@ -8,11 +8,9 @@
             <%= f.input :email,
                         required: false,
                         autofocus: true,
-                        placeholder: "gustavklimt@gmail.com",
                         input_html: { autocomplete: "email" } %>
             <%= f.input :password,
                         required: false,
-                        placeholder: "••••••••",
                         input_html: { autocomplete: "current-password" } %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>

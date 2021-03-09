@@ -51,6 +51,7 @@
 }
 
 .btn-outline-primary {
+  font-family: "Novar";
   width: 100%;
   margin-bottom: 20px;
   border-color: #1098ad;
@@ -74,6 +75,7 @@
 }
 
 .btn-outline-warning {
+  font-family: "Novar";
   width: 100%;
   margin-bottom: 20px;
   border-color: #f79533;
@@ -96,6 +98,54 @@
   text-shadow: 1px 1px 2px #f79533;
 }
 
+.btn-outline-success {
+  font-family: "Novar";
+  width: 100%;
+  margin-bottom: 20px;
+  border-color: #158467;
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: #158467;
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-outline-success:hover {
+  color: white;
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  border-color: #158467;
+  text-shadow: 1px 1px 2px #158467;
+}
+
+.btn-outline-danger {
+  font-family: "Novar";
+  width: 100%;
+  margin-bottom: 20px;
+  border-color: #ef4e7b;
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: #ef4e7b;
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-outline-danger:hover {
+  color: white;
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  border-color: #ef4e7b;
+  text-shadow: 1px 1px 2px #ef4e7b;
+}
+
 .btn-arrow-left {
   margin-left: 75px;
   width: 15%;
@@ -111,3 +161,195 @@
   }
 }
 
+.container-btn-collab {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+
+  .btn-outline-primary {
+    width: 15%;
+  }
+}
+
+.btn-collab-validation {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  .btn-reject {
+    width: 40%;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .btn-accept {
+    width: 40%;
+    margin-bottom: 0;
+  }
+}
+
+.btn-collab-view {
+  text-align: center;
+  width: 300px;
+
+  .btn-outline-primary {
+    margin-bottom: 0;
+    width: 30%;
+  }
+}
+
+.homepage-btn {
+  text-shadow: 0px 0px 50px rgba(0,0,0,0.7);
+  padding: 10px 25px;
+  font-family: "Gravity-Bold";
+  font-size: 24px;
+  letter-spacing: 0.075em;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-apply {
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  border: none;
+
+  a {
+    text-decoration: none;
+    color: #f4f4f4;
+  }
+}
+
+.btn-apply span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-apply:before,
+.btn-apply:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-apply:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  height: 50%;
+  width: 2px;
+}
+.btn-apply:after {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  width: 20%;
+  height: 2px;
+}
+.btn-apply:hover:before {
+  height: 100%;
+}
+.btn-apply:hover:after {
+  width: 100%;
+}
+.btn-apply span:before,
+.btn-apply span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-apply span:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  width: 2px;
+  height: 50%;
+}
+.btn-apply span:after {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  width: 20%;
+  height: 2px;
+}
+.btn-apply span:hover:before {
+  height: 100%;
+}
+.btn-apply span:hover:after {
+  width: 100%;
+}
+
+.btn-my-profile {
+  width: 250px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  border: none;
+
+  a {
+    text-decoration: none;
+    color: #f4f4f4;
+  }
+}
+
+.btn-my-profile span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-my-profile:before,
+.btn-my-profile:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-my-profile:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  height: 50%;
+  width: 2px;
+}
+.btn-my-profile:after {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  width: 20%;
+  height: 2px;
+}
+.btn-my-profile:hover:before {
+  height: 100%;
+}
+.btn-my-profile:hover:after {
+  width: 100%;
+}
+.btn-my-profile span:before,
+.btn-my-profile span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #f4f4f4;
+  transition: all 0.3s ease;
+}
+.btn-my-profile span:before {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);;
+  width: 2px;
+  height: 50%;
+}
+.btn-my-profile span:after {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.7);
+  width: 20%;
+  height: 2px;
+}
+.btn-my-profile span:hover:before {
+  height: 100%;
+}
+.btn-my-profile span:hover:after {
+  width: 100%;
+}

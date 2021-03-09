@@ -1,27 +1,27 @@
-<div class="navbar-container fixed-top <%= page_background_class %>">
-  <hr class="navbar-hr">
+<div class="navbar-container <%= 'fixed-top' unless params[:action] == 'home' && params[:controller] == 'pages' %> <%= page_background_class %>" id="padding-top-navbar-container">
+  <hr class="navbar-hr" id="top-divider">
 
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler <%= 'navbar-dark' if params[:action] == 'home' && params[:controller] == 'pages' %>" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav navbar-nav-tab">
         <li class="nav-item active <%= 'active-tab' if current_page?(root_path) %>">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link navbar-tab" %>
         </li>
         <li class="nav-item active <%= 'active-tab' if current_page?(users_path) %>">
-          <%= link_to "Artists", users_path, class: "nav-link" %>
+          <%= link_to "Artists", users_path, class: "nav-link navbar-tab" %>
         </li>
         <li class="nav-item active <%= 'active-tab' if current_page?(work_of_arts_path) %>">
-          <%= link_to "Artworks", work_of_arts_path, class: "nav-link" %>
+          <%= link_to "Artworks", work_of_arts_path, class: "nav-link navbar-tab" %>
         </li>
         <li class="nav-item active <%= 'active-tab' if current_page?(collabs_path) %>">
-          <%= link_to "Collabs", collabs_path, class: "nav-link" %>
+          <%= link_to "Collabs", collabs_path, class: "nav-link navbar-tab" %>
         </li>
         <li class="nav-item active <%= 'active-tab' if current_page?(exhibitions_path) %>">
-          <%= link_to "Exhibitions", exhibitions_path, class: "nav-link" %>
+          <%= link_to "Exhibitions", exhibitions_path, class: "nav-link navbar-tab", id: "exhibition-tab" %>
         </li>
       </ul>
     </div>
@@ -29,32 +29,36 @@
     <div>
       <ul class="navbar-nav mr-auto">
               <%= simple_form_for :search, url: users_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :name, input_html: {value: "", style: 'width: 300px'}, placeholder: "Find an artist, artwork, exhibition...", label: false %>
+        <%= f.input :name, input_html: {value: "", style: 'width: 300px'}, placeholder: "Find an artist...", html: { class: 'placeholder-small' }, label: false %>
         <%= button_tag(type: 'submit', class: "btn btn-outline-info") do %>
           <i class="fa fa-search"></i>
           <% end %>
       <% end %>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <%= image_tag "account-logo.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if params[:action] == 'home' && params[:controller] == 'pages' %>
+              <%= image_tag "account-logo-inverted.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "account-logo.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", user_path(current_user), class: "dropdown-item nav-link" %>
               <%= link_to "Messages", conversations_path, class: "nav-link" %>
               <%= link_to "My Art", user_work_of_arts_path(current_user), class: "dropdown-item nav-link" %>
               <%= link_to "My favorites", myfavorites_path, class: "dropdown-item nav-link" %>
-              <%= link_to "My Collabs", collabs_path(query: 'my_collabs'), class: "dropdown-item nav-link" %>
-              <%= link_to "My Exhibitions", exhibitions_path(query: 'my_exhibitions'), class: "dropdown-item nav-link" %>
+              <%= link_to "My collabs", user_collab_relationships_path, class: "dropdown-item nav-link" %>
+              <%= link_to "My exhibitions", exhibitions_path(current_user: current_user.id), class: "dropdown-item nav-link" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item nav-link" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item active">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "login nav-link" %>
           </li>
         <% end %>
       </ul>
     </div>
   </div>
 
-  <hr class="navbar-hr">
+  <hr class="navbar-hr" id="bottom-divider">
 </div>

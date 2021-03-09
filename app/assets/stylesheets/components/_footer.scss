@@ -1,0 +1,121 @@
+.footer {
+  height: 150px;
+  background-color: #f4f4f4;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .links {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -30px;
+  }
+
+  .links ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+   .links a {
+    text-decoration: none;
+    color: #1a1c20;
+  }
+
+  .links ul li {
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #1a1c20;
+    float: left;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li .fab {
+    color: #1a1c20;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover.facebook {
+    border: 2px solid #3b5998;
+    box-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover .fa-facebook-f {
+    color: #3b5998;
+    text-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover.twitter {
+    border: 2px solid #00aced;
+    box-shadow: 0 0 15px #00aced;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover .fa-twitter {
+    color: #00aced;
+    text-shadow: 0 0 15px #00aced;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover.instagram {
+    border: 2px solid #bc2a8d;
+    box-shadow: 0 0 15px #bc2a8d;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover .fa-instagram {
+    color: #bc2a8d;
+    text-shadow: 0 0 15px #bc2a8d;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover.github {
+    border: 2px solid #161C23;
+    box-shadow: 0 0 15px #161C23;
+    transition: all 0.5s ease;
+  }
+
+  .links ul li:hover .fa-github-square {
+    color: #161C23;
+    text-shadow: 0 0 15px #161C23;
+    transition: all 0.5s ease;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    background: #1a1c20;
+    width: 100%;
+
+    p {
+      margin: 8px 0;
+      color: #f4f4f4;
+      font-size: 14px;
+      word-spacing: 2px;
+    }
+
+    span {
+        text-transform: uppercase;
+        opacity: 0.7;
+    }
+  }
+}
+
+.text-footer span:hover {
+  color: #fa0101;
+  font-size: 28px;
+}

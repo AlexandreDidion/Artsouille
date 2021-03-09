@@ -1,11 +1,23 @@
 <div class="container">
-  <%= simple_form_for @work_of_art do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :creation_date, as: :date %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input_field :user, as: :hidden, value: current_user %>
-    <%= f.button :submit, class:"btn btn-primary" %>
-
-  <% end %>
+  <div class="row" id="row-form">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login gradient-border">
+      <h2>Edit my artwork</h2>
+        <%= simple_form_for @work_of_art do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :art_type, collection: @work_of_art.set_art_types, label: "Category" %>
+          <%= f.input :creation_date, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year, discard_day:true, discard_month:true, label: "Date of creation" %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input_field :user, as: :hidden, value: current_user %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Edit my artwork", class: "btn btn-outline-primary" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br>
 </div>

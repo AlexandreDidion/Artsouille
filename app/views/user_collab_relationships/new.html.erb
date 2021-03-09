@@ -1,11 +1,20 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <%= simple_form_for @user_collab_relationship, url:user_collab_relationships_path do |f| %>
-        <%= f.input :user_id, collection: @filtered_users, label_method: lambda {|u| u.username}  %>
-        <%= f.input_field :collab_id, as: :hidden, value: @user_collab_relationship.collab_id %>
-        <%= f.button :submit, 'Add this artist', class:'btn btn-primary' %>
-      <% end %>
+  <div class="row" id="row-form">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login gradient-border">
+        <h2>Add a new member</h2>
+        <%= simple_form_for @user_collab_relationship, url:user_collab_relationships_path do |f| %>
+        <div class="form-inputs">
+          <%= f.input :user_id, collection: @filtered_users, label_method: lambda {|u| u.username}  %>
+          <%= f.input_field :collab_id, as: :hidden, value: @user_collab_relationship.collab_id %>
+          <%= f.input_field :status, as: :hidden, value: "accepted" %>
+        </div>
+        <div class="form-actions">
+        <%= f.button :submit, 'Add this member', class: "btn btn-outline-primary" %>
+        <%= link_to "Cancel", :back, class: "btn btn-outline-warning" %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

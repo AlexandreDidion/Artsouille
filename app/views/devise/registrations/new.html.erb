@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+  <div class="row" id="row-form">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
       <div class="form-login gradient-border">
         <h2>Sign up</h2>
 
@@ -10,21 +10,17 @@
             <%= f.input :username,
                         required: true,
                         autofocus: true,
-                        placeholder: "Gustave Klimt",
                         input_html: { autocomplete: "username" } %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        placeholder: "gustavklimt@gmail.com",
                         input_html: { autocomplete: "email" }%>
             <%= f.input :password,
                         required: true,
-                        placeholder: "••••••••",
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
                         required: true,
-                        placeholder: "••••••••",
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :country,
                         priority: ["BE", "FR", "GB"],
@@ -33,7 +29,6 @@
                         input_html: { autocomplete: "Select country" } %>
             <%= f.input :city,
                         required: true,
-                        placeholder: "Vienna",
                         autofocus: true,
                         input_html: { autocomplete: "city" } %>
           </div>

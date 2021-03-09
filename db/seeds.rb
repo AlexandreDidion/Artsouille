@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Deleting all database'
 
+WorkOfArt.destroy_all
 User.destroy_all
 Exhibition.destroy_all
-UsersCollab.destroy_all
-WorkOfArt.destroy_all
+UserCollabRelationship.destroy_all
+ToDo.destroy_all
 Collab.destroy_all
 
 puts 'Database deleted'
@@ -42,6 +43,8 @@ puts 'Creating users...'
       start_date: Faker::Date.between(from: 20.days.ago, to: Date.today),
       end_date: Faker::Date.forward(days: 20),
       description: Faker::Lorem.sentence(word_count: 8),
+      city: Faker::Address.city,
+      country: Faker::Address.country,
       category: %w(visual sculpture performance music).sample,
       address: Faker::Address.street_address,
       latitude: Faker::Address.latitude,
@@ -49,9 +52,10 @@ puts 'Creating users...'
       collab: collab
     )
 
-  users_collab = UsersCollab.create!(
+  user_collab_relationship = UserCollabRelationship.create!(
     collab: collab,
-    user: user
+    user: user,
+    status: "accepted"
   )
 
   work_of_art = WorkOfArt.create!(
@@ -60,11 +64,6 @@ puts 'Creating users...'
     creation_date: Faker::Date.in_date_period,
     user: user,
     collab: collab
-  )
-
-  work_of_arts_favorite = WorkOfArtsFavorite.create!(
-    work_of_art: work_of_art,
-    user: user
   )
 end
 

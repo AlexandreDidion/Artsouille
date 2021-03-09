@@ -1,10 +1,20 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <%= simple_form_for @collab do |f| %>
-        <%= f.input :name %>
-        <%= f.button :submit, class:"btn btn-primary" %>
-      <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+      <div class="form-login gradient-border">
+        <h2>Create or edit a collab</h2>
+        <%= simple_form_for @collab do |f| %>
+          <div class="form-inputs">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.input :photo, as: :file %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Let's Collab!", class: "btn btn-outline-primary" %>
+            <%= link_to "Cancel", :back, class: "btn btn-outline-warning" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

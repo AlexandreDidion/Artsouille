@@ -26,6 +26,8 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initConversationCable } from '../channels/conversation_channel'
+import { initTooltip } from '../plugins/init_tooltip'
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,6 +37,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   initConversationCable()
+  initTooltip();
+
 });
 
 

@@ -14,6 +14,18 @@
 @import "components/index";
 @import "pages/index";
 
-body {
-  padding-top:106px;
+#page-container {
+  position: relative;
+  min-height: 100vh;
 }
+
+.no-padding-top {
+  padding-top: 0;
+  padding-bottom: 150px;
+}
+.content-wrap {
+  padding-top: 90px;
+  padding-bottom: 150px;
+}
+
+

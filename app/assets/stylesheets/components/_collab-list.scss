@@ -1,0 +1,200 @@
+.page-info {
+  margin: auto;
+  padding: 16px;
+  width: 600px;
+  text-align: justify;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  .btn-outline-primary {
+    font-family: "Novar";
+    width: 30%;
+    margin-bottom: 0;
+  }
+}
+
+.page-info-user-collab h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.container-collab-image {
+
+  img {
+    display: block;
+    margin: auto;
+    width: 400px;
+    max-height: 533px;
+    pointer-events: none;
+  }
+
+  h3, h4 {
+    text-align: center;
+  }
+}
+
+.collab-card-members-todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  .collab-card-info {
+    padding: 6px 12px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    width: 400px;
+
+    .collab-edit-delete-btn {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+
+      .btn-outline-danger, .btn-outline-primary  {
+        width: 40%;
+        padding: 4px 10px;
+        margin-bottom: 0;
+      }
+    }
+
+    .collab-members {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .btn-outline-warning {
+        width: 20%;
+        margin-bottom: 0;
+        padding: 4px 10px;
+      }
+    }
+  }
+}
+
+.container-btn-collab {
+  margin-top: 30px;
+  padding: 4px 10px;
+}
+
+.collab-divider {
+  border-color: black;
+  margin: 0 75px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .collab-active-and-requests {
+    display: flex;
+    justify-content: center;
+
+    h2 {
+      text-align: center;
+      padding: 16px;
+      width: 300px;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+  }
+
+  .collab-list-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 0;
+      width: 250px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    h4 {
+      margin-bottom: 0;
+      width: 300px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      width: 250px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    .request-not-accepted-yet {
+      width: 300px;
+      text-align: center;
+    }
+
+    .btn-collab-card {
+      width: 10%;
+      display: flex;
+      justify-content: center;
+
+      .btn-outline-primary, .btn-outline-success {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .collab-request-infos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 0;
+      width: 200px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    h4 {
+      margin-bottom: 0;
+      width: 250px;
+    }
+
+    p {
+      margin-bottom: 0;
+      width: 200px;
+      text-align: center;
+      padding-left: 50px;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.collab-pending-users {
+
+  h2 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .btn-collab-card {
+    width: 15%;
+    margin: auto;
+  }
+}

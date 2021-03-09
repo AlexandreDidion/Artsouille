@@ -1,4 +1,26 @@
-// Specific CSS for your home-page
-h1 {
-  text-align: center;
+.banner {
+  height: 100vh;
+  background-image: url(debashis.jpg);
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  .homepage-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+      text-shadow: 0px 0px 50px rgba(0,0,0,0.7);
+    }
+
+    h3 {
+      text-align: center;
+      letter-spacing: 0.075em;
+      text-shadow: 0px 0px 50px rgba(0,0,0,0.7);
+      color: #f4f4f4;
+    }
+  }
 }

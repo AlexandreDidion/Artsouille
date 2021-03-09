@@ -7,7 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :work_of_arts_favorites, dependent: :destroy
+  # has_many :work_of_arts_favorites, dependent: :destroy
   has_many :work_of_arts, dependent: :destroy
   has_many :user_collab_relationships, dependent: :destroy
   has_many :collabs, through: :user_collab_relationships, dependent: :destroy

@@ -27,7 +27,7 @@ class WorkOfArtsController < ApplicationController
 
   def update
     if @work_of_art.update(work_of_art_params)
-      redirect_to user_work_of_arts(@work_of_art), notice: 'Your artpage is updated'
+      redirect_to user_work_of_arts_path(@work_of_art.user), notice: 'Your artpage is updated'
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class WorkOfArtsController < ApplicationController
 
   def destroy
     @work_of_art.destroy
-    redirect_to work_of_arts_path(@work_of_art), notice: 'Your artwork has been deleted successfully.'
+    redirect_to request.referrer, notice: 'Your artwork has been deleted successfully.'
   end
 
   def toggle_favorite
@@ -54,6 +54,6 @@ class WorkOfArtsController < ApplicationController
   end
 
   def work_of_art_params
-    params.require(:work_of_art).permit(:name, :description, :creation_date, :photo, :user_id)
+    params.require(:work_of_art).permit(:name, :description, :creation_date, :photo, :user_id, :art_type)
   end
 end

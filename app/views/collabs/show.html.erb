@@ -1,18 +1,102 @@
 <div class="<%= page_background_class %>">
-  <div class="container">
-    <h2><%= @collab.name %></h2>
-    <% @collab.users.each do |user| %>
-      <div class="work-of-art-card">
-        <%= user.username %>
-        <% if @collab.users.include?(current_user) %>
-          <%= link_to "Remove this artist", user_collab_relationship_path(@collab.user_collab_relationships.find {|uc| uc.user == user }), method: :delete, data: {confirm: "Remove artist from the collab?"} %>
+  <br>
+  <div class="btn-arrow-left">
+    <%= link_to collabs_path do %>
+    <i> &#10229; Back to Collabs</i>
+    <% end %>
+  </div>
+  <br>
+
+  <div class="container-collab-image">
+    <% if @collab.photo.attached? %>
+    <%= cl_image_tag @collab.photo.key, crop: :fill %>
+    <% else %>
+    <%= image_tag('artist_2.png') %>
+    <% end %>
+    <br>
+    <h3><%= @collab.name %></h3>
+    <h4><%= @collab.description %></h4>
+  </div>
+
+  <br>
+  <hr class="collab-divider">
+  <br>
+
+  <% if @accepted_users %>
+
+    <div class="collab-card-members-todo">
+      <div class="collab-card-info">
+        <div class="collab-edit-delete-btn">
+          <%= link_to 'Edit collab', edit_collab_path(@collab), class: "btn btn-outline-primary" %>
+          <%= link_to "Delete collab", collab_path(@collab), method: :delete, data: { confirm: "Are you sure?", disable_with: "Processing..." }, class: "btn btn-outline-danger" %>
+        </div>
+        <hr>
+        <h4 style="margin-bottom:8px"> Members: </h4>
+        <% @accepted_collab.each do |collab| %>
+          <div class="collab-members">
+            <p style="margin-bottom:0"> <%= collab.user.username %> </p>
+            <% if @collab.users.include?(current_user) %>
+            <%= link_to "Remove", user_collab_relationship_path(@collab.user_collab_relationships.find {|uc| uc.user == collab.user }), method: :delete, data: {confirm: "Remove this artist from the collab?"}, class: "btn btn-outline-warning" %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-    <% end %>
-    <% if @collab.users.include?(current_user) %>
-      <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab) %>
-      <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition) %>
-    <% end %>
-    <%= link_to "Back", collabs_path %>
+
+      <div class="vertical-divider" style="border-left:1px solid black;"></div>
+
+      <div class="collab-to-do-container">
+        <% @collab.to_dos.each do |to_do| %>
+          <div class="card-to-do">
+            <div class="card-to-do-title-button">
+              <h3><%= to_do.title %></h3>
+                <%= link_to 'Delete table', to_do_path(to_do),  method: :delete, data: {confirm: 'Destroy the table?'}, class: "btn btn-outline-danger" %>
+            </div>
+            <hr>
+              <ul class="list">
+                <% to_do.to_do_items.each do |item| %>
+                  <li> <p id="to-do-item-<%= item.id %>"> <%= item.content %> <%= link_to "<i class='far fa-times-circle'></i>".html_safe,
+                  to_do_item_path(item),
+                  method: :delete %> </p></li>
+                <% end %>
+              </ul>
+              <%= simple_form_for [to_do, @to_do_item], remote: true do |f| %>
+                <div class="form-inputs">
+                  <%= f.input :content, label: false  %>
+                </div>
+                <div class="form-actions">
+                  <%= f.button :submit, "Add this idea", class: "btn btn-outline-primary" %>
+                </div>
+              <% end %>
+          </div>
+          <br>
+        <% end %>
+      </div>
+
+    </div>
+    <br>
+    <div class="container-btn-collab">
+      <%= link_to "Add a member", new_collab_user_collab_relationship_path(@collab), class: "btn btn-outline-primary" %>
+      <%= link_to "Add an exhibition", new_collab_exhibition_path(@collab, @exhibition), class: "btn btn-outline-primary", data: { toggle: 'tooltip', placement: 'top', title: 'Show the results of your collaboration' }  %>
+      <%= link_to "Add a brainstorming", new_collab_to_do_path(@collab), class: "btn btn-outline-primary", data: { toggle: 'tooltip', placement: 'top', title: 'Share a list of ideas' }  %>
+    </div>
+
+  <% elsif @pending_users %>
+
+  <div class="collab-pending-users">
+    <br>
+    <h2>Your request is pending!</h2>
+    <br>
   </div>
+
+  <% else %>
+
+  <div class="collab-pending-users">
+    <h2>You can't see more information because you're not a member.</h2>
+    <br>
+    <div class="btn-collab-card">
+      <%= link_to "Join this collab", user_collab_relationships_path(user_collab_relationship: {collab_id: @collab.id, user_id: current_user.id, status: "pending" }), method: :post , class: 'btn btn-outline-primary' %>
+    </div>
+  </div>
+
+  <% end %>
 </div>

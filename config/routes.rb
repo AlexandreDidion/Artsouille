@@ -13,10 +13,16 @@
   resources :collabs do
     resources :user_collab_relationships, only: [:new]
     resources :exhibitions, only: [:new, :create]
+    resources :to_dos, only: [:new, :create]
   end
   resources :exhibitions, except: [:new, :create]
-  resources :user_collab_relationships, only: [:create, :destroy]
+  resources :user_collab_relationships, only: [:index, :create, :destroy, :update]
+  resources :to_dos, only: [:destroy, :edit, :update] do
+    resources :to_do_items, only: [:new, :create]
+  end
+  resources :to_do_items, only: [:destroy]
   resources :conversations, only: [:index, :show]
   resources :messages, only: [:new, :create]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
